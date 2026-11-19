@@ -44,7 +44,7 @@ AI versterkt wat er is. Elk leeg perspectief remt de effectiviteit. Niet wachten
 
 ## Onder de kapstok
 
+- [Het FCD-model](model.md) — de objecten, de kaders en hoe ze samenhangen
+- [Showcases](showcases/index.md) — ShowKitchen en FCD-MVP0, gegenereerd uit het declaratieve bestand
 - [Het verhaal en de praatplaat](verhaal-presentatie.md) — FCD in het kort
-- [Het model](model.md) — de assen, met mijn opinie: waar je staat en waar je heen wilt
-- [Scenario's](scenarios/index.md) — het model ingevuld, elk als werkende showcase
-- [Showcase practice](showcase-practice/index.md) — één right practice als werkende code
+- [Backlog](backlog.md) — wat nog komt. Grow through doing.

@@ -3,6 +3,7 @@ import starlight from "@astrojs/starlight";
 import { unified } from "@astrojs/markdown-remark";
 import { remarkSchuiven } from "./src/plugins/schuiven";
 import { remarkLinks } from "./src/plugins/links";
+import { remarkMermaid } from "./src/plugins/mermaid";
 
 const base = "/fcd";
 
@@ -11,7 +12,7 @@ export default defineConfig({
   base,
   markdown: {
     processor: unified({
-      remarkPlugins: [remarkSchuiven, [remarkLinks, { base }]],
+      remarkPlugins: [remarkSchuiven, remarkMermaid, [remarkLinks, { base }]],
     }),
   },
   integrations: [
@@ -21,7 +22,7 @@ export default defineConfig({
         en: "Full Circle Delivery",
       },
       description:
-        "AI needs delivery. Delivery needs AI. Een model met assen, mijn opinie en scenario's met werkende showcases.",
+        "AI needs delivery. Delivery needs AI. Full Circle Delivery: het FCD-model, jouw FCD-model in een declaratief bestand, en een werkende showcase.",
       defaultLocale: "root",
       locales: {
         root: { label: "Nederlands", lang: "nl" },
@@ -43,37 +44,13 @@ export default defineConfig({
       },
       sidebar: [
         { label: "Home", slug: "index", translations: { en: "Home" } },
-        { label: "Het model", slug: "model", translations: { en: "The model" } },
+        { label: "Het FCD-model", slug: "model", translations: { en: "The FCD model" } },
         {
-          label: "Scenario's",
-          translations: { en: "Scenarios" },
+          label: "Showcases",
           items: [
-            { label: "Overzicht", slug: "scenarios", translations: { en: "Overview" } },
-            {
-              label: "Subdomein binnen enterprise",
-              slug: "scenarios/subdomein-enterprise",
-              translations: { en: "Subdomain within an enterprise" },
-            },
-            {
-              label: "Ontwerp subdomein",
-              slug: "scenarios/subdomein-enterprise-ontwerp",
-              translations: { en: "Design subdomain" },
-            },
-            { label: "Startup", slug: "scenarios/startup" },
-          ],
-        },
-        {
-          label: "Showcase practice",
-          items: [
-            {
-              label: "Overzicht",
-              slug: "showcase-practice",
-              translations: { en: "Overview" },
-            },
-            {
-              label: "Contract-based testing",
-              slug: "showcase-practice/contract-based-testing",
-            },
+            { label: "Overzicht", slug: "showcases", translations: { en: "Overview" } },
+            { label: "ShowKitchen-MVP0", slug: "showcases/showkitchen-mvp0" },
+            { label: "FCD-MVP0", slug: "showcases/fcd-mvp0" },
           ],
         },
         {
@@ -82,19 +59,62 @@ export default defineConfig({
           translations: { en: "Story and presentation" },
         },
         {
-          label: "Praatplaat en visuals",
+          label: "Praatplaat en platen",
           slug: "visuals",
-          translations: { en: "Visuals" },
+          translations: { en: "Talking picture and pictures" },
         },
         {
           label: "Terminologie",
           slug: "terminologie",
           translations: { en: "Terminology" },
         },
+        { label: "Backlog", slug: "backlog" },
         {
-          label: "Open punten",
-          slug: "open-punten",
-          translations: { en: "Open items" },
+          label: "Eerder werk",
+          translations: { en: "Earlier work" },
+          collapsed: true,
+          items: [
+            { label: "Overzicht", slug: "eerder-werk", translations: { en: "Overview" } },
+            {
+              label: "Scenario's",
+              translations: { en: "Scenarios" },
+              collapsed: true,
+              items: [
+                { label: "Overzicht", slug: "scenarios", translations: { en: "Overview" } },
+                {
+                  label: "Subdomein binnen enterprise",
+                  slug: "scenarios/subdomein-enterprise",
+                  translations: { en: "Subdomain within an enterprise" },
+                },
+                {
+                  label: "Ontwerp subdomein",
+                  slug: "scenarios/subdomein-enterprise-ontwerp",
+                  translations: { en: "Design subdomain" },
+                },
+                { label: "Startup", slug: "scenarios/startup" },
+              ],
+            },
+            {
+              label: "Showcase practice",
+              collapsed: true,
+              items: [
+                {
+                  label: "Overzicht",
+                  slug: "showcase-practice",
+                  translations: { en: "Overview" },
+                },
+                {
+                  label: "Contract-based testing",
+                  slug: "showcase-practice/contract-based-testing",
+                },
+              ],
+            },
+            {
+              label: "Open punten",
+              slug: "open-punten",
+              translations: { en: "Open items" },
+            },
+          ],
         },
         { label: "Over mij", slug: "over", translations: { en: "About me" } },
       ],

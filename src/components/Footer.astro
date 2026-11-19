@@ -9,6 +9,17 @@ import Default from "@astrojs/starlight/components/Footer.astro";
   code <a href="https://github.com/fcd-labs/fcd/blob/main/LICENSE">MIT</a>
 </p>
 
+<script>
+  // Mermaid alleen laden op pagina's met een diagram.
+  const blokken = document.querySelectorAll<HTMLElement>("pre.mermaid");
+  if (blokken.length) {
+    const { default: mermaid } = await import("mermaid");
+    const donker = document.documentElement.dataset.theme !== "light";
+    mermaid.initialize({ startOnLoad: false, theme: donker ? "dark" : "default" });
+    await mermaid.run({ nodes: [...blokken] });
+  }
+</script>
+
 <style>
   .licentie {
     margin-top: 1.5rem;
