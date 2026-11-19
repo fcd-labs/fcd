@@ -1,6 +1,6 @@
-# ContinuousDelivery
+# fcd
 
-De site: https://sim007.github.io/ContinuousDelivery/
+De site: https://fcd-labs.github.io/fcd/
 
 Markdown is de bron. De site wordt er automatisch van gemaakt, met
 [Astro](https://astro.build) en [Starlight](https://starlight.astro.build).
@@ -75,4 +75,4 @@ De tekst en de code hebben elk hun eigen licentie.
   `astro.config.ts` — staat onder [MIT](LICENSE).
 
 Naamsvermelding, bijvoorbeeld: Johannes Sim, *Continuous delivery*,
-https://sim007.github.io/ContinuousDelivery/, CC BY 4.0.
+https://fcd-labs.github.io/fcd/, CC BY 4.0.

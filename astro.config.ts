@@ -4,10 +4,10 @@ import { unified } from "@astrojs/markdown-remark";
 import { remarkSchuiven } from "./src/plugins/schuiven";
 import { remarkLinks } from "./src/plugins/links";
 
-const base = "/ContinuousDelivery";
+const base = "/fcd";
 
 export default defineConfig({
-  site: "https://sim007.github.io",
+  site: "https://fcd-labs.github.io",
   base,
   markdown: {
     processor: unified({
@@ -31,11 +31,11 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/Sim007/ContinuousDelivery",
+          href: "https://github.com/fcd-labs/fcd",
         },
       ],
       editLink: {
-        baseUrl: "https://github.com/Sim007/ContinuousDelivery/edit/main/",
+        baseUrl: "https://github.com/fcd-labs/fcd/edit/main/",
       },
       customCss: ["./src/styles/custom.css"],
       components: {

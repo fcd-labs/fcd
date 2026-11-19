@@ -3,7 +3,7 @@
  *
  * In de markdown blijf je schrijven naar het bestand — `model.md`,
  * `../model.md`, `scenarios/index.md` — precies zoals in MkDocs. Deze plugin
- * maakt daar `/ContinuousDelivery/model/` van, zodat de link ook klopt vanaf
+ * maakt daar `/fcd/model/` van, zodat de link ook klopt vanaf
  * een pagina die een map dieper staat.
  */
 import path from "node:path";
@@ -13,7 +13,7 @@ import type { VFile } from "vfile";
 import { visit } from "unist-util-visit";
 
 interface Opties {
-  /** Het pad waaronder de site staat, bijvoorbeeld "/ContinuousDelivery". */
+  /** Het pad waaronder de site staat, bijvoorbeeld "/fcd". */
   base: string;
 }
 
