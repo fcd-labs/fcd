@@ -74,5 +74,4 @@ De tekst en de code hebben elk hun eigen licentie.
 - De code — `src/plugins/`, `src/components/`, `src/styles/`, `.github/`,
   `astro.config.ts` — staat onder [MIT](LICENSE).
 
-Naam: fcd, *Continuous delivery*,
-https://fcd-labs.github.io/fcd/, CC BY 4.0.
+Naamsvermelding: fcd
