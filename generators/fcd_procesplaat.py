@@ -101,7 +101,7 @@ rel = by.get("Release", [])
 if rel: steps.append(("Releasen", "releasen", C_PROD, "rocket", [("Release", [title(r) for r in rel])], []))
 else:
     steps.append(("Releasen", "releasen", C_PROD, "rocket", [], ["release ?"]))
-    gap("Releasen: hoe het product beschikbaar komt voor de gebruiker")
+    gap("Releasen: hoe een deelproduct beschikbaar komt voor de gebruiker")
 steps.append(("Gebruiken", None, C_USE, "people", [("Persona", ["staat in de intent van het product"])], []))
 learn = by.get("Dashboard", []) + by.get("KeyPerformanceIndicator", [])
 if learn: steps.append(("Leren", None, C_LEARN, "pulse", [("Zichtbaar", [title(x) for x in learn])], []))

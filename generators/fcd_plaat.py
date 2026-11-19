@@ -87,7 +87,6 @@ text(PX + 106, PY + 98, title(prod), 44, True)
 tx = PX + 106 + tw(title(prod), 44, True) + 28
 version_chip(tx, PY + 60, prod)
 if spec(prod).get("description"): text(PX + 106, PY + 138, spec(prod)["description"], 26, False, MUTED)
-verb(PX + PW - 36, PY + 36, "releasen", C_PROD)
 check_version(prod, "Product")
 
 subs = [s for s in by.get("SubProduct", []) if spec(s).get("product") == name(prod)]
@@ -106,7 +105,8 @@ for i, s in enumerate(subs):
     text(sx + 96, SY + 50, "DEELPRODUCT", 24, True, C_SUB, ls=2)
     text(sx + 96, SY + 92, title(s), 40, True)
     version_chip(sx + 96 + tw(title(s), 40, True) + 26, SY + 56, s)
-    verb(sx + sw_each - 32, SY + 32, "deployen", C_SUB)
+    verb(sx + sw_each - 32, SY + 32, "releasen", C_PROD)
+    verb(sx + sw_each - 32 - tw("releasen", 26, True) - 56, SY + 32, "deployen", C_SUB)
     check_version(s, "Deelproduct")
     g = groups.get(spec(s).get("owner"))
     if g:
@@ -192,7 +192,7 @@ text(RX + 40, PY + 70, "Drie werkwoorden", 36, True)
 y = PY + 120
 for vb, col, lvl, zin in [("bouwen", C_CON, "Container", "Code en libraries worden één container."),
                           ("deployen", C_SUB, "Deelproduct", "Eén versie van één deelproduct op één omgeving."),
-                          ("releasen", C_PROD, "Product", "Het product komt beschikbaar voor de gebruiker.")]:
+                          ("releasen", C_PROD, "Deelproduct", "Eén versie van een deelproduct komt beschikbaar voor de gebruiker.")]:
     w = tw(vb, 26, True) + 40
     rect(RX + 40, y, w, 46, col, rx=23); text(RX + 40 + w/2, y + 32, vb, 26, True, "#FFFFFF", "middle")
     text(RX + 40 + w + 20, y + 33, lvl, 28, True)

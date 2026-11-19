@@ -29,10 +29,10 @@ Borrow words where the market has them, only add what the market lacks. The mark
 |---|---|
 | Intent | What the user wants, from the persona: persona and user story, why (objective), measure (key result), behaviour as scenarios. Intent is intent, not a norm. |
 | Persona | The user of the product. |
-| Product | Sub-products together form a product. It runs in production. You release the product. |
-| Sub-product (*deelproduct*) | The unit of deployment. Consists of one or more containers. A squad owns it. |
+| Product | Sub-products together form a product. It runs in production. |
+| Sub-product (*deelproduct*) | The unit of deployment and of release. Consists of one or more containers, each with its own lifecycle. A squad owns it. |
 | Container | A service runs in it. Built from code and libraries. |
-| Build, deploy, release | Building delivers a container, deploying puts a sub-product on an environment, releasing makes the product available to the user. |
+| Build, deploy, release | Building delivers a container, deploying puts a sub-product on an environment, releasing makes a version of a sub-product available to the user. |
 | Squad | Owns sub-products. Composition: humans, humans and AI agents, or AI agents only. |
 | Contracts | Agreements between sub-products. Contract first; the schema is part of the contract. |
 | Output | The software. |
@@ -44,7 +44,7 @@ Borrow words where the market has them, only add what the market lacks. The mark
 |---|---|
 | Showcase | Shows working how it can be done. It opens the conversation. |
 | ShowKitchen | The product in the showcases: software as a service for restaurants. |
-| FCD-MVP0 | The first, smallest way of working that goes the full circle. FCD-\* stands for the way of working. |
+| Demo, Classic, Ideal | The three showcases: the same product, three ways of working. Each showcase is a pair: fcd-X (the way of working) and sk-X (the product). |
 | Product picture (*productplaat*) | What is in what, generated from the declarative file. |
 | Process picture (*procesplaat*) | How the product comes into being and stays alive, generated from the declarative file. |
 

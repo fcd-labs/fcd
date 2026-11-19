@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F2937"/></marker></defs>
 <rect x="0.0" y="0.0" width="3840.0" height="2160.0" rx="0" fill="#F2F4F7"/>
-<text x="60.0" y="112.0" font-family="Segoe UI, Inter, sans-serif" font-size="68" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Full Circle Delivery: FCD-MVP0</text>
-<text x="62.0" y="162.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Hoe het product ontstaat en levend blijft  ·  gegenereerd uit fcd-mvp0.fcd.yaml</text>
+<text x="60.0" y="112.0" font-family="Segoe UI, Inter, sans-serif" font-size="68" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Full Circle Delivery: FCD-Demo</text>
+<text x="62.0" y="162.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Hoe het product ontstaat en levend blijft  ·  gegenereerd uit fcd-demo.fcd.yaml</text>
 <rect x="60.0" y="220.0" width="416.7" height="640.0" rx="24" fill="#FFFFFF"/>
 <path d="M60.0,316 V244 Q60.0,220 84.0,220 H452.6666666666667 Q476.6666666666667,220 476.6666666666667,244 V316 Z" fill="#7B3FB2"/>
 <g transform="translate(84.0,246.0) scale(1.833)" fill="#FFFFFF"><path d="M12 2c4 0 7.25 3.25 7.25 7.25q-.01 3.15-2.66 5.74a1 1 0 0 0-.18.27l-.03.1-1.13 4.9a2.25 2.25 0 0 1-2.02 1.73l-.17.01h-2.12c-.99 0-1.85-.65-2.14-1.58l-.05-.16-1.13-4.9a1 1 0 0 0-.2-.37q-2.53-2.47-2.66-5.44l-.01-.3v-.24a7.25 7.25 0 0 1 7.25-7m2.12 16.5H9.88l.33 1.42c.07.3.33.53.63.57l.1.01h2.12c.31 0 .59-.2.7-.48l.03-.1zM12 3.5a5.75 5.75 0 0 0-5.75 5.53v.5q.1 2.34 2.21 4.39.4.4.57.93l.05.17.46 1.98h4.92l.46-1.98q.12-.54.5-.97l.12-.13q2.1-2.05 2.2-4.4l.01-.27v-.22A5.75 5.75 0 0 0 12 3.5"/></g>
@@ -136,14 +136,14 @@
 <text x="96.0" y="1724.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Kubernetes</text>
 <rect x="621.0" y="1700.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
 <text x="688.0" y="1727.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<text x="96.0" y="1759.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: mvp0: docker-compose</text>
+<text x="96.0" y="1759.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: docker-compose</text>
 <line x1="96.0" y1="1785" x2="755.0" y2="1785" stroke="#DDE2E9" stroke-width="1.5"/>
 <text x="779.0" y="1160.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Omgevingen: OTAP</text>
 <g class="backlog">
 <rect x="1317.1" y="1136.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
 <text x="1377.6" y="1163.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<text x="779.0" y="1195.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: mvp0: één omgeving</text>
+<text x="779.0" y="1195.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: één omgeving</text>
 <line x1="779.0" y1="1221" x2="1438.0" y2="1221" stroke="#DDE2E9" stroke-width="1.5"/>
 <text x="779.0" y="1257.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Automate everything</text>
 <rect x="1304.0" y="1233.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
@@ -211,14 +211,14 @@
 <rect x="2683.1" y="1136.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
 <text x="2743.6" y="1163.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<text x="2145.0" y="1265.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: mvp0: frontend en backend</text>
+<text x="2145.0" y="1265.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: frontend en backend</text>
 <line x1="2145.0" y1="1291" x2="2804.0" y2="1291" stroke="#DDE2E9" stroke-width="1.5"/>
 <text x="2145.0" y="1327.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Database: PostgreSQL</text>
 <g class="backlog">
 <rect x="2683.1" y="1303.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
 <text x="2743.6" y="1330.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<text x="2145.0" y="1362.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: mvp0: bestand</text>
+<text x="2145.0" y="1362.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: bestand</text>
 <line x1="2145.0" y1="1388" x2="2804.0" y2="1388" stroke="#DDE2E9" stroke-width="1.5"/>
 <text x="2145.0" y="1450.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="2">CONTINUOUS DELIVERY (2)</text>
 <text x="2145.0" y="1494.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Een bash-script is de enige weg om</text>
@@ -274,7 +274,7 @@
 <text x="2930.0" y="800.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#8A3FC2" text-anchor="start" letter-spacing="0">Backlog (6)</text>
 <text x="2930.0" y="842.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Wat het FCD-model vraagt en nog niet is ingevuld</text>
 <circle cx="2942" cy="897" r="7" fill="#8A3FC2"/>
-<text x="2966.0" y="906.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Releasen: hoe het product beschikbaar komt voor de</text>
+<text x="2966.0" y="906.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Releasen: hoe een deelproduct beschikbaar komt voor de</text>
 <text x="2966.0" y="942.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">gebruiker</text>
 <circle cx="2942" cy="987" r="7" fill="#8A3FC2"/>
 <text x="2966.0" y="996.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Leren: dashboard en meting, zodat de cirkel rond is</text>

@@ -4,20 +4,25 @@ title: "Showcases"
 
 A working showcase opens the conversation. You see how it can work and where changes are needed.
 
-Two showcases side by side:
+Three showcases, with the same product and the same intent, in three ways of working:
 
-- **[ShowKitchen-MVP0](showkitchen-mvp0.md):** the product itself.
-- **[FCD-MVP0](fcd-mvp0.md):** how we make the product. The first, smallest way of working that goes the full circle. AI as accelerator.
+| Showcase | What it shows | Status |
+|---|---|---|
+| [Demo](demo.md) | The smallest way of working that goes the full circle. AI as accelerator. | working |
+| [Classic](classic.md) | How it often goes: all sub-products go to production together. | placeholder |
+| [Ideal](ideal.md) | How it can go: a sub-product goes to production on its own. | placeholder |
+
+Because product and intent stay the same, you only compare the way of working.
 
 ## ShowKitchen
 
-ShowKitchen is the product used in the FCD showcases: software as a service for restaurants, from a supplier. An open kitchen, where the guest sees how the cooking is done.
+The product in every showcase is ShowKitchen: software as a service for restaurants, from a supplier. An open kitchen, where the guest sees how the cooking is done.
 
-FCD brings ShowKitchen into being and keeps it alive. The product stays the same; the setup differs per showcase. FCD-\* stands for the way of working.
+Each showcase is a pair: **fcd-X**, the way of working, and **sk-X**, the product ShowKitchen that this way of working brings into being.
 
 ## From the declarative file
 
-Each showcase is captured in a declarative file: what and why, reproducible. The pictures are generated from it. The declarative file produces the picture, not the other way round.
+Each showcase is captured in declarative files. The pictures are generated from them. The declarative file produces the picture, not the other way round.
 
 What the FCD model asks for and is not yet filled in appears on the picture as backlog. With the switch you see the picture with and without backlog.
 
