@@ -1,0 +1,76 @@
+---
+/**
+ * Toont een gegenereerde plaat uit public/platen/, met een schakelaar
+ * voor de backlog: met en zonder, niet kiezen.
+ */
+import fs from "node:fs";
+import path from "node:path";
+
+interface Props {
+  /** Bestandsnaam in public/platen/, bijvoorbeeld "productplaat-showkitchen.svg". */
+  bestand: string;
+  /** Korte beschrijving voor schermlezers. */
+  alt: string;
+  lang?: "nl" | "en";
+}
+
+const { bestand, alt, lang = "nl" } = Astro.props;
+const svg = fs
+  .readFileSync(path.join(process.cwd(), "public", "platen", bestand), "utf8")
+  .replace("<svg ", `<svg role="img" aria-label="${alt.replace(/"/g, "&quot;")}" `)
+  .replace(/ width="\d+" height="\d+"/, "");
+const url = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/platen/${bestand}`;
+const t =
+  lang === "en"
+    ? { toon: "Show the backlog", groot: "Open at full size" }
+    : { toon: "Toon de backlog", groot: "Open op ware grootte" };
+---
+
+<figure class="plaat not-content">
+  <div class="plaat-balk">
+    <label><input type="checkbox" checked /> {t.toon}</label>
+    <a href={url}>{t.groot}</a>
+  </div>
+  <div class="plaat-svg" set:html={svg} />
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>("figure.plaat").forEach((fig) => {
+    const box = fig.querySelector<HTMLInputElement>("input[type=checkbox]");
+    box?.addEventListener("change", () => fig.classList.toggle("zonder", !box.checked));
+  });
+</script>
+
+<style>
+  .plaat {
+    margin: 1rem 0 1.5rem;
+  }
+  .plaat-balk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: var(--sl-text-sm);
+  }
+  .plaat-balk label {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+    cursor: pointer;
+  }
+  .plaat-svg {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--sl-color-gray-5);
+  }
+  .plaat-svg :global(svg) {
+    display: block;
+    width: 100%;
+    min-width: 640px;
+    height: auto;
+  }
+  .zonder :global(.backlog) {
+    display: none;
+  }
+</style>

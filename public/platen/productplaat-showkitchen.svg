@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
+<rect x="0.0" y="0.0" width="3840.0" height="2160.0" rx="0" fill="#F2F4F7"/>
+<text x="60.0" y="112.0" font-family="Segoe UI, Inter, sans-serif" font-size="68" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Productplaat: ShowKitchen</text>
+<text x="62.0" y="162.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Wat zit in wat  ·  gegenereerd uit sk-1dp-mvp0.fcd.yaml</text>
+<rect x="60.0" y="210.0" width="2780.0" height="1890.0" rx="28" fill="#FFFFFF" stroke="#239B45" stroke-width="6"/>
+<g transform="translate(96.0,244.0) scale(2.167)" fill="#239B45"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20m2.94 14.5H9.06c.65 2.41 1.79 4 2.94 4s2.29-1.59 2.94-4m-7.43 0H4.79a8.5 8.5 0 0 0 4.09 3.41q-.79-1.25-1.27-3.02zm11.7 0H16.5c-.32 1.33-.79 2.5-1.37 3.41a8.5 8.5 0 0 0 3.9-3.13zM7.1 10H3.74v.02a8.5 8.5 0 0 0 .3 4.98h3.18a20 20 0 0 1-.13-5m8.3 0H8.6a19 19 0 0 0 .14 5h6.52a19 19 0 0 0 .14-5m4.87 0h-3.35a21 21 0 0 1-.13 5h3.18a8.5 8.5 0 0 0 .3-5M8.88 4.09h-.02a8.5 8.5 0 0 0-4.61 4.4l3.05.01c.31-1.75.86-3.28 1.58-4.41m3.12-.6-.12.01c-1.26.12-2.48 2.12-3.05 5h6.34c-.56-2.87-1.78-4.87-3.04-5zm3.12.6.1.17A13 13 0 0 1 16.7 8.5h3.05a8.5 8.5 0 0 0-4.34-4.29z"/></g>
+<text x="166.0" y="264.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" fill="#239B45" text-anchor="start" letter-spacing="2">PRODUCT</text>
+<text x="166.0" y="308.0" font-family="Segoe UI, Inter, sans-serif" font-size="44" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">ShowKitchen</text>
+<g class="backlog">
+<rect x="480.5" y="270.0" width="135.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="548.0" y="303.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">versie ?</text>
+</g>
+<text x="166.0" y="348.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Software as a service voor restaurants</text>
+<rect x="2654.5" y="246.0" width="149.5" height="46.0" rx="23" fill="#239B45"/>
+<text x="2729.2" y="278.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">releasen</text>
+<rect x="110.0" y="390.0" width="2010.0" height="1660.0" rx="24" fill="#F3FBFC" stroke="#1AA6B7" stroke-width="5"/>
+<g transform="translate(142.0,420.0) scale(2.000)" fill="#1AA6B7"><path d="M13 2a3 3 0 0 1 3 2.82V5h2.25c.87 0 1.59.63 1.73 1.46l.01.15.01.14v3.75h-2a1.5 1.5 0 0 0-1.48 1.24l-.01.13V12c0 .74.53 1.37 1.23 1.48l.13.02H20v3.75c0 .92-.7 1.67-1.6 1.75H16v.17a3 3 0 0 1-2.64 2.8l-.18.02H13a3 3 0 0 1-3-2.81V19H7.75c-.87 0-1.59-.63-1.73-1.46l-.01-.14-.01-.15V15h-.16a3 3 0 0 1-2.8-2.64l-.02-.18V12a3 3 0 0 1 2.82-3H6V6.75c0-.87.63-1.59 1.46-1.73l.15-.01.14-.01H10v-.17a3 3 0 0 1 2.64-2.8l.18-.02zm0 1.5c-.78 0-1.42.6-1.5 1.36V6.5H7.75a.25.25 0 0 0-.24.2l-.01.05v3.75H6a1.5 1.5 0 0 0-.14 3H7.5v3.75q.01.2.2.25h3.8V19a1.5 1.5 0 0 0 3 .14V17.5h3.75q.2-.01.24-.19l.01-.06V15h-.7a3 3 0 0 1-2.8-2.85v-.35A3 3 0 0 1 17.84 9h.67V6.75q0-.15-.13-.22l-.06-.02-.06-.01H14.5V5c0-.82-.67-1.5-1.5-1.5"/></g>
+<text x="206.0" y="440.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" fill="#1AA6B7" text-anchor="start" letter-spacing="2">DEELPRODUCT</text>
+<text x="206.0" y="482.0" font-family="Segoe UI, Inter, sans-serif" font-size="40" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Bestellen</text>
+<g class="backlog">
+<rect x="413.2" y="446.0" width="135.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="480.7" y="479.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">versie ?</text>
+</g>
+<rect x="1930.3" y="422.0" width="157.7" height="46.0" rx="23" fill="#1AA6B7"/>
+<text x="2009.2" y="454.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">deployen</text>
+<text x="206.0" y="524.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Eigenaar: squad Claude Code met agents (alleen AI-agents; aanspreekbaar: product owner)</text>
+<rect x="150.0" y="570.0" width="947.0" height="1440.0" rx="20" fill="#FFFFFF" stroke="#2176C7" stroke-width="4"/>
+<g transform="translate(178.0,598.0) scale(1.833)" fill="#2176C7"><path d="M6.05 7.98a.75.75 0 0 1 .97-.43L12 9.44l4.98-1.9a.75.75 0 1 1 .54 1.41l-4.77 1.8v5.5a.75.75 0 1 1-1.5 0v-5.5l-4.77-1.8a.75.75 0 0 1-.43-.97m4.54-5.47c.9-.37 1.92-.37 2.82 0l7.5 3.04c.66.27 1.09.91 1.09 1.62v9.66c0 .7-.43 1.35-1.1 1.62l-7.5 3.04c-.9.36-1.9.36-2.8 0l-7.5-3.04c-.67-.27-1.1-.91-1.1-1.62V7.17c0-.71.43-1.35 1.1-1.62zm2.26 1.4a2.3 2.3 0 0 0-1.7 0l-7.5 3.03a.3.3 0 0 0-.15.23v9.66q0 .16.16.23l7.5 3.04c.54.22 1.14.22 1.69 0l7.5-3.04q.14-.07.15-.23V7.17q0-.17-.16-.23z"/></g>
+<text x="236.0" y="616.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#2176C7" text-anchor="start" letter-spacing="2">CONTAINER</text>
+<text x="236.0" y="656.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">frontend</text>
+<rect x="927.0" y="598.0" width="142.0" height="46.0" rx="23" fill="#2176C7"/>
+<text x="998.0" y="630.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">bouwen</text>
+<g class="backlog">
+<rect x="178.0" y="682.0" width="135.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="245.5" y="715.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">versie ?</text>
+</g>
+<text x="178.0" y="778.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Angular (micro-frontend)</text>
+<line x1="178.0" y1="832" x2="1069.0" y2="832" stroke="#DDE2E9" stroke-width="2"/>
+<text x="178.0" y="884.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Service</text>
+<text x="178.0" y="916.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">draait in de container</text>
+<g class="backlog">
+<rect x="178.0" y="940.0" width="151.2" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="253.6" y="973.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">service ?</text>
+</g>
+<line x1="178.0" y1="1032" x2="1069.0" y2="1032" stroke="#DDE2E9" stroke-width="2"/>
+<text x="178.0" y="1084.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Gebouwd uit</text>
+<text x="178.0" y="1140.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" fill="#1F8F4E" text-anchor="start" letter-spacing="0">Code</text>
+<text x="178.0" y="1170.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">uit een repository van het deelproduct</text>
+<g class="backlog">
+<rect x="178.0" y="1192.0" width="188.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="272.0" y="1225.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">repository ?</text>
+</g>
+<text x="178.0" y="1310.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" fill="#EF8A21" text-anchor="start" letter-spacing="0">Libraries</text>
+<text x="178.0" y="1340.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">kunnen open source zijn</text>
+<g class="backlog">
+<rect x="178.0" y="1362.0" width="160.4" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="258.2" y="1395.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">libraries ?</text>
+</g>
+<rect x="1133.0" y="570.0" width="947.0" height="1440.0" rx="20" fill="#FFFFFF" stroke="#2176C7" stroke-width="4"/>
+<g transform="translate(1161.0,598.0) scale(1.833)" fill="#2176C7"><path d="M6.05 7.98a.75.75 0 0 1 .97-.43L12 9.44l4.98-1.9a.75.75 0 1 1 .54 1.41l-4.77 1.8v5.5a.75.75 0 1 1-1.5 0v-5.5l-4.77-1.8a.75.75 0 0 1-.43-.97m4.54-5.47c.9-.37 1.92-.37 2.82 0l7.5 3.04c.66.27 1.09.91 1.09 1.62v9.66c0 .7-.43 1.35-1.1 1.62l-7.5 3.04c-.9.36-1.9.36-2.8 0l-7.5-3.04c-.67-.27-1.1-.91-1.1-1.62V7.17c0-.71.43-1.35 1.1-1.62zm2.26 1.4a2.3 2.3 0 0 0-1.7 0l-7.5 3.03a.3.3 0 0 0-.15.23v9.66q0 .16.16.23l7.5 3.04c.54.22 1.14.22 1.69 0l7.5-3.04q.14-.07.15-.23V7.17q0-.17-.16-.23z"/></g>
+<text x="1219.0" y="616.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#2176C7" text-anchor="start" letter-spacing="2">CONTAINER</text>
+<text x="1219.0" y="656.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">backend</text>
+<rect x="1910.0" y="598.0" width="142.0" height="46.0" rx="23" fill="#2176C7"/>
+<text x="1981.0" y="630.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">bouwen</text>
+<g class="backlog">
+<rect x="1161.0" y="682.0" width="135.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="1228.5" y="715.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">versie ?</text>
+</g>
+<text x="1161.0" y="778.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Kotlin</text>
+<line x1="1161.0" y1="832" x2="2052.0" y2="832" stroke="#DDE2E9" stroke-width="2"/>
+<text x="1161.0" y="884.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Service</text>
+<text x="1161.0" y="916.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">draait in de container</text>
+<g class="backlog">
+<rect x="1161.0" y="940.0" width="151.2" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="1236.6" y="973.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">service ?</text>
+</g>
+<line x1="1161.0" y1="1032" x2="2052.0" y2="1032" stroke="#DDE2E9" stroke-width="2"/>
+<text x="1161.0" y="1084.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Gebouwd uit</text>
+<text x="1161.0" y="1140.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" fill="#1F8F4E" text-anchor="start" letter-spacing="0">Code</text>
+<text x="1161.0" y="1170.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">uit een repository van het deelproduct</text>
+<g class="backlog">
+<rect x="1161.0" y="1192.0" width="188.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="1255.0" y="1225.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">repository ?</text>
+</g>
+<text x="1161.0" y="1310.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" fill="#EF8A21" text-anchor="start" letter-spacing="0">Libraries</text>
+<text x="1161.0" y="1340.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">kunnen open source zijn</text>
+<g class="backlog">
+<rect x="1161.0" y="1362.0" width="160.4" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="1241.2" y="1395.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">libraries ?</text>
+</g>
+<text x="2170.0" y="440.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="2">STUBS</text>
+<text x="2170.0" y="478.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Losse containers, geen onderdeel van een</text>
+<text x="2170.0" y="510.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">deelproduct. Ze staan voor deelproducten die er nog</text>
+<text x="2170.0" y="542.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">niet zijn.</text>
+<rect x="2170.0" y="570.0" width="620.0" height="150.0" rx="20" fill="#FFFFFF" stroke="#8A94A3" stroke-width="4" stroke-dasharray="14 10"/>
+<g transform="translate(2198.0,598.0) scale(1.833)" fill="#8A94A3"><path d="M6.05 7.98a.75.75 0 0 1 .97-.43L12 9.44l4.98-1.9a.75.75 0 1 1 .54 1.41l-4.77 1.8v5.5a.75.75 0 1 1-1.5 0v-5.5l-4.77-1.8a.75.75 0 0 1-.43-.97m4.54-5.47c.9-.37 1.92-.37 2.82 0l7.5 3.04c.66.27 1.09.91 1.09 1.62v9.66c0 .7-.43 1.35-1.1 1.62l-7.5 3.04c-.9.36-1.9.36-2.8 0l-7.5-3.04c-.67-.27-1.1-.91-1.1-1.62V7.17c0-.71.43-1.35 1.1-1.62zm2.26 1.4a2.3 2.3 0 0 0-1.7 0l-7.5 3.03a.3.3 0 0 0-.15.23v9.66q0 .16.16.23l7.5 3.04c.54.22 1.14.22 1.69 0l7.5-3.04q.14-.07.15-.23V7.17q0-.17-.16-.23z"/></g>
+<text x="2256.0" y="616.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#8A94A3" text-anchor="start" letter-spacing="2">CONTAINER · STUB</text>
+<text x="2256.0" y="660.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">keuken</text>
+<g class="backlog">
+<rect x="2627.0" y="652.0" width="135.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="2694.5" y="685.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">versie ?</text>
+</g>
+<rect x="2170.0" y="750.0" width="620.0" height="150.0" rx="20" fill="#FFFFFF" stroke="#8A94A3" stroke-width="4" stroke-dasharray="14 10"/>
+<g transform="translate(2198.0,778.0) scale(1.833)" fill="#8A94A3"><path d="M6.05 7.98a.75.75 0 0 1 .97-.43L12 9.44l4.98-1.9a.75.75 0 1 1 .54 1.41l-4.77 1.8v5.5a.75.75 0 1 1-1.5 0v-5.5l-4.77-1.8a.75.75 0 0 1-.43-.97m4.54-5.47c.9-.37 1.92-.37 2.82 0l7.5 3.04c.66.27 1.09.91 1.09 1.62v9.66c0 .7-.43 1.35-1.1 1.62l-7.5 3.04c-.9.36-1.9.36-2.8 0l-7.5-3.04c-.67-.27-1.1-.91-1.1-1.62V7.17c0-.71.43-1.35 1.1-1.62zm2.26 1.4a2.3 2.3 0 0 0-1.7 0l-7.5 3.03a.3.3 0 0 0-.15.23v9.66q0 .16.16.23l7.5 3.04c.54.22 1.14.22 1.69 0l7.5-3.04q.14-.07.15-.23V7.17q0-.17-.16-.23z"/></g>
+<text x="2256.0" y="796.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#8A94A3" text-anchor="start" letter-spacing="2">CONTAINER · STUB</text>
+<text x="2256.0" y="840.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">bar</text>
+<g class="backlog">
+<rect x="2627.0" y="832.0" width="135.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="2694.5" y="865.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">versie ?</text>
+</g>
+<rect x="2170.0" y="930.0" width="620.0" height="150.0" rx="20" fill="#FFFFFF" stroke="#8A94A3" stroke-width="4" stroke-dasharray="14 10"/>
+<g transform="translate(2198.0,958.0) scale(1.833)" fill="#8A94A3"><path d="M6.05 7.98a.75.75 0 0 1 .97-.43L12 9.44l4.98-1.9a.75.75 0 1 1 .54 1.41l-4.77 1.8v5.5a.75.75 0 1 1-1.5 0v-5.5l-4.77-1.8a.75.75 0 0 1-.43-.97m4.54-5.47c.9-.37 1.92-.37 2.82 0l7.5 3.04c.66.27 1.09.91 1.09 1.62v9.66c0 .7-.43 1.35-1.1 1.62l-7.5 3.04c-.9.36-1.9.36-2.8 0l-7.5-3.04c-.67-.27-1.1-.91-1.1-1.62V7.17c0-.71.43-1.35 1.1-1.62zm2.26 1.4a2.3 2.3 0 0 0-1.7 0l-7.5 3.03a.3.3 0 0 0-.15.23v9.66q0 .16.16.23l7.5 3.04c.54.22 1.14.22 1.69 0l7.5-3.04q.14-.07.15-.23V7.17q0-.17-.16-.23z"/></g>
+<text x="2256.0" y="976.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#8A94A3" text-anchor="start" letter-spacing="2">CONTAINER · STUB</text>
+<text x="2256.0" y="1020.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">kassa</text>
+<g class="backlog">
+<rect x="2627.0" y="1012.0" width="135.0" height="48.0" rx="24.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="2694.5" y="1045.4" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">versie ?</text>
+</g>
+<rect x="2890.0" y="210.0" width="890.0" height="620.0" rx="28" fill="#FFFFFF"/>
+<text x="2930.0" y="280.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Drie werkwoorden</text>
+<rect x="2930.0" y="330.0" width="142.0" height="46.0" rx="23" fill="#2176C7"/>
+<text x="3001.0" y="362.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">bouwen</text>
+<text x="3092.0" y="363.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Container</text>
+<text x="2930.0" y="414.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Code en libraries worden één container.</text>
+<rect x="2930.0" y="492.0" width="157.7" height="46.0" rx="23" fill="#1AA6B7"/>
+<text x="3008.8" y="524.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">deployen</text>
+<text x="3107.7" y="525.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Deelproduct</text>
+<text x="2930.0" y="576.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Eén versie van één deelproduct op één omgeving.</text>
+<rect x="2930.0" y="654.0" width="149.5" height="46.0" rx="23" fill="#239B45"/>
+<text x="3004.8" y="686.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">releasen</text>
+<text x="3099.5" y="687.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Product</text>
+<text x="2930.0" y="738.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Het product komt beschikbaar voor de gebruiker.</text>
+<g class="backlog">
+<rect x="2890.0" y="870.0" width="890.0" height="1230.0" rx="28" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="4" stroke-dasharray="14 10"/>
+<text x="2930.0" y="940.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#8A3FC2" text-anchor="start" letter-spacing="0">Backlog (9)</text>
+<text x="2930.0" y="982.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Wat het FCD-model vraagt en nog niet is ingevuld</text>
+<circle cx="2942" cy="1031" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1040.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Product ShowKitchen: geen versie</text>
+<circle cx="2942" cy="1081" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1090.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Deelproduct Bestellen: geen versie</text>
+<circle cx="2942" cy="1131" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1140.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Deelproduct Bestellen: geen repository (monorepo of per service)</text>
+<circle cx="2942" cy="1181" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1190.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Container frontend: geen versie</text>
+<circle cx="2942" cy="1231" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1240.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Container frontend: geen service</text>
+<circle cx="2942" cy="1281" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1290.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Container frontend: geen libraries</text>
+<circle cx="2942" cy="1331" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1340.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Container backend: geen versie</text>
+<circle cx="2942" cy="1381" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1390.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Container backend: geen service</text>
+<circle cx="2942" cy="1431" r="7" fill="#8A3FC2"/>
+<text x="2966.0" y="1440.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Container backend: geen libraries</text>
+</g>
+</svg>

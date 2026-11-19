@@ -36,6 +36,22 @@ Soort: `knock-out`, `profiel` of `en`. Opinie `vormend` betekent geen opinie. Wi
 
 Dit gebeurt in [`src/plugins/schuiven.ts`](src/plugins/schuiven.ts).
 
+## Platen uit het declaratieve bestand
+
+De declaratieve bestanden staan in `fcd/`. De platen in `public/platen/` worden
+daaruit gegenereerd, met de generatoren in `generators/`:
+
+```
+FCD_ICONS=pad/naar/@fluentui/svg-icons/icons/ generators/genereer.sh
+```
+
+Nodig: Python 3 met pyyaml en pillow, het lettertype Inter en de Fluent UI-iconen
+(`npm install @fluentui/svg-icons`). Pas het declaratieve bestand aan, genereer
+opnieuw en commit beide. Het declaratieve bestand levert de plaat, niet andersom.
+
+Een codeblok met taal `mermaid` wordt een diagram
+([`src/plugins/mermaid.ts`](src/plugins/mermaid.ts)).
+
 ## Engels
 
 Zet een bestand onder `src/content/docs/en/` op dezelfde plek als de Nederlandse

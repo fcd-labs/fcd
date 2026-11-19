@@ -2,6 +2,11 @@
 title: "Open punten"
 ---
 
+:::note[Eerder werk]
+Dit hoort bij het eerdere model met assen. Zie [Eerder werk](eerder-werk/index.md).
+:::
+
+
 *Wat nog open staat. Iedereen mag het zien, altijd. Open punten van een scenario staan in dat scenario.*
 
 **Kader**

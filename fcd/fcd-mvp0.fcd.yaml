@@ -1,0 +1,212 @@
+# Jouw FCD-model: FCD-MVP0, de way of working ("fabriek") die ShowKitchen voortbrengt
+# Bron: fcd-mvp0.md, fcd-showcases.md, fcd-objecten.md
+# Objecten volgen fcd-objecten.md. De veldnamen zijn een voorstel.
+# Wat niet in de bronnen staat, staat hier niet. De plaat toont dat als gat.
+---
+apiVersion: fcd/v0
+kind: Factory
+metadata:
+  name: fcd-mvp0
+  title: FCD-MVP0
+spec:
+  description: De eerste, kleinste way of working die de hele cirkel rond gaat. AI als versneller.
+  product: showkitchen
+  intentParts:
+    - Persona en userstory
+    - Waarom (objective)
+    - Meten (key result)
+    - Gedrag als scenario's
+  subProductDescriptionParts:
+    - Verantwoordelijkheid
+    - Gebruikers
+    - Interfaces
+    - Intents
+---
+apiVersion: fcd/v0
+kind: Group
+metadata:
+  name: claude-code
+  title: Claude Code met agents
+spec:
+  type: squad
+  composition: ai-agents-only
+  owner: product owner
+---
+apiVersion: fcd/v0
+kind: Pipeline
+metadata:
+  name: bash-script
+  title: bash-script
+spec:
+  builds: true
+  deploys: true
+  calledBy: GitHub Actions
+  artifact: container
+  deployUnit: SubProduct
+  deployTarget: docker-compose
+---
+apiVersion: fcd/v0
+kind: TestType
+metadata: {name: unit, title: Unittests}
+---
+apiVersion: fcd/v0
+kind: TestType
+metadata: {name: integration, title: Integratietests binnen het deelproduct}
+---
+apiVersion: fcd/v0
+kind: TestType
+metadata: {name: end-to-end, title: End-to-end tests met Playwright}
+---
+apiVersion: fcd/v0
+kind: Environment
+metadata: {name: mvp0, title: één omgeving}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: human-approves}
+spec: {statement: "Een mens keurt afwijkingen goed.", explainAllowed: false}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: out-of-scope}
+spec: {statement: "Wat niet beschreven is, is buiten scope."}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: contract-first}
+spec: {statement: "Contract first: tussen deelproducten eerst het contract, dan de code. Het schema is onderdeel van het contract. Contracten in OpenAPI."}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: datamodel-first}
+spec: {statement: "Datamodel first: binnen een deelproduct eerst het datamodel, dan de code."}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: structure}
+spec: {statement: "Opbouw: micro-frontend (Angular), UX-API (Kotlin), backend (Kotlin), datastore", label: Architectuur}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: database}
+spec: {statement: "Database: PostgreSQL", label: Architectuur}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: containerization}
+spec: {statement: "Containerization", explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: docker-compose}
+spec: {statement: "Docker-compose"}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: kubernetes}
+spec: {statement: "Kubernetes", explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: environments}
+spec: {statement: "Omgevingen: OTAP"}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: automate-everything}
+spec: {statement: "Automate everything", explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: single-source-of-truth}
+spec: {statement: "Single source of truth", explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: everything-as-code}
+spec: {statement: "Everything as code", explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: declarative}
+spec: {statement: "Declarative", explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: gitops}
+spec: {statement: "GitOps: alles staat in git, en de pipeline rolt uit", explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: only-way-to-production}
+spec: {statement: "CI/CD – the only way to production, ook bij spoed.", explainAllowed: false}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: bash-script-only}
+spec: {statement: "Een bash-script is de enige weg om te bouwen en uit te rollen.", label: Continuous Delivery}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: github-actions}
+spec: {statement: "GitHub Actions roept hetzelfde bash-script aan.", label: Continuous Delivery}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: tdd}
+spec: {statement: "Test-driven development (TDD).", label: Testen}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: unit-tests}
+spec: {statement: "Unittests.", label: Testen}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: integration-tests}
+spec: {statement: "Integratietests binnen het deelproduct.", label: Testen}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: end-to-end-tests}
+spec: {statement: "End-to-end tests met Playwright.", label: Testen}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: language}
+spec: {statement: "Deze bestanden zijn in het Nederlands. Code is Engels: termen en variabelen in het Engels."}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: deployable-unit}
+spec: {statement: "Het deelproduct is de eenheid van deployment. Het bestaat uit één of meer containers. De pipeline deployt altijd het hele deelproduct."}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: subproduct-version}
+spec: {statement: "Het deelproduct heeft een eigen versie."}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: stubs}
+spec: {statement: "Stubs (zoals voor andere deelproducten) zijn losse containers, niet onderdeel van het deelproduct."}
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: mvp0-structure}
+spec: {principle: structure, subject: fcd-mvp0, reason: "mvp0: frontend en backend"}
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: mvp0-database}
+spec: {principle: database, subject: fcd-mvp0, reason: "mvp0: bestand"}
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: mvp0-kubernetes}
+spec: {principle: kubernetes, subject: fcd-mvp0, reason: "mvp0: docker-compose"}
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: mvp0-environments}
+spec: {principle: environments, subject: fcd-mvp0, reason: "mvp0: één omgeving"}
