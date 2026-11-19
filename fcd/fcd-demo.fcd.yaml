@@ -1,4 +1,4 @@
-# Jouw FCD-model: FCD-MVP0, de way of working ("fabriek") die ShowKitchen voortbrengt
+# Jouw FCD-model: FCD-Demo, de way of working ("fabriek") die ShowKitchen voortbrengt
 # Bron: fcd-mvp0.md, fcd-showcases.md, fcd-objecten.md
 # Objecten volgen fcd-objecten.md. De veldnamen zijn een voorstel.
 # Wat niet in de bronnen staat, staat hier niet. De plaat toont dat als gat.
@@ -6,8 +6,8 @@
 apiVersion: fcd/v0
 kind: Factory
 metadata:
-  name: fcd-mvp0
-  title: FCD-MVP0
+  name: fcd-demo
+  title: FCD-Demo
 spec:
   description: De eerste, kleinste way of working die de hele cirkel rond gaat. AI als versneller.
   product: showkitchen
@@ -59,7 +59,7 @@ metadata: {name: end-to-end, title: End-to-end tests met Playwright}
 ---
 apiVersion: fcd/v0
 kind: Environment
-metadata: {name: mvp0, title: één omgeving}
+metadata: {name: demo, title: één omgeving}
 ---
 apiVersion: fcd/v0
 kind: Principle
@@ -193,20 +193,20 @@ spec: {statement: "Stubs (zoals voor andere deelproducten) zijn losse containers
 ---
 apiVersion: fcd/v0
 kind: Explanation
-metadata: {name: mvp0-structure}
-spec: {principle: structure, subject: fcd-mvp0, reason: "mvp0: frontend en backend"}
+metadata: {name: demo-structure}
+spec: {principle: structure, subject: fcd-demo, reason: "demo: frontend en backend"}
 ---
 apiVersion: fcd/v0
 kind: Explanation
-metadata: {name: mvp0-database}
-spec: {principle: database, subject: fcd-mvp0, reason: "mvp0: bestand"}
+metadata: {name: demo-database}
+spec: {principle: database, subject: fcd-demo, reason: "demo: bestand"}
 ---
 apiVersion: fcd/v0
 kind: Explanation
-metadata: {name: mvp0-kubernetes}
-spec: {principle: kubernetes, subject: fcd-mvp0, reason: "mvp0: docker-compose"}
+metadata: {name: demo-kubernetes}
+spec: {principle: kubernetes, subject: fcd-demo, reason: "demo: docker-compose"}
 ---
 apiVersion: fcd/v0
 kind: Explanation
-metadata: {name: mvp0-environments}
-spec: {principle: environments, subject: fcd-mvp0, reason: "mvp0: één omgeving"}
+metadata: {name: demo-environments}
+spec: {principle: environments, subject: fcd-demo, reason: "demo: één omgeving"}

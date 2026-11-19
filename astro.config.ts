@@ -10,6 +10,14 @@ const base = "/fcd";
 export default defineConfig({
   site: "https://fcd-labs.github.io",
   base,
+  redirects: {
+    "/visuals": "/fcd/verhaal-presentatie/",
+    "/showcases/showkitchen-mvp0": "/fcd/showcases/demo/",
+    "/showcases/fcd-mvp0": "/fcd/showcases/demo/",
+    "/en/visuals": "/fcd/en/verhaal-presentatie/",
+    "/en/showcases/showkitchen-mvp0": "/fcd/en/showcases/demo/",
+    "/en/showcases/fcd-mvp0": "/fcd/en/showcases/demo/",
+  },
   markdown: {
     processor: unified({
       remarkPlugins: [remarkSchuiven, remarkMermaid, [remarkLinks, { base }]],
@@ -44,31 +52,28 @@ export default defineConfig({
       },
       sidebar: [
         { label: "Home", slug: "index", translations: { en: "Home" } },
+        {
+          label: "Het verhaal",
+          slug: "verhaal-presentatie",
+          translations: { en: "The story" },
+        },
         { label: "Het FCD-model", slug: "model", translations: { en: "The FCD model" } },
+        { label: "Jouw FCD-model", slug: "jouw-fcd-model", translations: { en: "Your FCD model" } },
         {
           label: "Showcases",
           items: [
             { label: "Overzicht", slug: "showcases", translations: { en: "Overview" } },
-            { label: "ShowKitchen-MVP0", slug: "showcases/showkitchen-mvp0" },
-            { label: "FCD-MVP0", slug: "showcases/fcd-mvp0" },
+            { label: "Demo", slug: "showcases/demo" },
+            { label: "Classic", slug: "showcases/classic" },
+            { label: "Ideal", slug: "showcases/ideal" },
           ],
         },
-        {
-          label: "Verhaal en presentatie",
-          slug: "verhaal-presentatie",
-          translations: { en: "Story and presentation" },
-        },
-        {
-          label: "Praatplaat en platen",
-          slug: "visuals",
-          translations: { en: "Talking picture and pictures" },
-        },
+        { label: "Backlog", slug: "backlog" },
         {
           label: "Terminologie",
           slug: "terminologie",
           translations: { en: "Terminology" },
         },
-        { label: "Backlog", slug: "backlog" },
         {
           label: "Eerder werk",
           translations: { en: "Earlier work" },

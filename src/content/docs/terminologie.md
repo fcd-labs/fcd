@@ -29,10 +29,10 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 |---|---|
 | Intent | Wat de gebruiker wil, vanuit de persona: persona en userstory, waarom (objective), meten (key result), gedrag als scenario's. Intent is intent, geen norm. |
 | Persona | De gebruiker van het product. |
-| Product | Deelproducten vormen samen een product. Het draait op productie. Releasen doe je op het product. |
-| Deelproduct | De eenheid van deployment. Bestaat uit één of meer containers. Een squad is eigenaar. |
+| Product | Deelproducten vormen samen een product. Het draait op productie. |
+| Deelproduct | De eenheid van deployment en van release. Bestaat uit één of meer containers, elk met een eigen lifecycle. Een squad is eigenaar. |
 | Container | Hierin draait een service. Gebouwd uit code en libraries. |
-| Bouwen, deployen, releasen | Bouwen levert een container, deployen zet een deelproduct op een omgeving, releasen maakt het product beschikbaar voor de gebruiker. |
+| Bouwen, deployen, releasen | Bouwen levert een container, deployen zet een deelproduct op een omgeving, releasen maakt een versie van een deelproduct beschikbaar voor de gebruiker. |
 | Squad | Eigenaar van deelproducten. Samenstelling: mensen, mensen en AI-agents, of alleen AI-agents. |
 | Contracten | Afspraken tussen deelproducten. Contract first; het schema is onderdeel van het contract. |
 | Output | De software. |
@@ -44,7 +44,7 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 |---|---|
 | Showcase | Laat werkend zien hoe het kan. Het opent het gesprek. |
 | ShowKitchen | Het product in de showcases: software as a service voor restaurants. |
-| FCD-MVP0 | De eerste, kleinste way of working die de hele cirkel rond gaat. FCD-\* staat voor de way of working. |
+| Demo, Classic, Ideal | De drie showcases: hetzelfde product, drie manieren van werken. Elke showcase is een paar: fcd-X (de way of working) en sk-X (het product). |
 | Productplaat | Wat zit in wat, gegenereerd uit het declaratieve bestand. |
 | Procesplaat | Hoe het product ontstaat en levend blijft, gegenereerd uit het declaratieve bestand. |
 

@@ -7,7 +7,8 @@ What the FCD model asks for and is not yet filled in is not a gap. It is backlog
 ## Where the backlog is
 
 - **Issues:** the work on FCD is tracked as issues in [fcd-labs/fcd](https://github.com/fcd-labs/fcd/issues). The fcd board will follow.
-- **Showcases:** each picture shows the backlog of that showcase. [ShowKitchen-MVP0](showcases/showkitchen-mvp0.md) currently has 9 items, [FCD-MVP0](showcases/fcd-mvp0.md) 6.
+- **Showcases:** each picture shows the backlog of that showcase. In [Demo](showcases/demo.md) there are now 9 on the product picture and 6 on the process picture. [Classic](showcases/classic.md) and [Ideal](showcases/ideal.md) are still placeholders.
+- **[Your FCD model](jouw-fcd-model.md):** the questions per perspective.
 - **The model:** the objects are an inventory, far from complete. See [the FCD model](model.md).
 
 ## Open in the model
@@ -15,7 +16,7 @@ What the FCD model asks for and is not yet filled in is not a gap. It is backlog
 - How do organisation, tribe and squad relate to each other?
 - What does a major version of a sub-product do to the version of the product?
 - How do library and open source software attach to the container?
-- Do "release on product" and "build code and OSS libs into a container" become principles?
+- Does "build code and OSS libs into a container" become a principle?
 
 ## Earlier work
 

@@ -10,5 +10,5 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p public/platen
 
-python3 generators/fcd_plaat.py fcd/sk-1dp-mvp0.fcd.yaml public/platen/productplaat-showkitchen.svg
-python3 generators/fcd_procesplaat.py fcd/fcd-mvp0.fcd.yaml public/platen/procesplaat-fcd-mvp0.svg
+python3 generators/fcd_plaat.py fcd/sk-demo.fcd.yaml public/platen/productplaat-sk-demo.svg
+python3 generators/fcd_procesplaat.py fcd/fcd-demo.fcd.yaml public/platen/procesplaat-fcd-demo.svg
