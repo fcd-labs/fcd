@@ -20,7 +20,7 @@ Daarom: AI needs delivery. Delivery needs AI. Niet óf, maar én.
 
 1. Samen werken we voor de gebruiker; die moet senang zijn, nu en later.
 2. Dat wordt hij door het product te gebruiken.
-3. Het product ontstaat uit intentie en proces, in balans.
+3. Het product ontstaat uit intentie en delivery, in balans.
 4. Wat het gebruik ons leert, voedt de volgende intentie.
 5. Het product is nooit af.
 
@@ -32,7 +32,7 @@ De business moet ook senang zijn. Maar de gebruiker staat centraal.
 
 ## De cirkel
 
-Rond de gebruiker en het product draait een cirkel: intentie, proces, product en leren. Wat het gebruik ons leert, voedt de volgende intentie. Je herkent er plan-do-check-act in.
+Rond de gebruiker en het product draait een cirkel: intentie, delivery, product en leren. Wat het gebruik ons leert, voedt de volgende intentie. Je herkent er plan-do-check-act in.
 
 Daarom is het product nooit af. En daarom heet het Full Circle Delivery (FCD): niet alleen continuous delivery, maar de hele cirkel rond.
 
