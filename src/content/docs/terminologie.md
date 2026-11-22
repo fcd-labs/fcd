@@ -46,7 +46,7 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 | ShowKitchen | Het product in de showcases: software as a service voor restaurants. |
 | Demo, Classic, Ideal | De drie showcases: hetzelfde product, drie manieren van werken. Elke showcase is een paar: fcd-X (de way of working) en sk-X (het product). |
 | Productplaat | Wat zit in wat, gegenereerd uit het declaratieve bestand. |
-| Procesplaat | Hoe het product ontstaat en levend blijft, gegenereerd uit het declaratieve bestand. |
+| Full Circle Delivery-plaat | Hoe het product ontstaat en levend blijft, gegenereerd uit het declaratieve bestand. |
 
 ## Eerder werk: het model met assen
 

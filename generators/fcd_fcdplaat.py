@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genereert de plaat van het proces, Full Circle Delivery (SVG) uit een declaratief FCD-bestand (YAML)."""
+"""Genereert de Full Circle Delivery-plaat (SVG) uit een declaratief FCD-bestand (YAML)."""
 import sys, re, os, json, yaml
 from xml.sax.saxutils import escape
 from PIL import ImageFont

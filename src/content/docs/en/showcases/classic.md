@@ -18,4 +18,4 @@ The same product as in [Demo](demo.md): ShowKitchen, with the same persona and t
 ## Backlog
 
 - The declarative file of the way of working and of the product.
-- The product picture and the process picture.
+- The product picture and the Full Circle Delivery picture.

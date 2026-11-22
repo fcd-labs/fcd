@@ -18,4 +18,4 @@ Hetzelfde product als in [Demo](demo.md): ShowKitchen, met dezelfde persona en d
 ## Backlog
 
 - Het declaratieve bestand van de way of working en van het product.
-- De productplaat en de procesplaat.
+- De productplaat en de Full Circle Delivery-plaat.

@@ -7,7 +7,7 @@ Wat het FCD-model vraagt en nog niet is ingevuld, is geen gat. Het is backlog: w
 ## Waar de backlog staat
 
 - **Issues:** het werk aan FCD staat als issues in [fcd-labs/fcd](https://github.com/fcd-labs/fcd/issues). Het fcd board volgt.
-- **Showcases:** op elke plaat staat de backlog van die showcase. In [Demo](showcases/demo.md) staan er nu 9 op de productplaat en 6 op de procesplaat. [Classic](showcases/classic.md) en [Ideal](showcases/ideal.md) zijn nog placeholders.
+- **Showcases:** op elke plaat staat de backlog van die showcase. In [Demo](showcases/demo.md) staan er nu 5 op de productplaat en 5 op de Full Circle Delivery-plaat. [Classic](showcases/classic.md) en [Ideal](showcases/ideal.md) zijn nog placeholders.
 - **[Jouw FCD-model](jouw-fcd-model.md):** de vragen per perspectief.
 - **Het model:** de objecten zijn een inventaris, verre van compleet. Zie [het FCD-model](model.md).
 
