@@ -178,17 +178,17 @@
 <text x="1835.0" y="1170.6" font-family="Segoe UI, Inter, sans-serif" font-size="17" font-weight="700" fill="#C56A00" text-anchor="middle" letter-spacing="0">ingekort</text>
 <text x="1950.7" y="1054.0" font-family="Segoe UI, Inter, sans-serif" font-size="30" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Afwijkingen op stap en gate</text>
 <text x="1950.7" y="1098.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">EXP-001  ·  Securitygate: versheid frontend</text>
-<text x="1950.7" y="1128.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
+<text x="1950.7" y="1128.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door sim007</text>
 <text x="1950.7" y="1168.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">EXP-002  ·  Securitygate: versheid backend</text>
-<text x="1950.7" y="1198.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
+<text x="1950.7" y="1198.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door sim007</text>
 <text x="1950.7" y="1238.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">EXP-004  ·  Bouwen: images opgewarmd</text>
-<text x="1950.7" y="1268.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
+<text x="1950.7" y="1268.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door sim007</text>
 <text x="1950.7" y="1308.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">EXP-005  ·  Security en versheid: scan uit cache</text>
-<text x="1950.7" y="1338.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
+<text x="1950.7" y="1338.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door sim007</text>
 <text x="1950.7" y="1378.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">EXP-006  ·  End-to-end tests: alleen kernpad</text>
-<text x="1950.7" y="1408.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
+<text x="1950.7" y="1408.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door sim007</text>
 <text x="1950.7" y="1448.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">EXP-007  ·  Releasen: lokale release</text>
-<text x="1950.7" y="1478.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
+<text x="1950.7" y="1478.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door sim007</text>
 <rect x="60.0" y="2074.0" width="2780.0" height="1876.0" rx="24" fill="#FFFFFF"/>
 <text x="96.0" y="2136.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Kaders (30)</text>
 <text x="329.0" y="2134.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">comply or explain  ·  samen de guardrails voor AI</text>
