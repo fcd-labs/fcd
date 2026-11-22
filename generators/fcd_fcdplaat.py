@@ -237,8 +237,11 @@ if porder:
         if meta: text(sx, y, meta, 20, False, MUTED); y += 40
     if not sexp: text(sx, y, "Geen", 22, False, MUTED)
 KY, KH = KY0, 1100
-rect(AX, KY, AW, KH, "#FFFFFF", rx=24)
+_kidx = len(out); add("")   # het kaders-vlak; de hoogte volgt uit de inhoud
 prins = by.get("Principle", [])
+GBYP = {}
+for g in GATES:
+    if spec(g).get("principle"): GBYP.setdefault(spec(g)["principle"], []).append(title(g))
 exps = {}
 for e in by.get("Explanation", []):
     if not (spec(e).get("step") or spec(e).get("gate")): exps.setdefault(spec(e).get("principle"), []).append(e)
@@ -252,7 +255,7 @@ kw_ = (AW - 72 - cgap * (COLS - 1)) / COLS
 FS, LH = 27, 35
 def ph(p):
     n = len(wrap(spec(p)["statement"], FS, False, kw_ - 172))
-    return n * LH + 38 * len(exps.get(name(p), [])) + 24
+    return n * LH + 38 * len(exps.get(name(p), [])) + (34 if name(p) in GBYP else 0) + 24
 def draw(p, x, y):
     for k, l in enumerate(wrap(spec(p)["statement"], FS, False, kw_ - 172)): text(x, y + k * LH, l, FS)
     ea = spec(p).get("explainAllowed")
@@ -260,6 +263,8 @@ def draw(p, x, y):
     elif ea is False: chip(x + kw_, y - 24, "explain: nee", INK, 21, solid=True, anchor="end")
     else: chip(x + kw_, y - 24, "explain ?", C_GAP, 21, dashed=True, anchor="end")
     yy = y + len(wrap(spec(p)["statement"], FS, False, kw_ - 172)) * LH
+    if name(p) in GBYP:
+        text(x, yy, "Getoetst door de " + " en de ".join(GBYP[name(p)]), 23, True, MUTED); yy += 34
     for e in exps.get(name(p), []):
         r = spec(e).get("reason", "?")
         if tw("Afwijking: " + r, 25, True) > kw_: r = r.split(".")[0]
@@ -288,7 +293,11 @@ for l in labs:
     text(x, y - 44, f"{l.upper()} ({len(grp)})", 22, True, MUTED, ls=2)
     for p in grp: y = draw(p, x, y)
     maxy = max(maxy, y); y += 70
-if maxy > KY + KH - 10: print("OVERLOOP kaders", maxy, KY + KH)
+KH = max(KH, maxy - KY + 30)
+out[_kidx] = (f'<rect x="{AX:.1f}" y="{KY:.1f}" width="{AW:.1f}" height="{KH:.1f}" rx="24" fill="#FFFFFF"/>')
+H = KY + KH + 50
+out[0] = f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">'
+out[2] = f'<rect x="0.0" y="0.0" width="{W:.1f}" height="{H:.1f}" rx="0" fill="{BG}"/>'
 n_unk = sum(1 for p in prins if spec(p).get("explainAllowed") is None)
 if n_unk: gap(f"{n_unk} van de {len(prins)} kaders: niet bekend of explain is toegestaan")
 if unl: gap(f"{len(unl)} van de {len(prins)} kaders: geen label")
@@ -297,6 +306,12 @@ if bad: gap(f"{len(bad)} afwijkingen: geen goedkeurder en geen einddatum")
 pn = {name(p): p for p in prins}
 unk = [e for e in by.get("Explanation", []) if spec(e).get("principle") in pn and spec(pn[spec(e)["principle"]]).get("explainAllowed") is None]
 nok = [e for e in by.get("Explanation", []) if spec(e).get("principle") not in pn]
+nee = [e for e in by.get("Explanation", []) if spec(e).get("principle") in pn and spec(pn[spec(e)["principle"]]).get("explainAllowed") is False]
+if nee: gap(f"{len(nee)} afwijkingen op een kader waarbij explain niet is toegestaan ({', '.join(name(e) for e in nee)})")
+gnok = [g for g in GATES if spec(g).get("principle") and spec(g)["principle"] not in pn]
+if gnok: gap(f"{len(gnok)} quality gates verwijzen naar een kader dat niet in het bestand staat")
+gzon = [g for g in GATES if not spec(g).get("principle")]
+if gzon: gap(f"{len(gzon)} quality gates zonder kader")
 if nok: gap(f"{len(nok)} afwijkingen op een kader dat niet in het bestand staat ({', '.join(sorted({spec(e).get('principle', '?') for e in nok}))})")
 if unk: gap(f"{len(unk)} afwijkingen op een kader waarvan niet bekend is of explain mag")
 

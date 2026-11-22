@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="3224" viewBox="0 0 3840 3224">
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="4000" viewBox="0 0 3840 4000">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F2937"/></marker></defs>
-<rect x="0.0" y="0.0" width="3840.0" height="3224.0" rx="0" fill="#F2F4F7"/>
+<rect x="0.0" y="0.0" width="3840.0" height="4000.0" rx="0" fill="#F2F4F7"/>
 <text x="60.0" y="112.0" font-family="Segoe UI, Inter, sans-serif" font-size="68" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Full Circle Delivery: FCD-Demo</text>
 <text x="62.0" y="162.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Hoe het product ontstaat en levend blijft  ·  gegenereerd uit fcd-demo.fcd.yaml</text>
 <rect x="60.0" y="220.0" width="416.7" height="640.0" rx="24" fill="#FFFFFF"/>
@@ -189,9 +189,9 @@
 <text x="1950.7" y="1408.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
 <text x="1950.7" y="1448.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">EXP-007  ·  Releasen: lokale release</text>
 <text x="1950.7" y="1478.0" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">tot 2026-12-31 · goedgekeurd door Johannes</text>
-<rect x="60.0" y="2074.0" width="2780.0" height="1100.0" rx="24" fill="#FFFFFF"/>
-<text x="96.0" y="2136.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Kaders (26)</text>
-<text x="327.5" y="2134.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">comply or explain  ·  samen de guardrails voor AI</text>
+<rect x="60.0" y="2074.0" width="2780.0" height="1876.0" rx="24" fill="#FFFFFF"/>
+<text x="96.0" y="2136.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Kaders (30)</text>
+<text x="329.0" y="2134.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">comply or explain  ·  samen de guardrails voor AI</text>
 <g class="backlog">
 <rect x="2687.4" y="2104.0" width="116.6" height="38.0" rx="19.0" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
 <text x="2745.7" y="2130.2" font-family="Segoe UI, Inter, sans-serif" font-size="20" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
@@ -204,79 +204,80 @@
 <text x="96.0" y="2224.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Een mens keurt afwijkingen goed.</text>
 <rect x="600.8" y="2200.0" width="154.2" height="39.0" rx="19.5" fill="#1F2937"/>
 <text x="677.9" y="2227.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">explain: nee</text>
-<line x1="96.0" y1="2247" x2="755.0" y2="2247" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="96.0" y="2283.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Wat niet beschreven is, is buiten</text>
-<text x="96.0" y="2318.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">scope.</text>
+<text x="96.0" y="2259.0" font-family="Segoe UI, Inter, sans-serif" font-size="23" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="0">Getoetst door de Goedkeuring</text>
+<line x1="96.0" y1="2281" x2="755.0" y2="2281" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="96.0" y="2317.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Wat niet beschreven is, is buiten</text>
+<text x="96.0" y="2352.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">scope.</text>
 <g class="backlog">
-<rect x="634.1" y="2259.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="694.6" y="2286.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="634.1" y="2293.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="694.6" y="2320.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="96.0" y1="2341" x2="755.0" y2="2341" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="96.0" y="2377.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Contract first: tussen deelproducten</text>
-<text x="96.0" y="2412.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">eerst het contract, dan de code. Het</text>
-<text x="96.0" y="2447.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">schema is onderdeel van het</text>
-<text x="96.0" y="2482.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">contract. Contracten in OpenAPI.</text>
+<line x1="96.0" y1="2375" x2="755.0" y2="2375" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="96.0" y="2411.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Contract first: tussen deelproducten</text>
+<text x="96.0" y="2446.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">eerst het contract, dan de code. Het</text>
+<text x="96.0" y="2481.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">schema is onderdeel van het</text>
+<text x="96.0" y="2516.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">contract. Contracten in OpenAPI.</text>
 <g class="backlog">
-<rect x="634.1" y="2353.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="694.6" y="2380.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="634.1" y="2387.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="694.6" y="2414.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="96.0" y1="2505" x2="755.0" y2="2505" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="96.0" y="2541.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Datamodel first: binnen een</text>
-<text x="96.0" y="2576.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">deelproduct eerst het datamodel, dan</text>
-<text x="96.0" y="2611.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">de code.</text>
+<line x1="96.0" y1="2539" x2="755.0" y2="2539" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="96.0" y="2575.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Datamodel first: binnen een</text>
+<text x="96.0" y="2610.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">deelproduct eerst het datamodel, dan</text>
+<text x="96.0" y="2645.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">de code.</text>
 <g class="backlog">
-<rect x="634.1" y="2517.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="694.6" y="2544.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="634.1" y="2551.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="694.6" y="2578.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="96.0" y1="2634" x2="755.0" y2="2634" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="96.0" y="2670.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Containerization</text>
-<rect x="621.0" y="2646.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
-<text x="688.0" y="2673.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<line x1="96.0" y1="2693" x2="755.0" y2="2693" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="96.0" y="2729.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Docker-compose</text>
+<line x1="96.0" y1="2668" x2="755.0" y2="2668" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="96.0" y="2704.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Containerization</text>
+<rect x="621.0" y="2680.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="688.0" y="2707.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<line x1="96.0" y1="2727" x2="755.0" y2="2727" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="96.0" y="2763.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Docker-compose</text>
 <g class="backlog">
-<rect x="634.1" y="2705.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="694.6" y="2732.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="634.1" y="2739.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="694.6" y="2766.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="96.0" y1="2752" x2="755.0" y2="2752" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="96.0" y="2788.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Kubernetes</text>
-<rect x="621.0" y="2764.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
-<text x="688.0" y="2791.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<text x="96.0" y="2823.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: docker-compose</text>
-<line x1="96.0" y1="2849" x2="755.0" y2="2849" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="779.0" y="2224.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Omgevingen: OTAP</text>
-<g class="backlog">
-<rect x="1317.1" y="2200.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="1377.6" y="2227.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
-</g>
-<text x="779.0" y="2259.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: één omgeving</text>
+<line x1="96.0" y1="2786" x2="755.0" y2="2786" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2224.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Kubernetes</text>
+<rect x="1304.0" y="2200.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="1371.0" y="2227.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<text x="779.0" y="2259.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: docker-compose</text>
 <line x1="779.0" y1="2285" x2="1438.0" y2="2285" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="779.0" y="2321.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Automate everything</text>
-<rect x="1304.0" y="2297.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
-<text x="1371.0" y="2324.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<line x1="779.0" y1="2344" x2="1438.0" y2="2344" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="779.0" y="2380.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Single source of truth</text>
-<rect x="1304.0" y="2356.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
-<text x="1371.0" y="2383.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<line x1="779.0" y1="2403" x2="1438.0" y2="2403" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="779.0" y="2439.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Everything as code</text>
-<rect x="1304.0" y="2415.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
-<text x="1371.0" y="2442.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<line x1="779.0" y1="2462" x2="1438.0" y2="2462" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="779.0" y="2498.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Declarative</text>
-<rect x="1304.0" y="2474.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
-<text x="1371.0" y="2501.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<line x1="779.0" y1="2521" x2="1438.0" y2="2521" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="779.0" y="2557.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">GitOps: alles staat in git, en de</text>
-<text x="779.0" y="2592.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">pipeline rolt uit</text>
-<rect x="1304.0" y="2533.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
-<text x="1371.0" y="2560.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
-<line x1="779.0" y1="2615" x2="1438.0" y2="2615" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="779.0" y="2651.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">CI/CD – the only way to production,</text>
-<text x="779.0" y="2686.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">ook bij spoed.</text>
-<rect x="1283.8" y="2627.0" width="154.2" height="39.0" rx="19.5" fill="#1F2937"/>
-<text x="1360.9" y="2654.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">explain: nee</text>
-<line x1="779.0" y1="2709" x2="1438.0" y2="2709" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2321.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Omgevingen: OTAP</text>
+<g class="backlog">
+<rect x="1317.1" y="2297.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="1377.6" y="2324.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+</g>
+<text x="779.0" y="2356.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: één omgeving</text>
+<line x1="779.0" y1="2382" x2="1438.0" y2="2382" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2418.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Automate everything</text>
+<rect x="1304.0" y="2394.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="1371.0" y="2421.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<line x1="779.0" y1="2441" x2="1438.0" y2="2441" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2477.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Single source of truth</text>
+<rect x="1304.0" y="2453.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="1371.0" y="2480.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<line x1="779.0" y1="2500" x2="1438.0" y2="2500" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2536.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Everything as code</text>
+<rect x="1304.0" y="2512.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="1371.0" y="2539.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<line x1="779.0" y1="2559" x2="1438.0" y2="2559" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2595.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Declarative</text>
+<rect x="1304.0" y="2571.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="1371.0" y="2598.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<line x1="779.0" y1="2618" x2="1438.0" y2="2618" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2654.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">GitOps: alles staat in git, en de</text>
+<text x="779.0" y="2689.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">pipeline rolt uit</text>
+<rect x="1304.0" y="2630.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="1371.0" y="2657.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<line x1="779.0" y1="2712" x2="1438.0" y2="2712" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="779.0" y="2748.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">CI/CD – the only way to production,</text>
+<text x="779.0" y="2783.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">ook bij spoed.</text>
+<rect x="1283.8" y="2724.0" width="154.2" height="39.0" rx="19.5" fill="#1F2937"/>
+<text x="1360.9" y="2751.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">explain: nee</text>
+<line x1="779.0" y1="2806" x2="1438.0" y2="2806" stroke="#DDE2E9" stroke-width="1.5"/>
 <text x="1462.0" y="2224.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Deze bestanden zijn in het</text>
 <text x="1462.0" y="2259.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Nederlands. Code is Engels: termen</text>
 <text x="1462.0" y="2294.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">en variabelen in het Engels.</text>
@@ -327,7 +328,7 @@
 <text x="2145.0" y="2426.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: demo: bestand</text>
 <text x="2145.0" y="2464.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: Apicurio Registry houdt de contracten vo…</text>
 <line x1="2145.0" y1="2490" x2="2804.0" y2="2490" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="2145.0" y="2552.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="2">CONTINUOUS DELIVERY (2)</text>
+<text x="2145.0" y="2552.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="2">CONTINUOUS DELIVERY (6)</text>
 <text x="2145.0" y="2596.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Een bash-script is de enige weg om</text>
 <text x="2145.0" y="2631.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">te bouwen en uit te rollen.</text>
 <g class="backlog">
@@ -341,33 +342,65 @@
 <rect x="2683.1" y="2666.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
 <text x="2743.6" y="2693.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="2145.0" y1="2748" x2="2804.0" y2="2748" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="2145.0" y="2810.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="2">TESTEN (4)</text>
-<text x="2145.0" y="2854.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Test-driven development (TDD).</text>
+<text x="2145.0" y="2760.0" font-family="Segoe UI, Inter, sans-serif" font-size="25" font-weight="700" fill="#C56A00" text-anchor="start" letter-spacing="0">Afwijking: Alleen voor de demo: de Pipeline draait lo…</text>
+<line x1="2145.0" y1="2786" x2="2804.0" y2="2786" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="2822.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Codegate: de code voldoet aan de</text>
+<text x="2145.0" y="2857.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">lintregels, alle unittests slagen, het</text>
+<text x="2145.0" y="2892.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">contract is valide, een breaking</text>
+<text x="2145.0" y="2927.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">change krijgt een nieuwe major en de</text>
+<text x="2145.0" y="2962.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">versies zijn consistent.</text>
+<rect x="2670.0" y="2798.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="2737.0" y="2825.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<text x="2145.0" y="2997.0" font-family="Segoe UI, Inter, sans-serif" font-size="23" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="0">Getoetst door de Codegate</text>
+<line x1="2145.0" y1="3019" x2="2804.0" y2="3019" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="3055.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Bouwgate: de images zijn gebouwd</text>
+<text x="2145.0" y="3090.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">en alle integratietests slagen.</text>
+<rect x="2670.0" y="3031.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="2737.0" y="3058.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<text x="2145.0" y="3125.0" font-family="Segoe UI, Inter, sans-serif" font-size="23" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="0">Getoetst door de Bouwgate</text>
+<line x1="2145.0" y1="3147" x2="2804.0" y2="3147" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="3183.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Securitygate: geen ernstige</text>
+<text x="2145.0" y="3218.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">kwetsbaarheden, geen geheimen en</text>
+<text x="2145.0" y="3253.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">geen onveilige configuratie; libraries</text>
+<text x="2145.0" y="3288.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">zijn vers genoeg en hebben een</text>
+<text x="2145.0" y="3323.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">toegestane licentie.</text>
+<rect x="2670.0" y="3159.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="2737.0" y="3186.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<text x="2145.0" y="3358.0" font-family="Segoe UI, Inter, sans-serif" font-size="23" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="0">Getoetst door de Securitygate</text>
+<line x1="2145.0" y1="3380" x2="2804.0" y2="3380" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="3416.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Uitrolgate: het deelproduct is na het</text>
+<text x="2145.0" y="3451.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">uitrollen op tijd bereikbaar en alle</text>
+<text x="2145.0" y="3486.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">end-to-end tests slagen.</text>
+<rect x="2670.0" y="3392.0" width="134.0" height="39.0" rx="19.5" fill="#1F29371A" stroke="#1F2937" stroke-width="2.5"/>
+<text x="2737.0" y="3419.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="0">explain: ja</text>
+<text x="2145.0" y="3521.0" font-family="Segoe UI, Inter, sans-serif" font-size="23" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="0">Getoetst door de Uitrolgate</text>
+<line x1="2145.0" y1="3543" x2="2804.0" y2="3543" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="3605.0" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="700" fill="#5B6472" text-anchor="start" letter-spacing="2">TESTEN (4)</text>
+<text x="2145.0" y="3649.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Test-driven development (TDD).</text>
 <g class="backlog">
-<rect x="2683.1" y="2830.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="2743.6" y="2857.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="2683.1" y="3625.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="2743.6" y="3652.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="2145.0" y1="2877" x2="2804.0" y2="2877" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="2145.0" y="2913.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Unittests.</text>
+<line x1="2145.0" y1="3672" x2="2804.0" y2="3672" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="3708.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Unittests.</text>
 <g class="backlog">
-<rect x="2683.1" y="2889.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="2743.6" y="2916.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="2683.1" y="3684.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="2743.6" y="3711.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="2145.0" y1="2936" x2="2804.0" y2="2936" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="2145.0" y="2972.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Integratietests binnen het</text>
-<text x="2145.0" y="3007.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">deelproduct.</text>
+<line x1="2145.0" y1="3731" x2="2804.0" y2="3731" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="3767.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Integratietests binnen het</text>
+<text x="2145.0" y="3802.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">deelproduct.</text>
 <g class="backlog">
-<rect x="2683.1" y="2948.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="2743.6" y="2975.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="2683.1" y="3743.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="2743.6" y="3770.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="2145.0" y1="3030" x2="2804.0" y2="3030" stroke="#DDE2E9" stroke-width="1.5"/>
-<text x="2145.0" y="3066.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">End-to-end tests met Playwright.</text>
+<line x1="2145.0" y1="3825" x2="2804.0" y2="3825" stroke="#DDE2E9" stroke-width="1.5"/>
+<text x="2145.0" y="3861.0" font-family="Segoe UI, Inter, sans-serif" font-size="27" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">End-to-end tests met Playwright.</text>
 <g class="backlog">
-<rect x="2683.1" y="3042.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
-<text x="2743.6" y="3069.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
+<rect x="2683.1" y="3837.0" width="120.9" height="39.0" rx="19.5" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="2743.6" y="3864.1" font-family="Segoe UI, Inter, sans-serif" font-size="21" font-weight="700" fill="#8A3FC2" text-anchor="middle" letter-spacing="0">explain ?</text>
 </g>
-<line x1="2145.0" y1="3089" x2="2804.0" y2="3089" stroke="#DDE2E9" stroke-width="1.5"/>
+<line x1="2145.0" y1="3884" x2="2804.0" y2="3884" stroke="#DDE2E9" stroke-width="1.5"/>
 <rect x="2890.0" y="220.0" width="890.0" height="470.0" rx="24" fill="#FFFFFF"/>
 <text x="2930.0" y="286.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Wie doet het werk</text>
 <g transform="translate(2930.0,316.0) scale(1.833)" fill="#1F2937"><path d="M5.5 8a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8m7.5 5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0M17 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6m-2.75 13.04q1.04.44 2.75.46c2.28 0 3.59-.7 4.3-1.56a3 3 0 0 0 .7-1.73v-.03c0-1.2-.97-2.18-2.18-2.18H14.1q.6.63.81 1.5h4.91a.7.7 0 0 1 .68.7l-.04.18q-.05.25-.32.6C19.8 17.42 18.97 18 17 18c-.98 0-1.67-.15-2.17-.34q-.14.62-.58 1.38M4.25 14C3.01 14 2 15 2 16.25v.28l.01.2q.02.21.1.53c.09.42.29.98.68 1.55C3.61 19.97 5.17 21 8 21s4.39-1.03 5.2-2.2a4.5 4.5 0 0 0 .8-2.27v-.28c0-1.24-1-2.25-2.25-2.25zm-.75 2.5v-.25c0-.41.34-.75.75-.75h7.5c.41 0 .75.34.75.75v.34l-.06.33c-.07.28-.2.65-.46 1.02-.5.71-1.56 1.56-3.98 1.56s-3.49-.85-3.98-1.56a3 3 0 0 1-.52-1.43"/></g>
@@ -377,20 +410,17 @@
 <text x="2930.0" y="478.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">Eigenaar van het deelproduct: product owner. Die keurt</text>
 <text x="2930.0" y="514.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">afwijkingen goed.</text>
 <g class="backlog">
-<rect x="2890.0" y="730.0" width="890.0" height="2444.0" rx="24" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="4" stroke-dasharray="14 10"/>
-<text x="2930.0" y="800.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#8A3FC2" text-anchor="start" letter-spacing="0">Backlog (5)</text>
+<rect x="2890.0" y="730.0" width="890.0" height="3220.0" rx="24" fill="#FFFFFF" stroke="#8A3FC2" stroke-width="4" stroke-dasharray="14 10"/>
+<text x="2930.0" y="800.0" font-family="Segoe UI, Inter, sans-serif" font-size="36" font-weight="700" fill="#8A3FC2" text-anchor="start" letter-spacing="0">Backlog (4)</text>
 <text x="2930.0" y="842.0" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Wat het FCD-model vraagt en nog niet is ingevuld</text>
 <circle cx="2942" cy="897" r="7" fill="#8A3FC2"/>
-<text x="2966.0" y="906.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">17 van de 26 kaders: niet bekend of explain is toegestaan</text>
+<text x="2966.0" y="906.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">17 van de 30 kaders: niet bekend of explain is toegestaan</text>
 <circle cx="2942" cy="951" r="7" fill="#8A3FC2"/>
-<text x="2966.0" y="960.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">18 van de 26 kaders: geen label</text>
+<text x="2966.0" y="960.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">18 van de 30 kaders: geen label</text>
 <circle cx="2942" cy="1005" r="7" fill="#8A3FC2"/>
 <text x="2966.0" y="1014.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">4 afwijkingen: geen goedkeurder en geen einddatum</text>
 <circle cx="2942" cy="1059" r="7" fill="#8A3FC2"/>
-<text x="2966.0" y="1068.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">3 afwijkingen op een kader dat niet in het bestand staat</text>
-<text x="2966.0" y="1104.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">(quality-gate-security)</text>
-<circle cx="2942" cy="1149" r="7" fill="#8A3FC2"/>
-<text x="2966.0" y="1158.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">5 afwijkingen op een kader waarvan niet bekend is of explain</text>
-<text x="2966.0" y="1194.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">mag</text>
+<text x="2966.0" y="1068.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">6 afwijkingen op een kader waarvan niet bekend is of explain</text>
+<text x="2966.0" y="1104.0" font-family="Segoe UI, Inter, sans-serif" font-size="26" font-weight="400" fill="#1F2937" text-anchor="start" letter-spacing="0">mag</text>
 </g>
 </svg>

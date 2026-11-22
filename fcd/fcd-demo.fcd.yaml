@@ -226,6 +226,7 @@ apiVersion: fcd/v0
 kind: QualityGate
 metadata: {name: code, title: Codegate}
 spec:
+  principle: quality-gate-code
   afterSteps: [static-check, unit-tests, contract-test]
   thresholds:
     lintErrors: {max: 0}
@@ -238,6 +239,7 @@ apiVersion: fcd/v0
 kind: QualityGate
 metadata: {name: build, title: Bouwgate}
 spec:
+  principle: quality-gate-build
   afterSteps: [build, integration-tests]
   thresholds:
     integrationTestsFailed: {max: 0}
@@ -246,6 +248,7 @@ apiVersion: fcd/v0
 kind: QualityGate
 metadata: {name: security, title: Securitygate}
 spec:
+  principle: quality-gate-security
   afterSteps: [security-freshness, sbom-licenses]
   thresholds:
     vulnerabilities: {severities: [CRITICAL, HIGH], onlyWithFix: true, max: 0}
@@ -263,6 +266,7 @@ apiVersion: fcd/v0
 kind: QualityGate
 metadata: {name: deploy, title: Uitrolgate}
 spec:
+  principle: quality-gate-deploy
   afterSteps: [deploy, end-to-end-tests]
   thresholds:
     readySeconds: {max: 60}
@@ -386,6 +390,28 @@ apiVersion: fcd/v0
 kind: Principle
 metadata: {name: github-actions}
 spec: {statement: "GitHub Actions roept hetzelfde bash-script aan.", label: Continuous Delivery}
+---
+# Eén kader per quality gate (besluit Johannes, 22 november 2026): wat de gate eist, in woorden.
+# De drempels zelf staan alleen in de QualityGate. De goedkeuring valt onder human-approves.
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-code}
+spec: {statement: "Codegate: de code voldoet aan de lintregels, alle unittests slagen, het contract is valide, een breaking change krijgt een nieuwe major en de versies zijn consistent.", label: Continuous Delivery, explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-build}
+spec: {statement: "Bouwgate: de images zijn gebouwd en alle integratietests slagen.", label: Continuous Delivery, explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-security}
+spec: {statement: "Securitygate: geen ernstige kwetsbaarheden, geen geheimen en geen onveilige configuratie; libraries zijn vers genoeg en hebben een toegestane licentie.", label: Continuous Delivery, explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-deploy}
+spec: {statement: "Uitrolgate: het deelproduct is na het uitrollen op tijd bereikbaar en alle end-to-end tests slagen.", label: Continuous Delivery, explainAllowed: true}
 ---
 apiVersion: fcd/v0
 kind: Principle
@@ -530,11 +556,25 @@ apiVersion: fcd/v0
 kind: Explanation
 metadata: {name: EXP-007}
 spec:
-  principle: only-way-to-production
+  # gitops (besluit Johannes, 22 november 2026): de release gaat wel door de pipeline; wat afwijkt is geen push
+  # naar remote en geen GitHub Release. only-way-to-production staat geen explain toe.
+  principle: gitops
   subjects: [sk-bestellen]
   step: release
   rule: lokale release
   reason: "Alleen voor de demo: een lokale tag en de changelog, geen GitHub Release; tijdens de demo geen push naar remote (V9)."
   approver: Johannes
   approved: 2026-11-21
+  until: 2026-12-31
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-008}
+spec:
+  principle: github-actions
+  subjects: [sk-bestellen]
+  rule: lokale agent
+  reason: "Alleen voor de demo: de Pipeline draait lokaal als agent, zonder GitHub Actions, met hetzelfde bash-script (fcd)."
+  approver: Johannes
+  approved: 2026-11-22
   until: 2026-12-31
