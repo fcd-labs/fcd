@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genereert de plaat van het proces, Full Circle Delivery (SVG) uit een declaratief FCD-bestand (YAML)."""
+"""Genereert de Full Circle Delivery-plaat (SVG) uit een declaratief FCD-bestand (YAML)."""
 import sys, re, os, json, yaml
 from xml.sax.saxutils import escape
 from PIL import ImageFont
@@ -60,6 +60,40 @@ def gap(s):
     if s not in gaps: gaps.append(s)
 
 fac = by["Factory"][0]
+
+# ------------------------------------------------------------ pipeline: stappen en gates (berekenen)
+# Uit Pipeline (spec.steps, de volgorde), Step en QualityGate. Kolommen: Bouwen tot de stap deploy,
+# Deployen tot de stap release, Releasen vanaf release.
+STEPS = {name(x): x for x in by.get("Step", [])}
+GATES = by.get("QualityGate", [])
+porder = next((spec(p).get("steps") for p in by.get("Pipeline", []) if spec(p).get("steps")), [])
+porder = [n for n in porder if n in STEPS]
+cols3 = {"Bouwen": [], "Deployen": [], "Releasen": []}
+if porder:
+    col = "Bouwen"; lvl = None; nr = 0
+    for n in porder:
+        if n == "deploy": col = "Deployen"; lvl = None
+        if n == "release": col = "Releasen"; lvl = None
+        rows = cols3[col]
+        for g in GATES:
+            if n in (spec(g).get("beforeSteps") or []): rows.append(("gate", g))
+        l = spec(STEPS[n]).get("level") or "subProduct"
+        if l != lvl and col != "Releasen":
+            rows.append(("label", "per container" if l == "container" else "het deelproduct")); lvl = l
+        nr += 1; rows.append(("step", STEPS[n], nr))
+        for b_ in by.get("Step", []):
+            if spec(b_).get("status") == "backlog" and spec(b_).get("after") == n: rows.append(("backlog", b_))
+        for g in GATES:
+            if (spec(g).get("afterSteps") or [None])[-1] == n: rows.append(("gate", g))
+GEXP = {}
+for e in by.get("Explanation", []):
+    if spec(e).get("gate") and not spec(e).get("step"): GEXP.setdefault(spec(e)["gate"], []).append(e)
+RH = {"step": 56, "backlog": 56, "gate": 54, "label": 44}
+def rows_h(rows): return sum(RH[r[0]] + (30 if r[0] == "gate" and name(r[1]) in GEXP else 0) for r in rows)
+BY = 990
+BH = (max(rows_h(r) for r in cols3.values()) + 150) if porder else 0
+KY0 = BY + BH + 40 if porder else 1010
+H = KY0 + 1100 + 50
 add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">')
 add('<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">'
     f'<path d="M0,0 L10,5 L0,10 z" fill="{INK}"/></marker></defs>')
@@ -81,7 +115,9 @@ steps.append(("Intentie", None, C_INT, "lightbulb", [(h, v) for h, v in s if v],
 b, g_ = [], []
 if build:
     p = build[0]
-    b.append(("Pipeline", [title(p)] + ([f"aangeroepen door {spec(p)['calledBy']}"] if spec(p).get("calledBy") else [])))
+    u = spec(p).get("uses") or {}
+    b.append(("Pipeline", ([title(p)] if title(p) != "Pipeline" else []) + ([f"{u['subProduct']} {u.get('version', '')}".strip()] if u.get("subProduct") else [])
+              + ([f"aangeroepen door {spec(p)['calledBy']}"] if spec(p).get("calledBy") else [])))
     if spec(p).get("artifact"): b.append(("Levert", [spec(p)["artifact"]]))
 else: g_.append("pipeline ?"); gap("Bouwen: geen pipeline")
 if tests: b.append(("Testsoorten", [title(t) for t in tests]))
@@ -90,7 +126,8 @@ steps.append(("Bouwen", "bouwen", C_CON, "wrench_screwdriver", b, g_))
 b, g_ = [], []
 if deploy:
     p = deploy[0]
-    b.append(("Pipeline", [title(p)]))
+    b.append(("Pipeline", [title(p)] + ([f"{spec(p)['uses']['subProduct']} {spec(p)['uses'].get('version', '')}".strip()] if (spec(p).get("uses") or {}).get("subProduct") else [])))
+    if b[-1][1][0] == "Pipeline": b[-1] = ("Pipeline", b[-1][1][1:] or ["Pipeline"])
     if spec(p).get("deployUnit"): b.append(("Eenheid", [UNIT.get(spec(p)["deployUnit"], spec(p)["deployUnit"])]))
     if spec(p).get("deployTarget"): b.append(("Waarop", [spec(p)["deployTarget"]]))
 else: g_.append("pipeline ?"); gap("Deployen: geen pipeline")
@@ -98,13 +135,22 @@ if envs: b.append(("Omgevingen", [title(e) for e in envs]))
 else: g_.append("omgevingen ?"); gap("Deployen: geen omgevingen")
 steps.append(("Deployen", "deployen", C_SUB, "puzzle_piece", b, g_))
 rel = by.get("Release", [])
+prel = next((spec(p).get("release") for p in pipes if spec(p).get("release")), None)
 if rel: steps.append(("Releasen", "releasen", C_PROD, "rocket", [("Release", [title(r) for r in rel])], []))
+elif prel:
+    rv = []
+    if prel.get("tag"): rv.append(f"tag {prel['tag']}")
+    if prel.get("notesFrom"): rv.append(f"tekst uit {prel['notesFrom']}")
+    if prel.get("githubRelease") is False: rv.append("geen GitHub Release")
+    steps.append(("Releasen", "releasen", C_PROD, "rocket", [("Release", rv), ("Eenheid", ["het deelproduct"])], []))
 else:
     steps.append(("Releasen", "releasen", C_PROD, "rocket", [], ["release ?"]))
     gap("Releasen: hoe een deelproduct beschikbaar komt voor de gebruiker")
 steps.append(("Gebruiken", None, C_USE, "people", [("Persona", ["staat in de intent van het product"])], []))
 learn = by.get("Dashboard", []) + by.get("KeyPerformanceIndicator", [])
-if learn: steps.append(("Leren", None, C_LEARN, "pulse", [("Zichtbaar", [title(x) for x in learn])], []))
+if learn:
+    lv = [title(x) + (f" ({spec(x)['uses']['subProduct']} {spec(x)['uses'].get('version', '')})".rstrip() if (spec(x).get("uses") or {}).get("subProduct") else "") for x in learn]
+    steps.append(("Leren", None, C_LEARN, "pulse", [("Zichtbaar", lv), ("Meten", ["het key result uit de intent"])], []))
 else:
     steps.append(("Leren", None, C_LEARN, "pulse", [], ["dashboard ?", "meting ?"]))
     gap("Leren: dashboard en meting, zodat de cirkel rond is")
@@ -139,10 +185,66 @@ lw = tw(lab, 26, True) + 48
 rect(AX + AW/2 - lw/2, yb - 24, lw, 48, BG); text(AX + AW/2, yb + 9, lab, 26, True, INK, "middle")
 
 # ------------------------------------------------------------ kaders
-KY, KH = 1010, 1100
-rect(AX, KY, AW, KH, "#FFFFFF", rx=24)
+# ------------------------------------------------------------ pipeline: stappen en gates (tekenen)
+if porder:
+    rect(AX, BY, AW, BH, "#FFFFFF", rx=24)
+    colx = {nm: AX + i * (cw + GAPX) for i, (nm, *_r) in enumerate(steps)}
+    colc = {nm: c for nm, _v, c, *_r in steps}
+    # links: titel en legenda
+    x0 = AX + 30; y = BY + 64
+    text(x0, y, "Pipeline", 36, True); y += 46
+    for l in wrap("De stappen en quality gates per blok, uit Pipeline, Step en QualityGate.", 23, False, cw - 40):
+        text(x0, y, l, 23, False, MUTED); y += 31
+    y += 26
+    add(f'<path d="M{x0+12},{y-20} l12,12 l-12,12 l-12,-12 z" fill="{INK}"/>'); text(x0 + 36, y, "quality gate", 23); y += 50
+    _chip(x0, y - 26, "ingekort", C_EXP, 19); text(x0 + tw("ingekort", 19, True) + 44, y - 4, "alleen voor de demo", 21, False, MUTED); y += 50
+    chip(x0, y - 26, "backlog", C_GAP, 19, dashed=True); text(x0 + tw("backlog", 19, True) + 44, y - 4, "nog niet gebouwd", 21, False, MUTED)
+    for cn, rows in cols3.items():
+        x = colx[cn]; c = colc[cn]; y = BY + 40
+        text(x, y + 24, cn.upper(), 22, True, c, ls=2); y += 56
+        for r in rows:
+            if r[0] == "label":
+                text(x + 4, y + 28, r[1].upper(), 18, True, MUTED, ls=2); y += RH["label"]
+            elif r[0] == "step":
+                st = r[1]; rect(x, y, cw, 46, "#FFFFFF", rx=12, stroke=c, sw=2.5)
+                text(x + 16, y + 31, f"{r[2]}. {title(st)}", 22, True)
+                if spec(st).get("shortened"):
+                    tw_ = tw("ingekort", 17, True) + 30
+                    _chip(x + cw - 10 - tw_, y + 7, "ingekort", C_EXP, 17)
+                y += RH["step"]
+            elif r[0] == "backlog":
+                add('<g class="backlog">')
+                rect(x, y, cw, 46, "#FFFFFF", rx=12, stroke=C_GAP, sw=2.5, dash="8 6")
+                text(x + 16, y + 31, title(r[1]), 22, False, C_GAP)
+                tw_ = tw("backlog", 17, True) + 30
+                _chip(x + cw - 10 - tw_, y + 7, "backlog", C_GAP, 17, dashed=True)
+                add('</g>'); y += RH["backlog"]
+            else:
+                g = r[1]
+                add(f'<path d="M{x+14},{y+10} l13,13 l-13,13 l-13,-13 z" fill="{INK}"/>')
+                text(x + 38, y + 32, title(g), 23, True)
+                y += RH["gate"]
+                if name(g) in GEXP:
+                    text(x + 38, y + 4, "afwijking " + ", ".join(name(e) for e in GEXP[name(g)]), 20, True, C_EXP); y += 30
+    # rechts: de afwijkingen op een stap of gate
+    sx = colx["Gebruiken"]; sw_ = 2 * cw + GAPX; y = BY + 64
+    text(sx, y, "Afwijkingen op stap en gate", 30, True); y += 44
+    sexp = [e for e in by.get("Explanation", []) if spec(e).get("step") or spec(e).get("gate")]
+    for e in sexp:
+        where = title(STEPS[spec(e)["step"]]) if spec(e).get("step") in STEPS else next((title(g) for g in GATES if name(g) == spec(e).get("gate")), spec(e).get("gate", "?"))
+        text(sx, y, f"{name(e)}  ·  {where}: {spec(e).get('rule', '')}", 22, True, C_EXP); y += 30
+        meta = " · ".join(v for v in [f"tot {spec(e)['until']}" if spec(e).get("until") else "", f"goedgekeurd door {spec(e)['approver']}" if spec(e).get("approver") else ""] if v)
+        if meta: text(sx, y, meta, 20, False, MUTED); y += 40
+    if not sexp: text(sx, y, "Geen", 22, False, MUTED)
+KY, KH = KY0, 1100
+_kidx = len(out); add("")   # het kaders-vlak; de hoogte volgt uit de inhoud
 prins = by.get("Principle", [])
-exps = {spec(e)["principle"]: e for e in by.get("Explanation", [])}
+GBYP = {}
+for g in GATES:
+    if spec(g).get("principle"): GBYP.setdefault(spec(g)["principle"], []).append(title(g))
+exps = {}
+for e in by.get("Explanation", []):
+    if not (spec(e).get("step") or spec(e).get("gate")): exps.setdefault(spec(e).get("principle"), []).append(e)
 text(AX + 36, KY + 62, f"Kaders ({len(prins)})", 36, True)
 text(AX + 36 + tw(f"Kaders ({len(prins)})", 36, True) + 24, KY + 60, "comply or explain  ·  samen de guardrails voor AI", 24, False, MUTED)
 lx = AX + AW - 36
@@ -153,7 +255,7 @@ kw_ = (AW - 72 - cgap * (COLS - 1)) / COLS
 FS, LH = 27, 35
 def ph(p):
     n = len(wrap(spec(p)["statement"], FS, False, kw_ - 172))
-    return n * LH + (38 if name(p) in exps else 0) + 24
+    return n * LH + 38 * len(exps.get(name(p), [])) + (34 if name(p) in GBYP else 0) + 24
 def draw(p, x, y):
     for k, l in enumerate(wrap(spec(p)["statement"], FS, False, kw_ - 172)): text(x, y + k * LH, l, FS)
     ea = spec(p).get("explainAllowed")
@@ -161,8 +263,13 @@ def draw(p, x, y):
     elif ea is False: chip(x + kw_, y - 24, "explain: nee", INK, 21, solid=True, anchor="end")
     else: chip(x + kw_, y - 24, "explain ?", C_GAP, 21, dashed=True, anchor="end")
     yy = y + len(wrap(spec(p)["statement"], FS, False, kw_ - 172)) * LH
-    if name(p) in exps:
-        text(x, yy, "Afwijking: " + spec(exps[name(p)]).get("reason", "?"), 25, True, C_EXP); yy += 38
+    if name(p) in GBYP:
+        text(x, yy, "Getoetst door de " + " en de ".join(GBYP[name(p)]), 23, True, MUTED); yy += 34
+    for e in exps.get(name(p), []):
+        r = spec(e).get("reason", "?")
+        if tw("Afwijking: " + r, 25, True) > kw_: r = r.split(".")[0]
+        while tw("Afwijking: " + r, 25, True) > kw_: r = r[:-2].rstrip() + "…"
+        text(x, yy, "Afwijking: " + r, 25, True, C_EXP); yy += 38
     add(f'<line x1="{x}" y1="{yy-12}" x2="{x+kw_}" y2="{yy-12}" stroke="{RULE}" stroke-width="1.5"/>')
     return yy + 24
 unl = [p for p in prins if not spec(p).get("label")]
@@ -186,14 +293,26 @@ for l in labs:
     text(x, y - 44, f"{l.upper()} ({len(grp)})", 22, True, MUTED, ls=2)
     for p in grp: y = draw(p, x, y)
     maxy = max(maxy, y); y += 70
-if maxy > KY + KH - 10: print("OVERLOOP kaders", maxy, KY + KH)
+KH = max(KH, maxy - KY + 30)
+out[_kidx] = (f'<rect x="{AX:.1f}" y="{KY:.1f}" width="{AW:.1f}" height="{KH:.1f}" rx="24" fill="#FFFFFF"/>')
+H = KY + KH + 50
+out[0] = f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">'
+out[2] = f'<rect x="0.0" y="0.0" width="{W:.1f}" height="{H:.1f}" rx="0" fill="{BG}"/>'
 n_unk = sum(1 for p in prins if spec(p).get("explainAllowed") is None)
 if n_unk: gap(f"{n_unk} van de {len(prins)} kaders: niet bekend of explain is toegestaan")
 if unl: gap(f"{len(unl)} van de {len(prins)} kaders: geen label")
-bad = [e for e in by.get("Explanation", []) if not spec(e).get("approver") or not spec(e).get("endDate")]
+bad = [e for e in by.get("Explanation", []) if not spec(e).get("approver") or not (spec(e).get("endDate") or spec(e).get("until"))]
 if bad: gap(f"{len(bad)} afwijkingen: geen goedkeurder en geen einddatum")
 pn = {name(p): p for p in prins}
-unk = [e for e in by.get("Explanation", []) if spec(pn[spec(e)["principle"]]).get("explainAllowed") is None]
+unk = [e for e in by.get("Explanation", []) if spec(e).get("principle") in pn and spec(pn[spec(e)["principle"]]).get("explainAllowed") is None]
+nok = [e for e in by.get("Explanation", []) if spec(e).get("principle") not in pn]
+nee = [e for e in by.get("Explanation", []) if spec(e).get("principle") in pn and spec(pn[spec(e)["principle"]]).get("explainAllowed") is False]
+if nee: gap(f"{len(nee)} afwijkingen op een kader waarbij explain niet is toegestaan ({', '.join(name(e) for e in nee)})")
+gnok = [g for g in GATES if spec(g).get("principle") and spec(g)["principle"] not in pn]
+if gnok: gap(f"{len(gnok)} quality gates verwijzen naar een kader dat niet in het bestand staat")
+gzon = [g for g in GATES if not spec(g).get("principle")]
+if gzon: gap(f"{len(gzon)} quality gates zonder kader")
+if nok: gap(f"{len(nok)} afwijkingen op een kader dat niet in het bestand staat ({', '.join(sorted({spec(e).get('principle', '?') for e in nok}))})")
 if unk: gap(f"{len(unk)} afwijkingen op een kader waarvan niet bekend is of explain mag")
 
 # ------------------------------------------------------------ rechterkolom

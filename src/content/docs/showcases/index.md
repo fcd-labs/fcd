@@ -18,7 +18,7 @@ Omdat product en intent gelijk blijven, vergelijk je alleen de manier van werken
 
 Het product in elke showcase is ShowKitchen: software as a service voor restaurants, van een leverancier. Een open keuken, waar de gast ziet hoe er gekookt wordt.
 
-Elke showcase is een paar: **fcd-X**, de way of working, en **sk-X**, het product ShowKitchen dat die way of working voortbrengt.
+Elke showcase heeft een eigen way of working: **fcd-X**, met de configuratie. Het product ShowKitchen is in elke showcase hetzelfde: één repository per deelproduct, zoals **sk-bestellen**. Pipeline en Dashboard zijn ook voor elke showcase hetzelfde: [fcd-pipeline](https://github.com/fcd-labs/fcd-pipeline) en [fcd-dashboard](https://github.com/fcd-labs/fcd-dashboard).
 
 ## Uit het declaratieve bestand
 

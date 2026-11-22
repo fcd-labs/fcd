@@ -5,6 +5,8 @@ from xml.sax.saxutils import escape
 from PIL import ImageFont
 
 src, dst = sys.argv[1], sys.argv[2]
+# Optioneel: versions.env van de repository van het deelproduct, de ene bron voor de versies.
+vsrc = sys.argv[3] if len(sys.argv) > 3 else None
 docs = [d for d in yaml.safe_load_all(open(src)) if d]
 by = {}
 for d in docs:
@@ -13,6 +15,25 @@ name = lambda d: d["metadata"]["name"]
 title = lambda d: d["metadata"].get("title", name(d))
 spec = lambda d: d.get("spec") or {}
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
+
+# Versies uit versions.env (KEY=waarde) in het declaratieve model zetten, als ze daar nog niet staan.
+if vsrc and os.path.exists(vsrc):
+    env = {}
+    for l in open(vsrc):
+        l = l.split("#", 1)[0].strip()
+        if "=" in l:
+            k, v = l.split("=", 1); env[k.strip()] = v.strip()
+    key = lambda s: re.sub(r"[^A-Z0-9]", "_", s.upper()) + "_VERSION"
+    for d in docs:
+        sp = d.setdefault("spec", {}) if isinstance(d.get("spec"), dict) or d.get("spec") is None else None
+        if sp is None or sp.get("version"): continue
+        if d["kind"] == "SubProduct" and env.get("SUBPRODUCT") == name(d): v = env.get("SUBPRODUCT_VERSION")
+        elif d["kind"] == "Container": v = env.get(key(sp.get("service") or name(d)))
+        else: v = None
+        if v: sp["version"] = v
+    vbron = os.path.basename(os.path.dirname(os.path.abspath(vsrc))) + "/" + os.path.basename(vsrc)
+else:
+    vbron = None
 
 W, H = 3840, 2160
 FONT = "Segoe UI, Inter, sans-serif"
@@ -76,7 +97,7 @@ add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="
 rect(0, 0, W, H, BG)
 prod = by["Product"][0]
 text(60, 112, f"Productplaat: {title(prod)}", 68, True)
-text(62, 162, f"Wat zit in wat  ·  gegenereerd uit {os.path.basename(src)}", 28, False, MUTED)
+text(62, 162, f"Wat zit in wat  ·  gegenereerd uit {os.path.basename(src)}" + (f", versies uit {vbron}" if vbron else ""), 28, False, MUTED)
 
 # ------------------------------------------------------------ product
 PX, PY, PW, PH = 60, 210, 2780, 1890
@@ -116,6 +137,9 @@ for i, s in enumerate(subs):
         text(sx + 96, SY + 134, own, 24, False, MUTED)
     else: gap(f"Deelproduct {title(s)}: geen eigenaar")
     repos = [r for r in by.get("Repository", []) if spec(r).get("subProduct") == name(s)]
+    if not repos and spec(s).get("repository"):
+        # Eén repository voor het hele deelproduct (spec.repository van het deelproduct).
+        repos = [{"kind": "Repository", "metadata": {"name": spec(s)["repository"]}, "spec": {"subProduct": name(s)}}]
     if not repos: gap(f"Deelproduct {title(s)}: geen repository (monorepo of per service)")
     mine = [c for c in cons if spec(c).get("subProduct") == name(s)]
     if not mine: gap(f"Deelproduct {title(s)}: geen containers")

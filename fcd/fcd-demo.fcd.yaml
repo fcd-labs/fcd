@@ -1,5 +1,8 @@
 # Jouw FCD-model: FCD-Demo, de way of working ("fabriek") die ShowKitchen voortbrengt
 # Bron: fcd-mvp0.md, fcd-showcases.md, fcd-objecten.md
+# Kopie uit fcd/fcd/fcd-demo.fcd.yaml (20 november 2026), aangevuld met de configuratie van de showcase:
+# Pipeline (vastgelegde versie, trigger, uitrol, release, stappen), Step, QualityGate (drempels), Dashboard,
+# Environment (poorten) en goedgekeurde afwijkingen op een gate. Pipeline en Dashboard lezen dit bestand.
 # Objecten volgen fcd-objecten.md. De veldnamen zijn een voorstel.
 # Wat niet in de bronnen staat, staat hier niet. De plaat toont dat als gat.
 ---
@@ -10,6 +13,8 @@ metadata:
   title: FCD-Demo
 spec:
   description: De eerste, kleinste way of working die de hele cirkel rond gaat. AI als versneller.
+  showcase: demo
+  experiment: mvp0
   product: showkitchen
   intentParts:
     - Persona en userstory
@@ -35,15 +40,247 @@ spec:
 apiVersion: fcd/v0
 kind: Pipeline
 metadata:
-  name: bash-script
-  title: bash-script
+  name: pipeline
+  title: Pipeline
 spec:
+  uses: {subProduct: fcd-pipeline, version: 0.7.0}
   builds: true
   deploys: true
-  calledBy: GitHub Actions
+  calledBy: Pipeline-agent
+  # Bron: een lokale git-server (bare repositories in ~/.fcd/git). Tijdens de demo geen push naar remote (V9).
+  source: local-git
+  # Goedkeuring bij de start: de product owner drukt op de knop op het Dashboard (V3). Alleen wat gemerged is.
+  trigger: dashboard-button
   artifact: container
   deployUnit: SubProduct
   deployTarget: docker-compose
+  # Lokale tag, de tekst uit de changelog; geen GitHub Release in de demo (V9).
+  release: {tag: "v{version}", githubRelease: false, notesFrom: CHANGELOG.md}
+  # De demo herhalen (V10): ./fcd demo reset zet de lokale git terug naar startTag; branches zijn de klaarstaande wijzigingen.
+  demo: {startTag: demo-start, branches: ["patch/*"], warm: true}   # warm: de klaarstaande branches vooraf bouwen (EXP-004)
+  steps: [static-check, unit-tests, contract-test, build, integration-tests, security-freshness, sbom-licenses, deploy, end-to-end-tests, release]
+  # Nog niet gebouwd (grow through doing): grijs op het Dashboard, nooit uitgevoerd. Issues in fcd-demo.
+  backlog: [eslint, coverage, consumer-contract-test, dast, performance-tests]
+---
+apiVersion: fcd/v0
+kind: Dashboard
+metadata: {name: dashboard, title: Dashboard}
+spec:
+  uses: {subProduct: fcd-dashboard, version: 0.5.0}
+  # Live weergave van de pipeline (besluit sim007, 21 november 2026). Het FCD-model kent spec.live nog niet (issue in fcd).
+  # De stappen, gates en hun volgorde komen uit Pipeline, Step en QualityGate hierboven; niet herhalen.
+  live:
+    subProducts: []                   # welke deelproducten, in deze volgorde; leeg is alle
+    environments: [lokaal]            # welke runs: lokaal (na een merge); werkplek (vóór een push) niet, zodat een hook-run nooit in de demo verschijnt
+    layout: stacked                   # stacked (onder elkaar) of side-by-side
+    keepFinishedSeconds: 600          # zo lang blijft een afgelopen run groot staan
+    presentation:
+      title: "Showcase Demo – live"
+      theme: dark
+      fontScale: 1.6
+      focusRunning: true              # het lopende deelproduct bovenaan
+---
+apiVersion: fcd/v0
+kind: Registry
+metadata: {name: registry, title: API-register}
+spec:
+  tool: apicurio-registry
+  storage: in-memory          # afwijking EXP-003; de contracten staan in git, de Pipeline vult het register opnieuw
+---
+apiVersion: fcd/v0
+kind: Contract
+metadata: {name: order, title: De bestelling}
+spec:
+  repository: sk-bestellen
+  file: contracts/order.openapi.yaml
+  type: OPENAPI
+  between: {from: bestellen, to: [stub-keuken, stub-bar, stub-kassa]}
+  container: bestellen-backend   # de contracttest van deze container
+  compatibility: BACKWARD
+---
+apiVersion: fcd/v0
+kind: Contract
+metadata: {name: bestellen-api, title: Frontend en backend van Bestellen}
+spec:
+  repository: sk-bestellen
+  file: bestellen/contracts/bestellen-api.openapi.yaml
+  type: OPENAPI
+  between: {from: bestellen-frontend, to: [bestellen-backend]}
+  container: bestellen-backend   # de aanbieder; de consumer-kant (frontend) is backlog
+  compatibility: BACKWARD
+---
+apiVersion: fcd/v0
+kind: Contract
+metadata: {name: logline, title: De logregel}
+spec:
+  repository: fcd-dashboard
+  file: contracts/logline.schema.json
+  type: JSON
+  between: {from: [pipeline, bestellen], to: [dashboard]}
+  compatibility: BACKWARD
+---
+apiVersion: fcd/v0
+kind: Contract
+metadata: {name: logline-api, title: Het eindpunt voor logregels}
+spec:
+  repository: fcd-dashboard
+  file: contracts/logline.openapi.yaml
+  type: OPENAPI
+  compatibility: BACKWARD
+  references:
+    - {name: ./logline.schema.json, contract: logline}
+---
+apiVersion: fcd/v0
+kind: Contract
+metadata: {name: dashboard-api, title: Frontend en backend van het Dashboard}
+spec:
+  repository: fcd-dashboard
+  file: contracts/dashboard-api.openapi.yaml
+  type: OPENAPI
+  compatibility: BACKWARD
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: static-check, title: Statische controle}
+spec: {gate: code, level: container}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: unit-tests, title: Unittests}
+spec: {gate: code, testType: unit, level: container}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: contract-test, title: Contracttest}
+spec: {gate: code, level: container}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: build, title: Bouwen}
+# Ingekort voor de demo: de images zijn vooraf opgewarmd (laagcache van docker).
+spec: {gate: build, level: container, shortened: EXP-004}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: integration-tests, title: Integratietests}
+spec:
+  gate: build
+  testType: integration
+  contractChecks: [not_a_server_error, status_code_conformance, content_type_conformance, response_schema_conformance, response_headers_conformance, negative_data_rejection]
+  maxExamples: 25
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: security-freshness, title: Security en versheid}
+# Ingekort voor de demo: dezelfde scan van dezelfde inhoud (repository of image) komt uit de cache van de voorbereiding.
+spec: {gate: security, cache: true, shortened: EXP-005}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: sbom-licenses, title: SBOM en licenties}
+spec: {gate: security, sbomFormat: cyclonedx-json, cache: true, shortened: EXP-005}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: deploy, title: Deployen}
+spec: {gate: deploy}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: end-to-end-tests, title: End-to-end tests}
+# Ingekort voor de demo: alleen het kernpad "bestelling plaatsen".
+spec: {gate: deploy, testType: end-to-end, grep: "@kernpad", shortened: EXP-006}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: release, title: Releasen}
+# Ingekort voor de demo: een lokale tag en de changelog, geen GitHub Release (geen push naar remote).
+spec: {gate: human, shortened: EXP-007}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: eslint, title: ESLint}
+spec: {status: backlog, after: static-check, level: container, issue: "fcd-demo#7"}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: coverage, title: Testdekking}
+spec: {status: backlog, after: unit-tests, level: container, issue: "fcd-demo#11"}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: consumer-contract-test, title: Consumer-contracttest}
+spec: {status: backlog, after: contract-test, level: container}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: dast, title: DAST}
+spec: {status: backlog, after: end-to-end-tests}
+---
+apiVersion: fcd/v0
+kind: Step
+metadata: {name: performance-tests, title: Performancetests}
+spec: {status: backlog, after: end-to-end-tests}
+---
+apiVersion: fcd/v0
+kind: QualityGate
+metadata: {name: code, title: Codegate}
+spec:
+  principle: quality-gate-code
+  afterSteps: [static-check, unit-tests, contract-test]
+  thresholds:
+    lintErrors: {max: 0}
+    unitTestsFailed: {max: 0}
+    contractLintErrors: {max: 0}
+    breakingChanges: {withoutNewMajor: 0}
+    versionsConsistent: true
+---
+apiVersion: fcd/v0
+kind: QualityGate
+metadata: {name: build, title: Bouwgate}
+spec:
+  principle: quality-gate-build
+  afterSteps: [build, integration-tests]
+  thresholds:
+    integrationTestsFailed: {max: 0}
+---
+apiVersion: fcd/v0
+kind: QualityGate
+metadata: {name: security, title: Securitygate}
+spec:
+  principle: quality-gate-security
+  afterSteps: [security-freshness, sbom-licenses]
+  thresholds:
+    vulnerabilities: {severities: [CRITICAL, HIGH], onlyWithFix: true, max: 0}
+    secrets: {max: 0}
+    misconfigurations: {severities: [CRITICAL, HIGH], max: 0}
+    freshness: {maxMajorBehind: 1, undetermined: warn}   # besluit sim007 21-11-2026: hoogstens één major achter
+    licenses:
+      allowed: [MIT, MIT-0, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, Zlib, MPL-2.0, EPL-1.0, EPL-2.0, LGPL-2.0, LGPL-2.1, LGPL-2.1-only, LGPL-2.1-or-later, LGPL-3.0, LGPL-3.0-only, LGPL-3.0-or-later, Unlicense, CC0-1.0, 0BSD]
+      restricted: [GPL-1.0, GPL-2.0, GPL-2.0-only, GPL-2.0-or-later, GPL-2.0-with-classpath-exception, GPL-3.0, GPL-3.0-only, GPL-3.0-or-later]
+      restrictedInBaseImage: allowed
+      forbidden: [AGPL-1.0, AGPL-3.0, AGPL-3.0-only, AGPL-3.0-or-later, SSPL-1.0, BUSL-1.1, CC-BY-NC-4.0, Commons-Clause]
+      unknown: closed
+---
+apiVersion: fcd/v0
+kind: QualityGate
+metadata: {name: deploy, title: Uitrolgate}
+spec:
+  principle: quality-gate-deploy
+  afterSteps: [deploy, end-to-end-tests]
+  thresholds:
+    readySeconds: {max: 60}
+    endToEndTestsFailed: {max: 0}
+---
+apiVersion: fcd/v0
+kind: QualityGate
+metadata: {name: human, title: Goedkeuring}
+spec:
+  # Twee keer de knop op het Dashboard: bij de start en vóór het releasen (besluit sim007, 21 november 2026).
+  beforeSteps: [static-check, release]
+  approval: dashboard-button
+  approver: sim007
+  principle: human-approves
 ---
 apiVersion: fcd/v0
 kind: TestType
@@ -60,6 +297,9 @@ metadata: {name: end-to-end, title: End-to-end tests met Playwright}
 apiVersion: fcd/v0
 kind: Environment
 metadata: {name: demo, title: één omgeving}
+spec:
+  composeProjectPrefix: demo
+  ports: {dashboard: 8070, registry: 8071, registry-ui: 8072, bestellen: 8080, stub-kitchen: 8091, stub-bar: 8092, stub-cash-register: 8093}
 ---
 apiVersion: fcd/v0
 kind: Principle
@@ -151,6 +391,28 @@ kind: Principle
 metadata: {name: github-actions}
 spec: {statement: "GitHub Actions roept hetzelfde bash-script aan.", label: Continuous Delivery}
 ---
+# Eén kader per quality gate (besluit sim007, 22 november 2026): wat de gate eist, in woorden.
+# De drempels zelf staan alleen in de QualityGate. De goedkeuring valt onder human-approves.
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-code}
+spec: {statement: "Codegate: de code voldoet aan de lintregels, alle unittests slagen, het contract is valide, een breaking change krijgt een nieuwe major en de versies zijn consistent.", label: Continuous Delivery, explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-build}
+spec: {statement: "Bouwgate: de images zijn gebouwd en alle integratietests slagen.", label: Continuous Delivery, explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-security}
+spec: {statement: "Securitygate: geen ernstige kwetsbaarheden, geen geheimen en geen onveilige configuratie; libraries zijn vers genoeg en hebben een toegestane licentie.", label: Continuous Delivery, explainAllowed: true}
+---
+apiVersion: fcd/v0
+kind: Principle
+metadata: {name: quality-gate-deploy}
+spec: {statement: "Uitrolgate: het deelproduct is na het uitrollen op tijd bereikbaar en alle end-to-end tests slagen.", label: Continuous Delivery, explainAllowed: true}
+---
 apiVersion: fcd/v0
 kind: Principle
 metadata: {name: tdd}
@@ -210,3 +472,109 @@ apiVersion: fcd/v0
 kind: Explanation
 metadata: {name: demo-environments}
 spec: {principle: environments, subject: fcd-demo, reason: "demo: één omgeving"}
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-001}
+spec:
+  principle: quality-gate-security
+  # fcd-dashboard: D1 (tijdelijk), tot de configuratie van FCD zelf in fcd staat.
+  subjects: [sk-bestellen, fcd-dashboard]
+  gate: security
+  rule: versheid frontend
+  reason: "Frontend loopt een major-versie achter (Angular 21 -> 22, TypeScript 5.9 -> 7, vitest 4 -> 5, jsdom 28 -> 31). Bijwerken na de demo (fcd-demo issue #1)."
+  approver: sim007
+  approved: 2026-11-20
+  until: 2026-12-31
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-002}
+spec:
+  principle: quality-gate-security
+  # fcd-dashboard: D1 (tijdelijk), tot de configuratie van FCD zelf in fcd staat.
+  subjects: [sk-bestellen, fcd-dashboard]
+  gate: security
+  rule: versheid backend
+  reason: "json-schema-validator loopt een major-versie achter (1.5.9 -> 3.0.9); versie 3 vereist Jackson 3. Bijwerken na de demo (fcd-demo issue #17)."
+  approver: sim007
+  approved: 2026-11-20
+  until: 2026-12-31
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-003}
+spec:
+  principle: database
+  subject: registry
+  reason: "Apicurio Registry houdt de contracten voor de demo in het geheugen (H2), niet in PostgreSQL. De contracten staan in git; na een herstart vult de Pipeline het register opnieuw."
+  approver: sim007
+  approved: 2026-11-20
+  until: 2026-12-31
+---
+# De pipeline binnen 5 minuten, alleen voor de demo (goedgekeurde afwijking, V8). Alle stappen en gates blijven.
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-004}
+spec:
+  principle: automate-everything
+  subjects: [sk-bestellen]
+  step: build
+  rule: images opgewarmd
+  reason: "Alleen voor de demo: de images zijn vooraf opgewarmd (voorbereiding), zodat de pipeline binnen 5 minuten blijft. Er wordt wel gebouwd."
+  approver: sim007
+  approved: 2026-11-21
+  until: 2026-12-31
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-005}
+spec:
+  principle: quality-gate-security
+  subjects: [sk-bestellen]
+  step: security-freshness
+  rule: scan uit cache
+  reason: "Alleen voor de demo: de security-, versheids- en licentiescan van dezelfde inhoud (repository of image) komt uit de cache van de voorbereiding. Nieuwe inhoud wordt wel gescand."
+  approver: sim007
+  approved: 2026-11-21
+  until: 2026-12-31
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-006}
+spec:
+  principle: end-to-end-tests
+  subjects: [sk-bestellen]
+  step: end-to-end-tests
+  rule: alleen kernpad
+  reason: "Alleen voor de demo: end-to-end alleen het kernpad 'bestelling plaatsen' (@kernpad). De volledige scenario's draaien buiten de demo."
+  approver: sim007
+  approved: 2026-11-21
+  until: 2026-12-31
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-007}
+spec:
+  # gitops (besluit sim007, 22 november 2026): de release gaat wel door de pipeline; wat afwijkt is geen push
+  # naar remote en geen GitHub Release. only-way-to-production staat geen explain toe.
+  principle: gitops
+  subjects: [sk-bestellen]
+  step: release
+  rule: lokale release
+  reason: "Alleen voor de demo: een lokale tag en de changelog, geen GitHub Release; tijdens de demo geen push naar remote (V9)."
+  approver: sim007
+  approved: 2026-11-21
+  until: 2026-12-31
+---
+apiVersion: fcd/v0
+kind: Explanation
+metadata: {name: EXP-008}
+spec:
+  principle: github-actions
+  subjects: [sk-bestellen]
+  rule: lokale agent
+  reason: "Alleen voor de demo: de Pipeline draait lokaal als agent, zonder GitHub Actions, met hetzelfde bash-script (fcd)."
+  approver: sim007
+  approved: 2026-11-22
+  until: 2026-12-31

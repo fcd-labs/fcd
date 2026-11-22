@@ -14,8 +14,10 @@ Het wordt vastgelegd in een **declaratief bestand**: wat en waarom, reproduceerb
 
 De showcase [Demo](showcases/demo.md) is vastgelegd in twee declaratieve bestanden:
 
-- [sk-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-demo.fcd.yaml): het product ShowKitchen.
-- [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml): de way of working die het product voortbrengt.
+- [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml): het product ShowKitchen, met het deelproduct Bestellen.
+- [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml): de way of working die het product voortbrengt, met de stappen, quality gates en afwijkingen.
+
+Pipeline en Dashboard lezen dezelfde bestanden: de configuratie is het model.
 
 ## Backlog
 

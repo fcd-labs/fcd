@@ -46,7 +46,7 @@ Borrow words where the market has them, only add what the market lacks. The mark
 | ShowKitchen | The product in the showcases: software as a service for restaurants. |
 | Demo, Classic, Ideal | The three showcases: the same product, three ways of working. Each showcase is a pair: fcd-X (the way of working) and sk-X (the product). |
 | Product picture (*productplaat*) | What is in what, generated from the declarative file. |
-| Process picture (*procesplaat*) | How the product comes into being and stays alive, generated from the declarative file. |
+| Full Circle Delivery picture (*Full Circle Delivery-plaat*) | How the product comes into being and stays alive, generated from the declarative file. |
 
 ## Earlier work: the model with axes
 
