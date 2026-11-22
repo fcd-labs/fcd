@@ -9,7 +9,7 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 | Term | Betekenis |
 |---|---|
 | Full Circle Delivery (FCD) | De term voor het geheel: de hele cirkel rond, niet alleen continuous delivery. Een way of working, geen framework. Niet software development lifecycle. |
-| Cirkel | Intentie → proces → product → leren → weer intentie. |
+| Cirkel | Intentie → delivery → product → leren → weer intentie. |
 | Gebruiker | Wie het product gebruikt. Niet klant: dat is de business. |
 | Senang | Op je gemak, tevreden. Nu en later. |
 | Perspectief | Een blik op de cirkel, met eigen kaders. |

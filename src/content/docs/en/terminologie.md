@@ -9,7 +9,7 @@ Borrow words where the market has them, only add what the market lacks. The mark
 | Term | Meaning |
 |---|---|
 | Full Circle Delivery (FCD) | The term for the whole: the full circle, not just continuous delivery. A way of working, not a framework. Not software development lifecycle. |
-| Circle | Intention → process → product → learning → intention again. |
+| Circle | Intention → delivery → product → learning → intention again. |
 | User (*gebruiker*) | Who uses the product. Not customer: that is the business. |
 | Senang | At ease, satisfied. Now and later. |
 | Perspective | A view on the circle, with its own principles. |

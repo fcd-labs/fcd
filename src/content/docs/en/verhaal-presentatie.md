@@ -20,7 +20,7 @@ Hence: AI needs delivery. Delivery needs AI. Not either, but both.
 
 1. Together we work for the user; the user must be *senang* (at ease, satisfied), now and later.
 2. The user gets there by using the product.
-3. The product comes from intention and process, in balance.
+3. The product comes from intention and delivery, in balance.
 4. What usage teaches us feeds the next intention.
 5. The product is never finished.
 
@@ -32,7 +32,7 @@ The business must be at ease too. But the user is central.
 
 ## The circle
 
-Around the user and the product turns a circle: intention, process, product and learning. What usage teaches us feeds the next intention. You will recognise plan-do-check-act in it.
+Around the user and the product turns a circle: intention, delivery, product and learning. What usage teaches us feeds the next intention. You will recognise plan-do-check-act in it.
 
 That is why the product is never finished. And that is why it is called Full Circle Delivery (FCD): not just continuous delivery, but the full circle.
 
