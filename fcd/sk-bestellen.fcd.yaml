@@ -2,6 +2,8 @@
 # Bron: showkitchen.md, sk-1dp-mvp0.md (nu sk-demo), fcd-mvp0.md, fcd-objecten.md
 # Objecten en relaties volgen fcd-objecten.md. De veldnamen zijn een voorstel.
 # Wat niet in de bronnen staat, staat hier niet. De plaat toont dat als gat.
+# Kopie uit fcd/fcd/sk-demo.fcd.yaml (20 november 2026); hier hernoemd naar sk-bestellen.fcd.yaml (22 november 2026), aangevuld met de repository van het deelproduct.
+# Besluit Johannes (22 november 2026): één repository per deelproduct, voor alle showcases: sk-bestellen (met de stubs).
 ---
 apiVersion: fcd/v0
 kind: Product
@@ -29,6 +31,7 @@ metadata:
 spec:
   product: showkitchen
   owner: claude-code
+  repository: sk-bestellen   # het deelproduct Bestellen, voor alle showcases (was sk-demo)
 ---
 apiVersion: fcd/v0
 kind: Container
@@ -56,6 +59,8 @@ metadata:
 spec:
   product: showkitchen
   stub: true
+  receiver: kitchen   # de ontvanger in het contract van de bestelling
+  service: stub-kitchen   # de naam van de container in de code (docker compose)
 ---
 apiVersion: fcd/v0
 kind: Container
@@ -65,6 +70,8 @@ metadata:
 spec:
   product: showkitchen
   stub: true
+  receiver: bar   # de ontvanger in het contract van de bestelling
+  service: stub-bar
 ---
 apiVersion: fcd/v0
 kind: Container
@@ -74,3 +81,5 @@ metadata:
 spec:
   product: showkitchen
   stub: true
+  receiver: cash-register   # de ontvanger in het contract van de bestelling
+  service: stub-cash-register

@@ -8,9 +8,12 @@ The smallest way of working of Full Circle Delivery that goes the full circle: i
 
 | | Way of working | Product |
 |---|---|---|
-| Name | fcd-demo | sk-demo |
-| Declarative file | [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml) | [sk-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-demo.fcd.yaml) |
-| Code | coming to fcd-labs | coming to fcd-labs |
+| Name | fcd-demo | ShowKitchen, sub-product Ordering |
+| Repository | [fcd-demo](https://github.com/fcd-labs/fcd-demo): configuration, no code | [sk-bestellen](https://github.com/fcd-labs/sk-bestellen): for all showcases |
+| Declarative file | [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml) | [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml) |
+| Version | Pipeline 0.7.0, Dashboard 0.5.0 | Ordering 1.0.0; the patch makes it 1.0.1 |
+
+Pipeline ([fcd-pipeline](https://github.com/fcd-labs/fcd-pipeline)) and Dashboard ([fcd-dashboard](https://github.com/fcd-labs/fcd-dashboard)) are sub-products of FCD: one Pipeline and one Dashboard for all showcases. What differs per showcase is in the configuration, not in the code. The declarative files here are a copy from [fcd-demo](https://github.com/fcd-labs/fcd-demo/tree/main/fcd).
 
 ## The experiment
 
@@ -31,7 +34,7 @@ Why and measure are separate: the why is the direction and changes little; the m
 
 1. **Responsibility.** Does: show the menu, let the guest choose, and send the order to kitchen, bar and till. Does not: manage the menu, or payment. The menu is a fixed, declarative file in the repository; changing the menu goes through the pipeline.
 2. **Users:** the guest.
-3. **Interfaces:** Ordering sends one order, the whole order, directly to kitchen, bar and till, according to a contract (contract first).
+3. **Interfaces:** Ordering sends one order, the whole order, directly to kitchen, bar and till, according to a contract (contract first): [order.openapi.yaml](https://github.com/fcd-labs/sk-bestellen/blob/main/contracts/order.openapi.yaml). Frontend and backend also talk via a contract. The contracts are in git, with their own version, and in an API registry (Apicurio Registry).
 4. **Intents:** Ordering.
 
 In this version kitchen, bar and till exist as stubs: separate containers, not part of the sub-product. The intent is not the sub-product: which sub-product fulfils an intent is an architecture choice.
@@ -40,7 +43,9 @@ In this version kitchen, bar and till exist as stubs: separate containers, not p
 
 What is in what: product, sub-product and container, with the verb that belongs to each level.
 
-<Plaat lang="en" bestand="productplaat-sk-demo.svg" alt="Product picture ShowKitchen: product, sub-product Ordering with frontend and backend containers, and the stubs kitchen, bar and till" />
+<Plaat lang="en" bestand="productplaat-sk-bestellen.svg" alt="Product picture ShowKitchen: product, sub-product Ordering 1.0.0 with frontend (Angular) and backend (Kotlin) containers, and the stubs kitchen, bar and till" />
+
+Frontend in Angular, backend in Kotlin (Ktor). The versions come from one source: [versions.env](https://github.com/fcd-labs/sk-bestellen/blob/main/versions.env) in sk-bestellen. Releasing happens per sub-product; containers have their own lifecycle.
 
 ## Who does the work
 
@@ -50,6 +55,33 @@ The squad is Claude Code with agents: AI agents only. That is why the product ow
 
 How the product comes into being and stays alive, with the principles: comply or explain.
 
-<Plaat lang="en" bestand="procesplaat-fcd-demo.svg" alt="Process picture FCD-Demo: intention, build, deploy, release, use and learn, with 26 principles" />
+<Plaat lang="en" bestand="procesplaat-fcd-demo.svg" alt="Process picture FCD-Demo: intention, build, deploy, release, use and learn; the pipeline with 10 steps and the quality gates; 26 principles" />
 
 The pictures are in Dutch.
+
+## The pipeline
+
+One bash script is the only way to build, test, check, deploy and release. The Pipeline runs locally, only takes what has been merged from a local git server, and deploys with docker-compose. It starts with the button on the Dashboard: the approval by the product owner.
+
+| Block | Steps | Quality gate |
+|---|---|---|
+| Build, per container | 1. Static check, 2. Unit tests, 3. Contract test | Code gate |
+| | 4. Build | |
+| Build, the sub-product | 5. Integration tests | Build gate |
+| | 6. Security and freshness, 7. SBOM and licences | Security gate |
+| Deploy | 8. Deploy, 9. End-to-end tests | Deploy gate |
+| Release | 10. Release: a tag and the changelog | Approval, before releasing |
+
+If a gate closes, the pipeline stops: nothing is deployed or released. The pipeline is deliberately incomplete: ESLint, test coverage, the consumer contract test, DAST and performance tests are on the picture and the Dashboard as backlog. Grow through doing.
+
+## Learning
+
+The Dashboard closes the circle. It shows the key result from the intent: does every order reach kitchen, bar and till (the stubs)? It also shows the pipeline live, per step and per gate, the new version and the changelog.
+
+## The demo
+
+Ordering 1.0.0 has a deliberate bug: an order does not reach the bar. The key result is red. The patch 1.0.1 is ready. The product owner starts the pipeline, you watch the steps and gates live, and then the order does reach the bar: the key result is green. Measure, learn, fix.
+
+## Deviations for the demo
+
+All steps and gates stay. To keep the pipeline within 5 minutes, five steps are shortened for the demo only, with approved deviations: the images are pre-warmed, the security, freshness and licence scan comes from the cache, end-to-end runs only the core path "place an order", and releasing is a local tag without a GitHub Release. Nothing is pushed to remote during the demo. Everything runs locally, in one environment, with docker-compose instead of Kubernetes.

@@ -8,9 +8,12 @@ De kleinste way of working van Full Circle Delivery die de hele cirkel rond gaat
 
 | | Way of working | Product |
 |---|---|---|
-| Naam | fcd-demo | sk-demo |
-| Declaratief bestand | [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml) | [sk-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-demo.fcd.yaml) |
-| Code | komt in fcd-labs | komt in fcd-labs |
+| Naam | fcd-demo | ShowKitchen, deelproduct Bestellen |
+| Repository | [fcd-demo](https://github.com/fcd-labs/fcd-demo): configuratie, geen code | [sk-bestellen](https://github.com/fcd-labs/sk-bestellen): voor alle showcases |
+| Declaratief bestand | [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml) | [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml) |
+| Versie | Pipeline 0.7.0, Dashboard 0.5.0 | Bestellen 1.0.0; de patch maakt er 1.0.1 van |
+
+Pipeline ([fcd-pipeline](https://github.com/fcd-labs/fcd-pipeline)) en Dashboard ([fcd-dashboard](https://github.com/fcd-labs/fcd-dashboard)) zijn deelproducten van FCD: één Pipeline en één Dashboard voor alle showcases. Wat per showcase verschilt, staat in de configuratie, niet in de code. De declaratieve bestanden hier zijn een kopie uit [fcd-demo](https://github.com/fcd-labs/fcd-demo/tree/main/fcd).
 
 ## Het experiment
 
@@ -31,7 +34,7 @@ Waarom en meten staan apart: het waarom is de richting en verandert weinig; het 
 
 1. **Verantwoordelijkheid.** Wel: het menu tonen, de gast laten kiezen, en de bestelling versturen naar keuken, bar en kassa. Niet: het menu beheren, en betalen. Het menu is een vast, declaratief bestand in de repository; een menu wijzigen gaat via de pipeline.
 2. **Gebruikers:** de gast.
-3. **Interfaces:** Bestellen verstuurt één bestelling, de hele bestelling, rechtstreeks naar keuken, bar en kassa, volgens een contract (contract first).
+3. **Interfaces:** Bestellen verstuurt één bestelling, de hele bestelling, rechtstreeks naar keuken, bar en kassa, volgens een contract (contract first): [order.openapi.yaml](https://github.com/fcd-labs/sk-bestellen/blob/main/contracts/order.openapi.yaml). Ook frontend en backend praten via een contract. De contracten staan in git, met een eigen versie, en in een API-register (Apicurio Registry).
 4. **Intents:** Bestellen.
 
 Keuken, bar en kassa bestaan in deze versie als stubs: losse containers, geen onderdeel van het deelproduct. De intent is niet het deelproduct: welk deelproduct een intent waarmaakt, is een architectuurkeuze.
@@ -40,7 +43,9 @@ Keuken, bar en kassa bestaan in deze versie als stubs: losse containers, geen on
 
 Wat zit in wat: product, deelproduct en container, met het werkwoord dat bij elk niveau hoort.
 
-<Plaat bestand="productplaat-sk-demo.svg" alt="Productplaat ShowKitchen: product, deelproduct Bestellen met containers frontend en backend, en de stubs keuken, bar en kassa" />
+<Plaat bestand="productplaat-sk-bestellen.svg" alt="Productplaat ShowKitchen: product, deelproduct Bestellen 1.0.0 met containers frontend (Angular) en backend (Kotlin), en de stubs keuken, bar en kassa" />
+
+Frontend in Angular, backend in Kotlin (Ktor). De versies komen uit één bron: [versions.env](https://github.com/fcd-labs/sk-bestellen/blob/main/versions.env) in sk-bestellen. Releasen gebeurt op het deelproduct; containers hebben een eigen lifecycle.
 
 ## Wie doet het werk
 
@@ -50,4 +55,31 @@ De squad is Claude Code met agents: alleen AI-agents. Daarom is de product owner
 
 Hoe het product ontstaat en levend blijft, met de kaders: comply or explain.
 
-<Plaat bestand="procesplaat-fcd-demo.svg" alt="Procesplaat FCD-Demo: intentie, bouwen, deployen, releasen, gebruiken en leren, met 26 kaders" />
+<Plaat bestand="procesplaat-fcd-demo.svg" alt="Procesplaat FCD-Demo: intentie, bouwen, deployen, releasen, gebruiken en leren; de pipeline met 10 stappen en de quality gates; 26 kaders" />
+
+## De pipeline
+
+Eén bash-script is de enige weg om te bouwen, te testen, te controleren, uit te rollen en te releasen. De Pipeline draait lokaal, haalt alleen wat gemerged is uit een lokale git-server en rolt uit met docker-compose. Hij start met de knop op het Dashboard: de goedkeuring door de product owner.
+
+| Blok | Stappen | Quality gate |
+|---|---|---|
+| Bouwen, per container | 1. Statische controle, 2. Unittests, 3. Contracttest | Codegate |
+| | 4. Bouwen | |
+| Bouwen, het deelproduct | 5. Integratietests | Bouwgate |
+| | 6. Security en versheid, 7. SBOM en licenties | Securitygate |
+| Deployen | 8. Deployen, 9. End-to-end tests | Uitrolgate |
+| Releasen | 10. Releasen: een tag en de changelog | Goedkeuring, vóór het releasen |
+
+Valt een gate dicht, dan stopt de pipeline: er wordt niet uitgerold en niet gereleased. De pipeline is bewust niet compleet: ESLint, testdekking, de consumer-contracttest, DAST en performancetests staan als backlog op de plaat en op het Dashboard. Grow through doing.
+
+## Leren
+
+Het Dashboard maakt de cirkel rond. Het toont het key result uit de intent: komt elke bestelling aan bij keuken, bar en kassa (de stubs)? Daarnaast de pipeline live, per stap en per gate, de nieuwe versie en de changelog.
+
+## De demo
+
+Bestellen 1.0.0 heeft een bewuste fout: een bestelling komt niet aan bij de bar. Het key result is rood. De patch 1.0.1 staat klaar. De product owner start de pipeline, je ziet live de stappen en gates, en daarna komt de bestelling wél aan bij de bar: het key result is groen. Meten, leren, herstellen.
+
+## Afwijkingen voor de demo
+
+Alle stappen en gates blijven. Om de pipeline binnen 5 minuten te houden, zijn vijf stappen alleen voor de demo ingekort, met goedgekeurde afwijkingen: de images zijn vooraf opgewarmd, de scan op security, versheid en licenties komt uit de cache, end-to-end draait alleen het kernpad "bestelling plaatsen", en releasen is een lokale tag zonder GitHub Release. Tijdens de demo gaat er niets naar remote. Alles draait lokaal, op één omgeving, met docker-compose in plaats van Kubernetes.

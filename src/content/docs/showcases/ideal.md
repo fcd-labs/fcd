@@ -12,7 +12,7 @@ Hetzelfde product als in [Demo](demo.md): ShowKitchen, met dezelfde persona en d
 
 | | Way of working | Product |
 |---|---|---|
-| Naam | fcd-ideal | sk-ideal |
+| Naam | fcd-ideal | ShowKitchen: dezelfde deelproducten als in Demo, zoals [sk-bestellen](https://github.com/fcd-labs/sk-bestellen) |
 | Declaratief bestand | nog te maken | nog te maken |
 
 ## Backlog

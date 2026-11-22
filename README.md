@@ -46,7 +46,8 @@ FCD_ICONS=pad/naar/@fluentui/svg-icons/icons/ generators/genereer.sh
 ```
 
 Nodig: Python 3 met pyyaml en pillow, het lettertype Inter en de Fluent UI-iconen
-(`npm install @fluentui/svg-icons`). Pas het declaratieve bestand aan, genereer
+(`npm install @fluentui/svg-icons`). De versies op de productplaat komen uit `versions.env` van
+het deelproduct (standaard `../sk-bestellen/versions.env`, anders `FCD_VERSIONS`). Pas het declaratieve bestand aan, genereer
 opnieuw en commit beide. Het declaratieve bestand levert de plaat, niet andersom.
 
 Een codeblok met taal `mermaid` wordt een diagram
