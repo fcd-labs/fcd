@@ -19,6 +19,7 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 | FCD-model | Eén taal: de bouwstenen, per perspectief geplaatst. Niet CD-model. |
 | Jouw FCD-model | Waar je staat, waar je heen wilt, welk perspectief aandacht nodig heeft. |
 | Declaratief bestand | Jouw FCD-model vastgelegd: wat en waarom, reproduceerbaar. Het levert de platen, niet andersom. |
+| FCD-taal | Eén taal voor mens en machine: de woorden en regels van het FCD-model (intent, deelproduct, kader, quality gate), met de woorden die de markt al kent. Het declaratieve bestand (`*.fcd.yaml`, `apiVersion: fcd/v0`) is de FCD-taal voor de machine. |
 | Continuous delivery | Een perspectief binnen FCD: er is altijd een werkende weg naar productie. |
 | Backlog | Wat het FCD-model vraagt en nog niet is ingevuld. Niet "gaten". |
 | FCD-criteria | Betrouwbaar, veilig, volledig, effectief, efficiënt en budget. Voor het product én voor FCD. |
