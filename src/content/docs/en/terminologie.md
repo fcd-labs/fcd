@@ -19,6 +19,7 @@ Borrow words where the market has them, only add what the market lacks. The mark
 | FCD model | One language: the building blocks, placed per perspective. Not CD model. |
 | Your FCD model | Where you are, where you want to go, which perspective needs attention. |
 | Declarative file | Your FCD model captured: what and why, reproducible. It produces the pictures, not the other way round. |
+| FCD language (*FCD-taal*) | One language for people and machines: the words and rules of the FCD model (intent, sub-product, principle, quality gate), using words the market already knows. The declarative file (`*.fcd.yaml`, `apiVersion: fcd/v0`) is the FCD language for machines. |
 | Continuous delivery | A perspective within FCD: there is always a working path to production. |
 | Backlog | What the FCD model asks for and is not yet filled in. Not "gaps". |
 | FCD criteria | Reliable, secure and safe, complete, effective, efficient and budget. For the product and for FCD. |
