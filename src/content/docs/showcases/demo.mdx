@@ -20,7 +20,7 @@ Het begint bij fcd, het FCD-model: één taal, de FCD-taal, met de bouwstenen va
 
 ## Beschrijving van FCD-demo
 
-In FCD-demo werken één product owner en twee squads AI samen (people): een squad voor sk-bestellen, en een platformsquad voor het platform, de pipeline en het Dashboard. Ze werken van intent naar product (process), aan sk-bestellen (product). Binnen de squad is er autonomie in het hoe, binnen de kaders: comply or explain.
+In FCD-demo werken één product owner en twee squads AI samen (people): een squad voor sk-bestellen, en een platformsquad voor het platform, de pipeline en het Dashboard. Ze werken van intent naar product (process), aan sk-bestellen (product). Binnen de squad is er autonomie in het hoe, binnen de kaders: comply or explain. De product owner is eigenaar van het deelproduct en keurt afwijkingen goed: aanspreekbaarheid ligt altijd bij een mens.
 
 ## De kaders in FCD-demo
 
@@ -49,6 +49,8 @@ Transparant door de hele cirkel: iedereen kijkt naar hetzelfde Dashboard, met he
 Dat is continuous compliance. Niet vooraf vastleggen hoe de code moet zijn, maar bij elke wijziging aantonen dat het product doet wat de intent belooft, binnen de kaders. De intent blijft; de code mag elke keer anders zijn. Het bewijs ontstaat onderweg, en iedereen ziet hetzelfde.
 
 <Plaat bestand="productplaat-sk-bestellen.svg" alt="Productplaat sk-bestellen: het deelproduct Bestellen met containers frontend en backend, de stubs keuken, bar en kassa, en de versies van wat er draait" />
+
+Wat zit in wat: product, deelproduct en container. Frontend in Angular, backend in Kotlin (Ktor). De versies komen uit één bron: [versions.env](https://github.com/fcd-labs/sk-bestellen/blob/main/versions.env) in sk-bestellen. Releasen gebeurt op het deelproduct; containers hebben een eigen lifecycle.
 
 ## De perspectieven in FCD-demo
 
@@ -114,23 +116,8 @@ Waarom en meten staan apart: het waarom is de richting en verandert weinig; het 
 
 Keuken, bar en kassa bestaan in deze versie als stubs: losse containers, geen onderdeel van het deelproduct. De intent is niet het deelproduct: welk deelproduct een intent waarmaakt, is een architectuurkeuze.
 
-## De productplaat
 
-Wat zit in wat: product, deelproduct en container, met het werkwoord dat bij elk niveau hoort.
 
-De productplaat staat hierboven, bij [Wat je ziet in FCD-demo](#wat-je-ziet-in-fcd-demo).
-
-Frontend in Angular, backend in Kotlin (Ktor). De versies komen uit één bron: [versions.env](https://github.com/fcd-labs/sk-bestellen/blob/main/versions.env) in sk-bestellen. Releasen gebeurt op het deelproduct; containers hebben een eigen lifecycle.
-
-## Wie doet het werk
-
-Er zijn twee squads AI, allebei Claude Code met agents: alleen AI-agents. De squad voor sk-bestellen, en de platformsquad voor het platform, de Pipeline en het Dashboard. Binnen de squad is er autonomie in het hoe, binnen de kaders: comply or explain. Daarom is de product owner eigenaar van het deelproduct en keurt hij afwijkingen goed. Aanspreekbaarheid ligt altijd bij een mens.
-
-## De Full Circle Delivery-plaat
-
-Hoe het product ontstaat en levend blijft, met de kaders: comply or explain.
-
-De Full Circle Delivery-plaat staat hierboven, bij [De kaders in FCD-demo](#de-kaders-in-fcd-demo).
 
 ## De pipeline
 
@@ -147,13 +134,7 @@ Eén bash-script is de enige weg om te bouwen, te testen, te controleren, uit te
 
 Valt een gate dicht, dan stopt de pipeline: er wordt niet uitgerold en niet gereleased. De pipeline is bewust niet compleet: ESLint, testdekking, de consumer-contracttest, DAST en performancetests staan als backlog op de plaat en op het Dashboard. Grow through doing.
 
-## Leren
-
-Het Dashboard maakt de cirkel rond. Het toont het key result uit de intent: komt elke bestelling aan bij keuken, bar en kassa (de stubs)? Daarnaast de pipeline live, per stap en per gate, de nieuwe versie en de changelog.
-
-## De demo
-
-Bestellen 1.0.0 heeft een bewuste fout: een bestelling komt niet aan bij de bar. Het key result is rood. De patch 1.0.1 staat klaar. De product owner start de pipeline, je ziet live de stappen en gates, en daarna komt de bestelling wél aan bij de bar: het key result is groen. Meten, leren, herstellen.
+Het Dashboard toont de pipeline live, per stap en per gate, met de nieuwe versie en de changelog.
 
 ## Afwijkingen voor de demo
 
@@ -165,7 +146,7 @@ FCD-demo is gemaakt door een product owner, Claude in de chat en twee squads AI.
 
 ### Kennis in het model
 
-AI heeft FCD niet bedacht. Het FCD-model bundelt vakkennis over kwaliteit, testen, audit, releasen en continuous delivery: de kaders, de quality gates, comply or explain, één bron. Die kennis vormt het harnas: de kaders van FCD-demo, op de [Full Circle Delivery-plaat](#de-full-circle-delivery-plaat) hierboven. AI hielp het model uit te werken en de showcase te bouwen.
+AI heeft FCD niet bedacht. Het FCD-model bundelt vakkennis over kwaliteit, testen, audit, releasen en continuous delivery: de kaders, de quality gates, comply or explain, één bron. Die kennis vormt het harnas: de kaders van FCD-demo, op de [Full Circle Delivery-plaat](#de-kaders-in-fcd-demo) hierboven. AI hielp het model uit te werken en de showcase te bouwen.
 
 ### Eén intent
 
