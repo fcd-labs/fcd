@@ -12,6 +12,7 @@ metadata:
   title: ShowKitchen
 spec:
   description: Software as a service voor restaurants
+  plateBacklog: false   # de plaat toont geen backlog (besluit sim007, 25 november 2026)
 ---
 apiVersion: fcd/v0
 kind: Group

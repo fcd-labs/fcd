@@ -86,6 +86,20 @@ def chip(*a, **k):
     w = _chip(*a, **k)
     if d: add('</g>')
     return w
+
+def zonder_backlog(regels):
+    """Laat alle groepen met class backlog weg."""
+    uit, diep = [], 0
+    for r in regels:
+        if diep == 0 and r == '<g class="backlog">':
+            diep = 1; continue
+        if diep:
+            diep += r.count("<g") - r.count("</g>")
+            continue
+        uit.append(r)
+    return uit
+# Schakelaar in het bestand: spec.plateBacklog: false laat de backlog van de plaat weg.
+TOON_BACKLOG = (spec(by["Product"][0]).get("plateBacklog", True) is not False) if by.get("Product") else True
 gaps = []
 def gap(s):
     if s not in gaps: gaps.append(s)
@@ -237,6 +251,7 @@ for g_ in gaps:
     y += len(ls_) * 34 + 16
 add('</g>')
 add("</svg>")
+if not TOON_BACKLOG: out = zonder_backlog(out); gaps = []
 open(dst, "w").write("\n".join(out))
 json.dump(gaps, open(dst + ".backlog.json", "w"), ensure_ascii=False)
 print(len(gaps), "backlog"); [print(" -", g_) for g_ in gaps]

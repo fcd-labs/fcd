@@ -14,6 +14,7 @@ metadata:
 spec:
   description: De eerste, kleinste way of working die de hele cirkel rond gaat. AI als versneller.
   showcase: demo
+  plateBacklog: false   # de plaat toont geen backlog (besluit sim007, 25 november 2026)
   experiment: mvp0
   product: showkitchen
   intentParts:

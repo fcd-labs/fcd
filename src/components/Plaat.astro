@@ -19,6 +19,7 @@ const svg = fs
   .readFileSync(path.join(process.cwd(), "public", "platen", bestand), "utf8")
   .replace("<svg ", `<svg role="img" aria-label="${alt.replace(/"/g, "&quot;")}" `)
   .replace(/ width="\d+" height="\d+"/, "");
+const heeftBacklog = svg.includes('class="backlog"');
 const url = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/platen/${bestand}`;
 const t =
   lang === "en"
@@ -28,7 +29,7 @@ const t =
 
 <figure class="plaat not-content">
   <div class="plaat-balk">
-    <label><input type="checkbox" checked /> {t.toon}</label>
+    {heeftBacklog && <label><input type="checkbox" checked /> {t.toon}</label>}
     <a href={url}>{t.groot}</a>
   </div>
   <div class="plaat-svg" set:html={svg} />
