@@ -67,6 +67,23 @@ erDiagram
 
 Modelkeuzes: één of meer persona's per domein, en één monorepo per deelproduct of één repository per service.
 
+### Kaders, perspectieven en inrichtingskeuzes
+
+Concept: deze relaties zijn nog te bevestigen.
+
+```mermaid
+erDiagram
+    KADER }|--|{ PERSPECTIEF : "hangt aan"
+    KADER }o--o{ KADER : "is onderdeel van"
+    INRICHTINGSKEUZE }o--|| KADER : "vult in"
+    INRICHTINGSKEUZE }o--o| DEELPRODUCT : "geldt voor"
+    INRICHTINGSKEUZE }o--o| WAY_OF_WORKING : "geldt voor"
+    QUALITY_GATE }o--|{ KADER : "toetst"
+    AFWIJKING }o--|| KADER : "verwijst naar"
+```
+
+Een afwijking zegt: we volgen het kader niet, en waarom. Een inrichtingskeuze zegt: zó volgen we het kader. Een inrichtingskeuze geldt voor één deelproduct, zoals een database, of voor de hele way of working, zoals docker-compose.
+
 ## FCD-criteria
 
 Zes criteria. Ze gelden voor het product én voor FCD zelf.
@@ -95,14 +112,17 @@ Status *bevestigd*: beschrijving bevestigd. Status *concept*: beschrijving nog t
 | Squad<br/>`Group` (type: squad, `composition`) | Group, soort squad (Backstage) | Bestaat uit teams die werken aan maatwerksoftware van één domein. Is eigenaar van deelproducten. Samenstelling: mensen, mensen en AI-agents, of alleen AI-agents. | bevestigd |
 | Mens<br/>`Human` | User (Backstage), Person | Een mens in de organisatie, zoals een product owner of ontwikkelaar. Kan eigenaar zijn en goedkeuren. Lid van een squad. | bevestigd |
 | AI-agent<br/>`AIAgent` | geen vaste term; eigen object | Een AI-agent die werk doet in een squad, zoals bouwen, testen of reviewen. Kan geen eigenaar zijn en niet goedkeuren. | bevestigd |
-| Kader<br/>`Principle` | Principle (ArchiMate, TOGAF) | Eén richtinggevende uitspraak, met wat en waarom. Kan aan meerdere perspectieven hangen. Comply or explain. Eigenschap: explain toegestaan (ja of nee). | bevestigd |
+| Kader<br/>`Principle` | Principle (ArchiMate, TOGAF) | Eén richtinggevende uitspraak, met wat en waarom. Kan aan meerdere perspectieven hangen, en onderdeel zijn van andere kaders. Comply or explain. Eigenschap: explain toegestaan (ja of nee). | bevestigd |
 | Afwijking<br/>`Explanation` | PolicyException (Kyverno) | De explain bij een kader. Verwijst naar één kader en naar het object dat afwijkt. Met reden, goedkeurder en einddatum. De goedkeurder is altijd een mens: de eigenaar. | bevestigd |
 | Team<br/>`Group` (type: team) | Group, soort team (Backstage) | Wie het werk doet. Soorten zijn mogelijk, zoals een platformteam. | concept |
 | Product<br/>`Product` | vergelijkbaar: System (Backstage) | Deelproducten vormen samen een product. Eigen versie (semantic versioning). | bevestigd |
 | Deelproduct<br/>`SubProduct` | vergelijkbaar: Component (Backstage); bewust niet overgenomen | De eenheid van deployment en van release. Bestaat uit één of meer containers. Een squad is eigenaar. Eigen versie (semantic versioning). Heeft één of meer repositories. | bevestigd |
 | Pipeline-actie<br/>`PipelineAction` | TaskRun binnen PipelineRun (CDEvents) | Een stap waarmee een deelproduct geleverd wordt. | concept |
 | Omgeving<br/>`Environment` | Environment (CDEvents) | Waar een deelproduct terechtkomt. | concept |
-| Quality gate<br/>`QualityGate` | geen; eigen term | Een moment waarop iets wel of niet door mag. | concept |
+| Quality gate<br/>`QualityGate` | geen; eigen term | Een moment waarop iets wel of niet door mag. Toetst tegen één of meer kaders. | concept |
+| Perspectief<br/>`Perspective` | Viewpoint (ISO/IEC/IEEE 42010) | Een manier van kijken, zoals domein, testen of security. Tien perspectieven, ook het lege vak. Elk perspectief heeft kaders. | concept |
+| Inrichtingskeuze<br/>`Decision` | Architecture Decision Record (ADR) | Hoe een way of working een kader invult, zoals PostgreSQL of docker-compose. Verwijst naar één kader. Geldt voor één deelproduct of voor de hele way of working. | concept |
+| Way of working<br/>`WayOfWorking` | Way of Working (OMG Essence) | Hoe jouw FCD werkt: de pipeline, de kaders, de inrichtingskeuzes en de afwijkingen. FCD-demo is een way of working. | concept |
 | Dashboard<br/>`Dashboard` | geen; eigen term | Maakt zichtbaar hoe het gaat. | concept |
 | Repository<br/>`Repository` | Source (SLSA) | Waar de code staat van één of meer services van één deelproduct. Gaat nooit over de grens van een deelproduct heen. | bevestigd |
 | Open source software (OSS)<br/>`OpenSourceComponent` | Component (CycloneDX) | Open source componenten die worden gebruikt. Ook eigen code kan open source zijn. | concept |
