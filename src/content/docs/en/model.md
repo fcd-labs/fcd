@@ -67,6 +67,23 @@ erDiagram
 
 Model choices: one or more personas per domain, and one monorepo per sub-product or one repository per service.
 
+### Principles, perspectives and design decisions
+
+Concept: these relationships are still to be confirmed.
+
+```mermaid
+erDiagram
+    PRINCIPLE }|--|{ PERSPECTIVE : "belongs to"
+    PRINCIPLE }o--o{ PRINCIPLE : "is part of"
+    DECISION }o--|| PRINCIPLE : "fills in"
+    DECISION }o--o| SUB_PRODUCT : "applies to"
+    DECISION }o--o| WAY_OF_WORKING : "applies to"
+    QUALITY_GATE }o--|{ PRINCIPLE : "checks"
+    DEVIATION }o--|| PRINCIPLE : "refers to"
+```
+
+A deviation says: we do not follow the principle, and why. A design decision says: this is how we follow the principle. A design decision applies to one sub-product, such as a database, or to the whole way of working, such as docker-compose.
+
 ## FCD criteria
 
 Six criteria. They apply to the product and to FCD itself.
@@ -95,14 +112,17 @@ Status *confirmed*: description confirmed. Status *concept*: description still t
 | Squad<br/>`Group` (type: squad, `composition`) | Group, kind squad (Backstage) | Consists of teams working on custom software for one domain. Owns sub-products. Composition: humans, humans and AI agents, or AI agents only. | confirmed |
 | Human<br/>`Human` | User (Backstage), Person | A human in the organisation, such as a product owner or developer. Can be owner and approve. Member of a squad. | confirmed |
 | AI agent<br/>`AIAgent` | no fixed term; own object | An AI agent doing work in a squad, such as building, testing or reviewing. Cannot be owner and cannot approve. | confirmed |
-| Principle (*kader*)<br/>`Principle` | Principle (ArchiMate, TOGAF) | One guiding statement, with what and why. Can belong to several perspectives. Comply or explain. Property: explain allowed (yes or no). | confirmed |
+| Principle (*kader*)<br/>`Principle` | Principle (ArchiMate, TOGAF) | One guiding statement, with what and why. Can belong to several perspectives, and be part of other principles. Comply or explain. Property: explain allowed (yes or no). | confirmed |
 | Deviation<br/>`Explanation` | PolicyException (Kyverno) | The explain for a principle. Refers to one principle and to the object that deviates. With reason, approver and end date. The approver is always a human: the owner. | confirmed |
 | Team<br/>`Group` (type: team) | Group, kind team (Backstage) | Who does the work. Kinds are possible, such as a platform team. | concept |
 | Product<br/>`Product` | comparable: System (Backstage) | Sub-products together form a product. Own version (semantic versioning). | confirmed |
 | Sub-product<br/>`SubProduct` | comparable: Component (Backstage); deliberately not adopted | The unit of deployment and of release. Consists of one or more containers. A squad owns it. Own version (semantic versioning). Has one or more repositories. | confirmed |
 | Pipeline action<br/>`PipelineAction` | TaskRun within PipelineRun (CDEvents) | A step that delivers a sub-product. | concept |
 | Environment<br/>`Environment` | Environment (CDEvents) | Where a sub-product lands. | concept |
-| Quality gate<br/>`QualityGate` | none; own term | A moment where something may or may not pass. | concept |
+| Quality gate<br/>`QualityGate` | none; own term | A moment where something may or may not pass. Checks against one or more principles. | concept |
+| Perspective (*perspectief*)<br/>`Perspective` | Viewpoint (ISO/IEC/IEEE 42010) | A way of looking, such as domain, testing or security. Ten perspectives, including the empty box. Each perspective has principles. | concept |
+| Design decision (*inrichtingskeuze*)<br/>`Decision` | Architecture Decision Record (ADR) | How a way of working fills in a principle, such as PostgreSQL or docker-compose. Refers to one principle. Applies to one sub-product or to the whole way of working. | concept |
+| Way of working<br/>`WayOfWorking` | Way of Working (OMG Essence) | How your FCD works: the pipeline, the principles, the design decisions and the deviations. FCD-demo is a way of working. | concept |
 | Dashboard<br/>`Dashboard` | none; own term | Shows how things are going. | concept |
 | Repository<br/>`Repository` | Source (SLSA) | Where the code of one or more services of one sub-product lives. Never crosses the boundary of a sub-product. | confirmed |
 | Open source software (OSS)<br/>`OpenSourceComponent` | Component (CycloneDX) | Open source components in use. Your own code can be open source too. | concept |
