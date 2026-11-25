@@ -55,6 +55,20 @@ def chip(*a, **k):
     w = _chip(*a, **k)
     if d: add('</g>')
     return w
+
+def zonder_backlog(regels):
+    """Laat alle groepen met class backlog weg."""
+    uit, diep = [], 0
+    for r in regels:
+        if diep == 0 and r == '<g class="backlog">':
+            diep = 1; continue
+        if diep:
+            diep += r.count("<g") - r.count("</g>")
+            continue
+        uit.append(r)
+    return uit
+# Schakelaar in het bestand: spec.plateBacklog: false laat de backlog van de plaat weg.
+TOON_BACKLOG = (spec(by["Factory"][0]).get("plateBacklog", True) is not False) if by.get("Factory") else True
 gaps = []
 def gap(s):
     if s not in gaps: gaps.append(s)
@@ -82,7 +96,7 @@ if porder:
             rows.append(("label", "per container" if l == "container" else "het deelproduct")); lvl = l
         nr += 1; rows.append(("step", STEPS[n], nr))
         for b_ in by.get("Step", []):
-            if spec(b_).get("status") == "backlog" and spec(b_).get("after") == n: rows.append(("backlog", b_))
+            if TOON_BACKLOG and spec(b_).get("status") == "backlog" and spec(b_).get("after") == n: rows.append(("backlog", b_))
         for g in GATES:
             if (spec(g).get("afterSteps") or [None])[-1] == n: rows.append(("gate", g))
 GEXP = {}
@@ -198,7 +212,7 @@ if porder:
     y += 26
     add(f'<path d="M{x0+12},{y-20} l12,12 l-12,12 l-12,-12 z" fill="{INK}"/>'); text(x0 + 36, y, "quality gate", 23); y += 50
     _chip(x0, y - 26, "ingekort", C_EXP, 19); text(x0 + tw("ingekort", 19, True) + 44, y - 4, "alleen voor de demo", 21, False, MUTED); y += 50
-    chip(x0, y - 26, "backlog", C_GAP, 19, dashed=True); text(x0 + tw("backlog", 19, True) + 44, y - 4, "nog niet gebouwd", 21, False, MUTED)
+    if TOON_BACKLOG: chip(x0, y - 26, "backlog", C_GAP, 19, dashed=True); text(x0 + tw("backlog", 19, True) + 44, y - 4, "nog niet gebouwd", 21, False, MUTED)
     for cn, rows in cols3.items():
         x = colx[cn]; c = colc[cn]; y = BY + 40
         text(x, y + 24, cn.upper(), 22, True, c, ls=2); y += 56
@@ -342,6 +356,7 @@ for g_ in gaps:
     y += 18
 add('</g>')
 add("</svg>")
+if not TOON_BACKLOG: out = zonder_backlog(out); gaps = []
 open(dst, "w").write("\n".join(out))
 json.dump(gaps, open(dst + ".backlog.json", "w"), ensure_ascii=False)
 print(len(gaps), "backlog"); [print(" -", g_) for g_ in gaps]
