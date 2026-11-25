@@ -4,13 +4,13 @@ title: "Demo"
 
 import Plaat from "../../../components/Plaat.astro";
 
-> Eerst het verhaal? Lees [fcd-demo in werking](/fcd/showcases/in-werking/): één bestelling, de hele cirkel, alle perspectieven.
+> Eerst het verhaal? Lees [FCD-demo in werking](/fcd/showcases/in-werking/): één bestelling, de hele cirkel, alle perspectieven.
 
 De kleinste way of working van Full Circle Delivery die de hele cirkel rond gaat: intentie, delivery, product, leren. AI als versneller. Met ShowKitchen met één deelproduct.
 
 | | Way of working | Product |
 |---|---|---|
-| Naam | fcd-demo | ShowKitchen, deelproduct Bestellen |
+| Naam | FCD-demo | ShowKitchen, deelproduct Bestellen |
 | Repository | [fcd-demo](https://github.com/fcd-labs/fcd-demo): configuratie, geen code | [sk-bestellen](https://github.com/fcd-labs/sk-bestellen): voor alle showcases |
 | Declaratief bestand | [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml) | [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml) |
 | Versie | Pipeline 0.7.0, Dashboard 0.5.0 | Bestellen 1.0.0; de patch maakt er 1.0.1 van |
@@ -20,6 +20,8 @@ Pipeline ([fcd-pipeline](https://github.com/fcd-labs/fcd-pipeline)) en Dashboard
 ## Het experiment
 
 Zijn één intent en één beschrijving van een deelproduct samen genoeg voor een AI-squad om het deelproduct te bouwen?
+
+Het antwoord: ja, mits het harnas er staat. Lees verderop [hoe FCD-demo is gemaakt](#hoe-fcd-demo-is-gemaakt): door een product owner, Claude in de chat en twee squads AI.
 
 ## De intent: Bestellen
 
@@ -51,13 +53,13 @@ Frontend in Angular, backend in Kotlin (Ktor). De versies komen uit één bron: 
 
 ## Wie doet het werk
 
-De squad is Claude Code met agents: alleen AI-agents. Daarom is de product owner eigenaar van het deelproduct en keurt hij afwijkingen goed. Aanspreekbaarheid ligt altijd bij een mens.
+Er zijn twee squads AI, allebei Claude Code met agents: alleen AI-agents. De squad voor sk-bestellen, en de platformsquad voor het platform, de Pipeline en het Dashboard. Binnen de squad is er autonomie in het hoe, binnen de kaders: comply or explain. Daarom is de product owner eigenaar van het deelproduct en keurt hij afwijkingen goed. Aanspreekbaarheid ligt altijd bij een mens.
 
 ## De Full Circle Delivery-plaat
 
 Hoe het product ontstaat en levend blijft, met de kaders: comply or explain.
 
-<Plaat bestand="fcdplaat-fcd-demo.svg" alt="Full Circle Delivery-plaat FCD-Demo: intentie, bouwen, deployen, releasen, gebruiken en leren; de pipeline met 10 stappen en de quality gates; 30 kaders" />
+<Plaat bestand="fcdplaat-fcd-demo.svg" alt="Full Circle Delivery-plaat FCD-demo: intentie, bouwen, deployen, releasen, gebruiken en leren; de pipeline met 10 stappen en de quality gates; 30 kaders" />
 
 ## De pipeline
 
@@ -85,3 +87,57 @@ Bestellen 1.0.0 heeft een bewuste fout: een bestelling komt niet aan bij de bar.
 ## Afwijkingen voor de demo
 
 Alle stappen en gates blijven. Om de pipeline binnen 5 minuten te houden, zijn vijf stappen alleen voor de demo ingekort, met goedgekeurde afwijkingen: de images zijn vooraf opgewarmd, de scan op security, versheid en licenties komt uit de cache, end-to-end draait alleen het kernpad "bestelling plaatsen", en releasen is een lokale tag zonder GitHub Release. Tijdens de demo gaat er niets naar remote. Alles draait lokaal, op één omgeving, met docker-compose in plaats van Kubernetes.
+
+## Hoe FCD-demo is gemaakt
+
+FCD-demo is gemaakt door een product owner, Claude in de chat en twee squads AI. Het antwoord op het experiment: één intent en één beschrijving van een deelproduct zijn genoeg, mits het harnas er staat.
+
+### Kennis in het model
+
+AI heeft FCD niet bedacht. Het FCD-model bundelt vakkennis over kwaliteit, testen, audit, releasen en continuous delivery: de kaders, de quality gates, comply or explain, één bron. Die kennis vormt het harnas: de kaders van FCD-demo, op de [Full Circle Delivery-plaat](#de-full-circle-delivery-plaat) hierboven. AI hielp het model uit te werken en de showcase te bouwen.
+
+### Eén intent
+
+Het begon met één zin, [de intent Bestellen](#de-intent-bestellen): als gast wil ik uit een menu kiezen, zodat mijn bestelling bij keuken, bar en kassa terechtkomt. En met één vraag: is één intent, met een beschrijving van het deelproduct, genoeg voor een squad AI?
+
+### Twee sporen tegelijk
+
+Het model en de showcase groeiden parallel. Het model gaf de showcase richting; de showcase liet zien waar het model nog niet klopte. Het model groeide eerst in gesprekken in de chat; de showcase volgde in negen dagen.
+
+### De rollen
+
+| Rol | Wie | Wat |
+|---|---|---|
+| Product owner | sim007 | Het wat en waarom, de besluiten, de Goedkeuring |
+| Denkpartner | Claude in de chat | Het model, de FCD-taal, de site en de platen; de opdrachten voor Claude Code |
+| Squad AI | Claude Code | sk-bestellen: het deelproduct Bestellen; eerst een voorstel, dan pushen |
+| Platformsquad AI | Claude Code | Het platform, de Pipeline en het Dashboard; eerst een voorstel, dan pushen |
+
+### Ook een cirkel
+
+Een intent werd in de chat een opdracht. Claude Code maakte een plan, de product owner koos, en Claude Code bouwde, testte en meldde terug. Met die terugmelding werd de site bijgewerkt. Wat geleerd werd, werd de volgende intent.
+
+### Wat schuurde, en wat het opleverde
+
+- **De site liep achter op de showcase.** Daaruit kwam één bron: de configuratie staat in fcd en gaat naar de showcase, niet andersom.
+- **Woorden doen ertoe.** Procesplaat werd Full Circle Delivery-plaat, proces werd delivery, en de FCD-taal kreeg een naam.
+- **De AI vond een tegenspraak in de kaders:** een afwijking op een kader waarbij explain niet mocht. Nu controleert de generator dat zelf.
+- **Het harnas is niet af.** Wat ontbreekt, is backlog: een keuze, geen gat.
+
+### Het antwoord
+
+Ja, mits het harnas er staat. Wat de squads AI maakten, ging door dezelfde stappen en quality gates, binnen de kaders, en de besluiten bleven bij de product owner. AI needs delivery. Delivery needs AI.
+
+### Het bewijs
+
+De intent: [mvp0-fcd-demo.md](https://github.com/fcd-labs/fcd-demo/blob/main/docs/mvp0-fcd-demo.md). Stand 23 november 2026:
+
+| Repository | Commits | Met een squad AI als co-auteur |
+|---|---|---|
+| [sk-bestellen](https://github.com/fcd-labs/sk-bestellen/commits/main) | 34 | 29 |
+| [fcd-pipeline](https://github.com/fcd-labs/fcd-pipeline/commits/main) | 53 | 42 |
+| [fcd-dashboard](https://github.com/fcd-labs/fcd-dashboard/commits/main) | 56 | 50 |
+| [fcd-demo](https://github.com/fcd-labs/fcd-demo/commits/main) | 59 | 46 |
+| **Totaal** | **202** | **167** |
+
+Kijk zelf: de regel "Co-Authored-By" in een commit laat zien dat een squad AI meeschreef.

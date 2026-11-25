@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="3840" height="4000" viewBox="0 0 3840 4000">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F2937"/></marker></defs>
 <rect x="0.0" y="0.0" width="3840.0" height="4000.0" rx="0" fill="#F2F4F7"/>
-<text x="60.0" y="112.0" font-family="Segoe UI, Inter, sans-serif" font-size="68" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Full Circle Delivery: FCD-Demo</text>
+<text x="60.0" y="112.0" font-family="Segoe UI, Inter, sans-serif" font-size="68" font-weight="700" fill="#1F2937" text-anchor="start" letter-spacing="0">Full Circle Delivery: FCD-demo</text>
 <text x="62.0" y="162.0" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="400" fill="#5B6472" text-anchor="start" letter-spacing="0">Hoe het product ontstaat en levend blijft  ·  gegenereerd uit fcd-demo.fcd.yaml</text>
 <rect x="60.0" y="220.0" width="416.7" height="640.0" rx="24" fill="#FFFFFF"/>
 <path d="M60.0,316 V244 Q60.0,220 84.0,220 H452.6666666666667 Q476.6666666666667,220 476.6666666666667,244 V316 Z" fill="#7B3FB2"/>
