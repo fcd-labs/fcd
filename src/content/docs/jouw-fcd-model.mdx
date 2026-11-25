@@ -1,0 +1,59 @@
+---
+title: "Jouw FCD-model"
+---
+
+import Plaat from "../../components/Plaat.astro";
+
+:::note[Placeholder]
+Deze pagina wordt nog uitgewerkt. Grow through doing.
+:::
+
+Jouw FCD-model laat zien waar je staat, waar je heen wilt en welk perspectief aandacht nodig heeft. Je komt er door vraag en antwoord.
+
+Het wordt vastgelegd in een **declaratief bestand**: wat en waarom, reproduceerbaar. Uit dat bestand komen de platen. Wat het [FCD-model](/fcd/model/) vraagt en nog niet is ingevuld, toont de plaat als backlog.
+
+## Voorbeeld
+
+De showcase [Demo](/fcd/showcases/demo/) is vastgelegd in twee declaratieve bestanden:
+
+- [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml): het product ShowKitchen, met het deelproduct Bestellen.
+- [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml): de way of working die het product voortbrengt, met de stappen, quality gates en afwijkingen.
+
+Pipeline en Dashboard lezen dezelfde bestanden: de configuratie is het model.
+
+## De platen
+
+Elk declaratief bestand levert een plaat. Samen laten ze jouw FCD-model zien: wat er is, en hoe het ontstaat en levend blijft.
+
+### De productplaat
+
+De productplaat laat zien wat in wat zit: het product, de deelproducten en de containers, met bij elk niveau het werkwoord dat erbij hoort. Per deelproduct staan de eigenaar, de repository en de versie; per container de techniek. Stubs, zoals keuken, bar en kassa, staan apart: ze zijn geen onderdeel van het deelproduct. De versies komen uit één bron, het bestand versions.env in de repository van het deelproduct.
+
+<Plaat bestand="productplaat-sk-bestellen.svg" alt="Productplaat ShowKitchen: het product, het deelproduct Bestellen met de containers frontend en backend, de stubs keuken, bar en kassa, en de versies" />
+
+### De Full Circle Delivery-plaat
+
+De Full Circle Delivery-plaat laat zien hoe het product ontstaat en levend blijft. De cirkel: intentie, bouwen, deployen, releasen, gebruiken en leren. De pipeline, met de stappen en de quality gates, en wat voor de demo is ingekort. De kaders per perspectief, met bij elke gate het kader waartegen getoetst wordt, en de afwijkingen: comply or explain, met een goedkeurder en een einddatum. En wie het werk doet.
+
+<Plaat bestand="fcdplaat-fcd-demo.svg" alt="Full Circle Delivery-plaat FCD-demo: de cirkel, de pipeline met stappen en quality gates, de kaders en de afwijkingen, en wie het werk doet" />
+
+## Gegenereerd, niet getekend
+
+Niemand tekent deze platen. Een generator leest het declaratieve bestand en maakt de plaat: het bestand levert de plaat, niet andersom.
+
+Dat heeft gevolgen. Wijzig je het bestand, dan genereer je de plaat opnieuw, zodat plaat en bestand nooit uit elkaar lopen. Bestand en plaat staan allebei in git, dus je ziet hoe jouw FCD-model groeit: het is nooit af. En wat op de plaat staat, is wat Pipeline en Dashboard ook lezen: de plaat is geen tekening van de werkelijkheid, maar komt uit dezelfde bron.
+
+De generatoren staan in fcd: [fcd_plaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_plaat.py) voor de productplaat, [fcd_fcdplaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_fcdplaat.py) voor de Full Circle Delivery-plaat, en [genereer.sh](https://github.com/fcd-labs/fcd/blob/main/generators/genereer.sh) maakt ze allebei.
+
+## De backlog op de plaat
+
+De generator controleert het bestand tegen het FCD-model. Wat het model vraagt en nog ontbreekt, of wat niet klopt, komt als backlog op de plaat. Met de knop **Toon de backlog** zet je die aan of uit.
+
+Op de productplaat is dat nu bijvoorbeeld een product zonder versie, of een container zonder service of libraries. Op de Full Circle Delivery-plaat: kaders zonder label, kaders waarvan niet bekend is of explain mag, en afwijkingen zonder goedkeurder of einddatum. De generator ziet ook tegenspraak, zoals een afwijking op een kader waarbij explain niet mag, een quality gate zonder kader, of een afwijking op een kader dat niet in het bestand staat.
+
+De backlog is een keuze, geen gat: je ziet wat er nog niet is, en je kiest wanneer je het oppakt.
+
+## Backlog
+
+- De vragen per perspectief, waarmee je vastlegt waar je staat en waar je heen wilt.
+- Wat een declaratief bestand mag bevatten: de objecten en velden.

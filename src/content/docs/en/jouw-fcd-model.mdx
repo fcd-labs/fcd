@@ -1,0 +1,59 @@
+---
+title: "Your FCD model"
+---
+
+import Plaat from "../../../components/Plaat.astro";
+
+:::note[Placeholder]
+This page is still being worked out. Grow through doing.
+:::
+
+Your FCD model shows where you are, where you want to go and which perspective needs attention. You get there through questions and answers.
+
+It is captured in a **declarative file**: what and why, reproducible. The pictures come from that file. What the [FCD model](/fcd/en/model/) asks for and is not yet filled in, the picture shows as backlog.
+
+## Example
+
+The showcase [Demo](/fcd/en/showcases/demo/) is captured in two declarative files:
+
+- [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml): the product ShowKitchen, with the sub-product Ordering.
+- [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml): the way of working that brings the product into being, with the steps, quality gates and deviations.
+
+Pipeline and Dashboard read the same files: the configuration is the model.
+
+## The pictures
+
+Each declarative file produces a picture. Together they show your FCD model: what there is, and how it comes into being and stays alive. The pictures are in Dutch.
+
+### The product picture
+
+The product picture shows what is in what: the product, the sub-products and the containers, with the verb that belongs to each level. Per sub-product it shows the owner, the repository and the version; per container the technology. Stubs, such as kitchen, bar and till, stand apart: they are not part of the sub-product. The versions come from one source, the file versions.env in the repository of the sub-product.
+
+<Plaat lang="en" bestand="productplaat-sk-bestellen.svg" alt="Product picture ShowKitchen: the product, the sub-product Ordering with the frontend and backend containers, the stubs kitchen, bar and till, and the versions" />
+
+### The Full Circle Delivery picture
+
+The Full Circle Delivery picture shows how the product comes into being and stays alive. The circle: intention, build, deploy, release, use and learn. The pipeline, with the steps and the quality gates, and what has been shortened for the demo. The principles per perspective, with for each gate the principle it is checked against, and the deviations: comply or explain, with an approver and an end date. And who does the work.
+
+<Plaat lang="en" bestand="fcdplaat-fcd-demo.svg" alt="Full Circle Delivery picture FCD-demo: the circle, the pipeline with steps and quality gates, the principles and the deviations, and who does the work" />
+
+## Generated, not drawn
+
+Nobody draws these pictures. A generator reads the declarative file and makes the picture: the file produces the picture, not the other way round.
+
+That has consequences. If you change the file, you generate the picture again, so picture and file never drift apart. File and picture both live in git, so you see how your FCD model grows: it is never finished. And what is on the picture is what Pipeline and Dashboard read too: the picture is not a drawing of reality, it comes from the same source.
+
+The generators live in fcd: [fcd_plaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_plaat.py) for the product picture, [fcd_fcdplaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_fcdplaat.py) for the Full Circle Delivery picture, and [genereer.sh](https://github.com/fcd-labs/fcd/blob/main/generators/genereer.sh) makes both.
+
+## The backlog on the picture
+
+The generator checks the file against the FCD model. What the model asks for and is still missing, or what does not add up, appears as backlog on the picture. The **Show the backlog** button turns it on or off.
+
+On the product picture that is currently, for example, a product without a version, or a container without a service or libraries. On the Full Circle Delivery picture: principles without a label, principles where it is unknown whether explain is allowed, and deviations without an approver or end date. The generator also spots contradictions, such as a deviation on a principle where explain is not allowed, a quality gate without a principle, or a deviation on a principle that is not in the file.
+
+The backlog is a choice, not a gap: you see what is not there yet, and you choose when to pick it up.
+
+## Backlog
+
+- The questions per perspective, to capture where you are and where you want to go.
+- What a declarative file may contain: the objects and fields.
