@@ -17,6 +17,8 @@ export default defineConfig({
     "/en/visuals": "/fcd/en/verhaal-presentatie/",
     "/en/showcases/showkitchen-mvp0": "/fcd/en/showcases/demo/",
     "/en/showcases/fcd-mvp0": "/fcd/en/showcases/demo/",
+    "/showcases/in-werking": "/fcd/showcases/demo/",
+    "/en/showcases/in-werking": "/fcd/en/showcases/demo/",
   },
   markdown: {
     processor: unified({
@@ -63,7 +65,6 @@ export default defineConfig({
           label: "Showcases",
           items: [
             { label: "Overzicht", slug: "showcases", translations: { en: "Overview" } },
-            { label: "FCD-demo in werking", slug: "showcases/in-werking", translations: { en: "FCD-demo in action" } },
             { label: "Demo", slug: "showcases/demo" },
             { label: "Classic", slug: "showcases/classic" },
             { label: "Ideal", slug: "showcases/ideal" },
