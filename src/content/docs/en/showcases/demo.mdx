@@ -20,7 +20,7 @@ It starts with fcd, the FCD model: one language, the FCD language, with the buil
 
 ## Describing FCD-demo
 
-In FCD-demo one product owner and two AI squads work together (people): a squad for sk-bestellen, and a platform squad for the platform, the pipeline and the Dashboard. They work from intent to product (process), on sk-bestellen (product). Within the squad there is autonomy in the how, within the principles: comply or explain.
+In FCD-demo one product owner and two AI squads work together (people): a squad for sk-bestellen, and a platform squad for the platform, the pipeline and the Dashboard. They work from intent to product (process), on sk-bestellen (product). Within the squad there is autonomy in the how, within the principles: comply or explain. The product owner owns the sub-product and approves deviations: accountability always lies with a human.
 
 ## The principles in FCD-demo
 
@@ -31,6 +31,8 @@ For architecture, sk-bestellen is custom-built, schema first: a microservice, wi
 Where FCD-demo deviates from a principle, it says so, with an explanation and an approval: comply or explain.
 
 <Plaat lang="en" bestand="fcdplaat-fcd-demo.svg" alt="Full Circle Delivery picture of FCD-demo, generated from the files in the FCD language: the circle, the pipeline with steps and quality gates, the principles and the deviations" />
+
+The pictures are in Dutch.
 
 ## What you see in FCD-demo
 
@@ -49,6 +51,8 @@ Transparent throughout the circle: everyone looks at the same Dashboard, with th
 That is continuous compliance. Not fixing in advance what the code must look like, but showing with every change that the product does what the intent promises, within the principles. The intent stays; the code may differ every time. The evidence arises along the way, and everyone sees the same.
 
 <Plaat lang="en" bestand="productplaat-sk-bestellen.svg" alt="Product picture sk-bestellen: the sub-product Ordering with frontend and backend containers, the stubs kitchen, bar and till, and the versions of what is running" />
+
+What is in what: product, sub-product and container. Frontend in Angular, backend in Kotlin (Ktor). The versions come from one source: [versions.env](https://github.com/fcd-labs/sk-bestellen/blob/main/versions.env) in sk-bestellen. Releasing happens per sub-product; containers have their own lifecycle.
 
 ## The perspectives in FCD-demo
 
@@ -114,25 +118,8 @@ Why and measure are separate: the why is the direction and changes little; the m
 
 In this version kitchen, bar and till exist as stubs: separate containers, not part of the sub-product. The intent is not the sub-product: which sub-product fulfils an intent is an architecture choice.
 
-## The product picture
 
-What is in what: product, sub-product and container, with the verb that belongs to each level.
 
-The product picture is above, at [What you see in FCD-demo](#what-you-see-in-fcd-demo).
-
-Frontend in Angular, backend in Kotlin (Ktor). The versions come from one source: [versions.env](https://github.com/fcd-labs/sk-bestellen/blob/main/versions.env) in sk-bestellen. Releasing happens per sub-product; containers have their own lifecycle.
-
-## Who does the work
-
-There are two AI squads, both Claude Code with agents: AI agents only. The squad for sk-bestellen, and the platform squad for the platform, the Pipeline and the Dashboard. Within the squad there is autonomy in the how, within the principles: comply or explain. That is why the product owner owns the sub-product and approves deviations. Accountability always lies with a human.
-
-## The Full Circle Delivery picture
-
-How the product comes into being and stays alive, with the principles: comply or explain.
-
-The Full Circle Delivery picture is above, at [The principles in FCD-demo](#the-principles-in-fcd-demo).
-
-The pictures are in Dutch.
 
 ## The pipeline
 
@@ -149,13 +136,7 @@ One bash script is the only way to build, test, check, deploy and release. The P
 
 If a gate closes, the pipeline stops: nothing is deployed or released. The pipeline is deliberately incomplete: ESLint, test coverage, the consumer contract test, DAST and performance tests are on the picture and the Dashboard as backlog. Grow through doing.
 
-## Learning
-
-The Dashboard closes the circle. It shows the key result from the intent: does every order reach kitchen, bar and till (the stubs)? It also shows the pipeline live, per step and per gate, the new version and the changelog.
-
-## The demo
-
-Ordering 1.0.0 has a deliberate bug: an order does not reach the bar. The key result is red. The patch 1.0.1 is ready. The product owner starts the pipeline, you watch the steps and gates live, and then the order does reach the bar: the key result is green. Measure, learn, fix.
+The Dashboard shows the pipeline live, per step and per gate, with the new version and the changelog.
 
 ## Deviations for the demo
 
@@ -167,7 +148,7 @@ FCD-demo was made by a product owner, Claude in the chat and two AI squads. The 
 
 ### Knowledge in the model
 
-AI did not invent FCD. The FCD model bundles professional knowledge of quality, testing, audit, releasing and continuous delivery: the principles, the quality gates, comply or explain, one source. That knowledge forms the harness: the principles of FCD-demo, on the [Full Circle Delivery picture](#the-full-circle-delivery-picture) above. AI helped to work out the model and to build the showcase.
+AI did not invent FCD. The FCD model bundles professional knowledge of quality, testing, audit, releasing and continuous delivery: the principles, the quality gates, comply or explain, one source. That knowledge forms the harness: the principles of FCD-demo, on the [Full Circle Delivery picture](#the-principles-in-fcd-demo) above. AI helped to work out the model and to build the showcase.
 
 ### One intent
 
