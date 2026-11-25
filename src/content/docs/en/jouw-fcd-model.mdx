@@ -47,9 +47,11 @@ The generators live in fcd: [fcd_plaat.py](https://github.com/fcd-labs/fcd/blob/
 
 ## The backlog on the picture
 
-The generator checks the file against the FCD model. What the model asks for and is still missing, or what does not add up, appears as backlog on the picture. The **Show the backlog** button turns it on or off.
+The generator checks the file against the FCD model. What the model asks for and is still missing, or what does not add up, it can put on the picture as backlog. On the site you then turn it on or off with the **Show the backlog** button.
 
-On the product picture that is currently, for example, a product without a version, or a container without a service or libraries. On the Full Circle Delivery picture: principles without a label, principles where it is unknown whether explain is allowed, and deviations without an approver or end date. The generator also spots contradictions, such as a deviation on a principle where explain is not allowed, a quality gate without a principle, or a deviation on a principle that is not in the file.
+Whether the backlog appears on the picture is decided in the file itself, with the switch `plateBacklog`. For the pictures of FCD-demo it is off: there the point is what is there, not what is still missing.
+
+The generator spots, for example, a product or container without a version, a principle without a perspective or where it is unknown whether explain is allowed, and a deviation without an approver or end date. It also spots contradictions, such as a deviation on a principle where explain is not allowed, a quality gate without a principle, or a deviation on a principle that is not in the file.
 
 The backlog is a choice, not a gap: you see what is not there yet, and you choose when to pick it up.
 
