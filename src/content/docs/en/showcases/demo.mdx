@@ -4,13 +4,13 @@ title: "Demo"
 
 import Plaat from "../../../../components/Plaat.astro";
 
-> The story first? Read [fcd-demo in action](/fcd/en/showcases/in-werking/): one order, the whole circle, every perspective.
+> The story first? Read [FCD-demo in action](/fcd/en/showcases/in-werking/): one order, the whole circle, every perspective.
 
 The smallest way of working of Full Circle Delivery that goes the full circle: intention, delivery, product, learning. AI as accelerator. With ShowKitchen with one sub-product.
 
 | | Way of working | Product |
 |---|---|---|
-| Name | fcd-demo | ShowKitchen, sub-product Ordering |
+| Name | FCD-demo | ShowKitchen, sub-product Ordering |
 | Repository | [fcd-demo](https://github.com/fcd-labs/fcd-demo): configuration, no code | [sk-bestellen](https://github.com/fcd-labs/sk-bestellen): for all showcases |
 | Declarative file | [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml) | [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml) |
 | Version | Pipeline 0.7.0, Dashboard 0.5.0 | Ordering 1.0.0; the patch makes it 1.0.1 |
@@ -21,7 +21,7 @@ Pipeline ([fcd-pipeline](https://github.com/fcd-labs/fcd-pipeline)) and Dashboar
 
 Are one intent and one description of a sub-product together enough for an AI squad to build the sub-product?
 
-The answer: yes, provided the harness is in place. Read [how Demo was made](/fcd/en/showcases/hoe-gemaakt/): by a product owner, Claude in the chat and Claude Code as the AI squad.
+The answer: yes, provided the harness is in place. Read further down [how FCD-demo was made](#how-fcd-demo-was-made): by a product owner, Claude in the chat and two AI squads.
 
 ## The intent: Ordering
 
@@ -53,13 +53,13 @@ Frontend in Angular, backend in Kotlin (Ktor). The versions come from one source
 
 ## Who does the work
 
-The squad is Claude Code with agents: AI agents only. That is why the product owner owns the sub-product and approves deviations. Accountability always lies with a human.
+There are two AI squads, both Claude Code with agents: AI agents only. The squad for sk-bestellen, and the platform squad for the platform, the Pipeline and the Dashboard. Within the squad there is autonomy in the how, within the principles: comply or explain. That is why the product owner owns the sub-product and approves deviations. Accountability always lies with a human.
 
 ## The Full Circle Delivery picture
 
 How the product comes into being and stays alive, with the principles: comply or explain.
 
-<Plaat lang="en" bestand="fcdplaat-fcd-demo.svg" alt="Full Circle Delivery picture FCD-Demo: intention, build, deploy, release, use and learn; the pipeline with 10 steps and the quality gates; 30 principles" />
+<Plaat lang="en" bestand="fcdplaat-fcd-demo.svg" alt="Full Circle Delivery picture FCD-demo: intention, build, deploy, release, use and learn; the pipeline with 10 steps and the quality gates; 30 principles" />
 
 The pictures are in Dutch.
 
@@ -89,3 +89,57 @@ Ordering 1.0.0 has a deliberate bug: an order does not reach the bar. The key re
 ## Deviations for the demo
 
 All steps and gates stay. To keep the pipeline within 5 minutes, five steps are shortened for the demo only, with approved deviations: the images are pre-warmed, the security, freshness and licence scan comes from the cache, end-to-end runs only the core path "place an order", and releasing is a local tag without a GitHub Release. Nothing is pushed to remote during the demo. Everything runs locally, in one environment, with docker-compose instead of Kubernetes.
+
+## How FCD-demo was made
+
+FCD-demo was made by a product owner, Claude in the chat and two AI squads. The answer to the experiment: one intent and one sub-product description are enough, provided the harness is in place.
+
+### Knowledge in the model
+
+AI did not invent FCD. The FCD model bundles professional knowledge of quality, testing, audit, releasing and continuous delivery: the principles, the quality gates, comply or explain, one source. That knowledge forms the harness: the principles of FCD-demo, on the [Full Circle Delivery picture](#the-full-circle-delivery-picture) above. AI helped to work out the model and to build the showcase.
+
+### One intent
+
+It started with one sentence, [the intent Ordering](#the-intent-ordering): as a guest I want to choose from a menu, so that my order reaches kitchen, bar and till. And with one question: is one intent, with a description of the sub-product, enough for an AI squad?
+
+### Two tracks at once
+
+The model and the showcase grew in parallel. The model gave the showcase direction; the showcase showed where the model did not fit yet. The model grew first in conversations in the chat; the showcase followed in nine days.
+
+### The roles
+
+| Role | Who | What |
+|---|---|---|
+| Product owner | sim007 | The what and why, the decisions, the Approval |
+| Thinking partner | Claude in the chat | The model, the FCD language, the site and the pictures; the assignments for Claude Code |
+| AI squad | Claude Code | sk-bestellen: the sub-product Ordering; first a proposal, then push |
+| AI platform squad | Claude Code | The platform, the Pipeline and the Dashboard; first a proposal, then push |
+
+### A circle too
+
+An intent became an assignment in the chat. Claude Code made a plan, the product owner chose, and Claude Code built, tested and reported back. With that report the site was updated. What was learned became the next intent.
+
+### What chafed, and what it brought
+
+- **The site lagged behind the showcase.** That led to one source: the configuration lives in fcd and goes to the showcase, not the other way round.
+- **Words matter.** The process picture became the Full Circle Delivery picture, process became delivery, and the FCD language got a name.
+- **The AI found a contradiction in the principles:** a deviation on a principle where explain was not allowed. Now the generator checks this itself.
+- **The harness is not finished.** What is missing is backlog: a choice, not a gap.
+
+### The answer
+
+Yes, provided the harness is in place. What the AI squads made went through the same steps and quality gates, within the principles, and the decisions stayed with the product owner. AI needs delivery. Delivery needs AI.
+
+### The evidence
+
+The intent: [mvp0-fcd-demo.md](https://github.com/fcd-labs/fcd-demo/blob/main/docs/mvp0-fcd-demo.md) (in Dutch). As of 23 November 2026:
+
+| Repository | Commits | With an AI squad as co-author |
+|---|---|---|
+| [sk-bestellen](https://github.com/fcd-labs/sk-bestellen/commits/main) | 34 | 29 |
+| [fcd-pipeline](https://github.com/fcd-labs/fcd-pipeline/commits/main) | 53 | 42 |
+| [fcd-dashboard](https://github.com/fcd-labs/fcd-dashboard/commits/main) | 56 | 50 |
+| [fcd-demo](https://github.com/fcd-labs/fcd-demo/commits/main) | 59 | 46 |
+| **Total** | **202** | **167** |
+
+See for yourself: the "Co-Authored-By" line in a commit shows that an AI squad co-wrote it.

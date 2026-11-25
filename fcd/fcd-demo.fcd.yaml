@@ -1,4 +1,4 @@
-# Jouw FCD-model: FCD-Demo, de way of working ("fabriek") die ShowKitchen voortbrengt
+# Jouw FCD-model: FCD-demo, de way of working ("fabriek") die ShowKitchen voortbrengt
 # Bron: fcd-mvp0.md, fcd-showcases.md, fcd-objecten.md
 # Kopie uit fcd/fcd/fcd-demo.fcd.yaml (20 november 2026), aangevuld met de configuratie van de showcase:
 # Pipeline (vastgelegde versie, trigger, uitrol, release, stappen), Step, QualityGate (drempels), Dashboard,
@@ -10,7 +10,7 @@ apiVersion: fcd/v0
 kind: Factory
 metadata:
   name: fcd-demo
-  title: FCD-Demo
+  title: FCD-demo
 spec:
   description: De eerste, kleinste way of working die de hele cirkel rond gaat. AI als versneller.
   showcase: demo

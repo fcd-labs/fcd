@@ -63,9 +63,8 @@ export default defineConfig({
           label: "Showcases",
           items: [
             { label: "Overzicht", slug: "showcases", translations: { en: "Overview" } },
-            { label: "Fcd-demo in werking", slug: "showcases/in-werking", translations: { en: "Fcd-demo in action" } },
+            { label: "FCD-demo in werking", slug: "showcases/in-werking", translations: { en: "FCD-demo in action" } },
             { label: "Demo", slug: "showcases/demo" },
-            { label: "Hoe Demo is gemaakt", slug: "showcases/hoe-gemaakt", translations: { en: "How Demo was made" } },
             { label: "Classic", slug: "showcases/classic" },
             { label: "Ideal", slug: "showcases/ideal" },
           ],
