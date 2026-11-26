@@ -6,9 +6,9 @@ title: "Het verhaal"
 Dit is een levend document. Pagina's groeien mee.
 :::
 
-[![Praatplaat Full Circle Delivery (FCD) 0.8.10](/praatplaat-fcd.png)](/praatplaat-fcd.png "Klik voor de praatplaat op ware grootte")
+[![Praatplaat Full Circle Delivery (FCD) 0.8.11](/fcd/praatplaat-fcd.png)](/fcd/praatplaat-fcd.png "Klik voor de praatplaat op ware grootte")
 
-*Praatplaat versie 0.8.10. Klik voor ware grootte. Bron: [praatplaat-fcd.drawio](/praatplaat-fcd.drawio), te openen in draw.io.*
+*Praatplaat versie 0.8.11. Klik voor ware grootte. Bron: [praatplaat-fcd.drawio](/fcd/praatplaat-fcd.drawio), te openen in draw.io.*
 
 ## De aanleiding
 
@@ -40,7 +40,7 @@ Dat doen we samen, en in balans.
 
 ## De perspectieven
 
-Je bekijkt de cirkel vanuit perspectieven: domein, team, agile en DevOps, continuous delivery, testen, kwaliteit, architectuur en security. En AI.
+Je bekijkt de cirkel vanuit perspectieven: domein, team, agile en DevOps, continuous delivery, testen, kwaliteit, architectuur, security en operations. En AI.
 
 Elk perspectief heeft een kader. Samen zijn dat de guardrails voor AI. Het principe is comply or explain: je volgt het kader, of je legt uit waarom niet.
 

@@ -6,9 +6,9 @@ title: "The story"
 This is a living document. Pages grow along.
 :::
 
-[![Talking picture Full Circle Delivery (FCD) 0.8.10](/praatplaat-fcd.png)](/praatplaat-fcd.png "Click for the talking picture at full size")
+[![Talking picture Full Circle Delivery (FCD) 0.8.11](/fcd/praatplaat-fcd.png)](/fcd/praatplaat-fcd.png "Click for the talking picture at full size")
 
-*Talking picture version 0.8.10, in Dutch. Click for full size. Source: [praatplaat-fcd.drawio](/praatplaat-fcd.drawio), to open in draw.io.*
+*Talking picture version 0.8.11, in Dutch. Click for full size. Source: [praatplaat-fcd.drawio](/fcd/praatplaat-fcd.drawio), to open in draw.io.*
 
 ## The reason
 
@@ -40,7 +40,7 @@ We do this together, and in balance.
 
 ## The perspectives
 
-You look at the circle from perspectives: domain, team, agile and DevOps, continuous delivery, testing, quality, architecture and security. And AI.
+You look at the circle from perspectives: domain, team, agile and DevOps, continuous delivery, testing, quality, architecture, security and operations. And AI.
 
 Each perspective has principles. Together they are the guardrails for AI. The rule of thumb is comply or explain: you follow the principle, or you explain why not.
 
