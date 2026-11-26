@@ -48,29 +48,3 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 | Demo, Classic, Ideal | De drie showcases: hetzelfde product, drie manieren van werken. Elke showcase is een paar: fcd-X (de way of working) en sk-X (het product). |
 | Productplaat | Wat zit in wat, gegenereerd uit het declaratieve bestand. |
 | Full Circle Delivery-plaat | Hoe het product ontstaat en levend blijft, gegenereerd uit het declaratieve bestand. |
-
-## Eerder werk: het model met assen
-
-Deze termen horen bij het [eerdere model](eerder-werk/index.md).
-
-| Term | Betekenis |
-|---|---|
-| As | Een keuze met twee polen. |
-| Randvoorwaarde | As waarop de positie gegeven is. |
-| Knock-out | Randvoorwaarde waarbij het model niet van toepassing is aan de verkeerde kant. |
-| Vormend | Randvoorwaarde waarbij elke positie mag; hij bepaalt de invulling. |
-| Startingpoint | As waarop je de positie kiest. |
-| Opinie / strong belief | Mijn positie op een as; de overtuigingen uit het waarom. |
-| Scenario | Een set posities op de assen. |
-| Route | De afstand van de positie van een scenario naar de opinie. |
-| Invulling | Het resultaat van de route. |
-| Right practice | Goed in deze situatie. Niet best practice. |
-| Fabriek | De organisatie én AI; een verzameling right practices. |
-| Showcase practice | Eén right practice als werkende code. |
-| Kaart | Rol: taak, gebruiker, domeinindeling en budget per domein. |
-| Terrein | Rol: alles binnen een domein. |
-| Het hoe | Rol: het werk binnen een deelsysteem. |
-| Domeinindeling | Wat de kaart bepaalt, in plaats van portfolio. |
-| Professional | *Voorstel* voor de rol van de persoon, in plaats van people. |
-| Stabiele teams | *Voorstel* in plaats van longlive squads. |
-| AI in het team | *Voorstel*, met als as: van AI als gereedschap tot een team dat grotendeels AI is. |
