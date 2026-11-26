@@ -1,5 +1,5 @@
 ---
-title: "Your FCD model"
+title: "Your FCD"
 ---
 
 import Plaat from "../../../components/Plaat.astro";
@@ -8,13 +8,15 @@ import Plaat from "../../../components/Plaat.astro";
 This page is still being worked out. Grow through doing.
 :::
 
-Your FCD model shows where you are, where you want to go and which perspective needs attention. You get there through questions and answers.
+You configure the FCD model into your FCD: a decision per principle, and where you deviate, why. Your FCD shows where you are, where you want to go and which perspective needs attention. You get there through questions and answers.
 
-It is captured in a **declarative file**: what and why, reproducible. The pictures come from that file. What the [FCD model](/fcd/en/model/) asks for and is not yet filled in, the picture shows as backlog.
+Your FCD gets a name: FCD-‹name›, with a repo fcd-‹name›. [FCD-demo](/fcd/en/showcases/demo/) is one.
+
+It is captured in a **declarative file**: what and why, reproducible. The pictures come from that file. What the [FCD model](/fcd/en/model/) asks for and is not yet filled in, the picture can show as backlog.
 
 ## Example
 
-The showcase [Demo](/fcd/en/showcases/demo/) is captured in two declarative files:
+The showcase [FCD-demo](/fcd/en/showcases/demo/) is captured in two declarative files:
 
 - [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml): the product ShowKitchen, with the sub-product Ordering.
 - [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml): the way of working that brings the product into being, with the steps, quality gates and deviations.
@@ -23,7 +25,7 @@ Pipeline and Dashboard read the same files: the configuration is the model.
 
 ## The pictures
 
-Each declarative file produces a picture. Together they show your FCD model: what there is, and how it comes into being and stays alive. The pictures are in Dutch.
+Each declarative file produces a picture. Together they show your FCD: what there is, and how it comes into being and stays alive. The pictures are in Dutch.
 
 ### The product picture
 
@@ -41,7 +43,7 @@ The Full Circle Delivery picture shows how the product comes into being and stay
 
 Nobody draws these pictures. A generator reads the declarative file and makes the picture: the file produces the picture, not the other way round.
 
-That has consequences. If you change the file, you generate the picture again, so picture and file never drift apart. File and picture both live in git, so you see how your FCD model grows: it is never finished. And what is on the picture is what Pipeline and Dashboard read too: the picture is not a drawing of reality, it comes from the same source.
+That has consequences. If you change the file, you generate the picture again, so picture and file never drift apart. File and picture both live in git, so you see how your FCD grows: it is never finished. And what is on the picture is what Pipeline and Dashboard read too: the picture is not a drawing of reality, it comes from the same source.
 
 The generators live in fcd: [fcd_plaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_plaat.py) for the product picture, [fcd_fcdplaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_fcdplaat.py) for the Full Circle Delivery picture, and [genereer.sh](https://github.com/fcd-labs/fcd/blob/main/generators/genereer.sh) makes both.
 

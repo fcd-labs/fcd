@@ -53,8 +53,8 @@ Het geheel is transparant. Bij de intentie hoort een objective. Bij het product 
 ## Wat je krijgt
 
 1. **[Het FCD-model](model.md).** Eén taal: de bouwstenen, beschreven en per perspectief geplaatst. Business, IT en teams praten over hetzelfde.
-2. **[Jouw FCD-model](jouw-fcd-model.md).** Door vraag en antwoord: waar je staat, waar je heen wilt en welk perspectief aandacht nodig heeft. Vastgelegd in een declaratief bestand: wat en waarom, reproduceerbaar.
-3. **[Jouw FCD-model als werkende showcase](showcases/index.md).** Je ziet hoe het kan werken en waar wijzigingen nodig zijn.
+2. **[Jouw FCD](/fcd/jouw-fcd/).** Door vraag en antwoord: waar je staat, waar je heen wilt en welk perspectief aandacht nodig heeft. Vastgelegd in een declaratief bestand: wat en waarom, reproduceerbaar.
+3. **[Jouw FCD als werkende showcase](showcases/index.md).** Je ziet hoe het kan werken en waar wijzigingen nodig zijn.
 
 ## Tot slot
 

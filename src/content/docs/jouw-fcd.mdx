@@ -1,5 +1,5 @@
 ---
-title: "Jouw FCD-model"
+title: "Jouw FCD"
 ---
 
 import Plaat from "../../components/Plaat.astro";
@@ -8,13 +8,15 @@ import Plaat from "../../components/Plaat.astro";
 Deze pagina wordt nog uitgewerkt. Grow through doing.
 :::
 
-Jouw FCD-model laat zien waar je staat, waar je heen wilt en welk perspectief aandacht nodig heeft. Je komt er door vraag en antwoord.
+Je configureert het FCD-model naar jouw FCD: per kader een keuze, en waar je afwijkt, waarom. Jouw FCD laat zien waar je staat, waar je heen wilt en welk perspectief aandacht nodig heeft. Je komt er door vraag en antwoord.
 
-Het wordt vastgelegd in een **declaratief bestand**: wat en waarom, reproduceerbaar. Uit dat bestand komen de platen. Wat het [FCD-model](/fcd/model/) vraagt en nog niet is ingevuld, toont de plaat als backlog.
+Jouw FCD krijgt een naam: FCD-‹naam›, met een repo fcd-‹naam›. [FCD-demo](/fcd/showcases/demo/) is er een.
+
+Het wordt vastgelegd in een **declaratief bestand**: wat en waarom, reproduceerbaar. Uit dat bestand komen de platen. Wat het [FCD-model](/fcd/model/) vraagt en nog niet is ingevuld, kan de plaat als backlog tonen.
 
 ## Voorbeeld
 
-De showcase [Demo](/fcd/showcases/demo/) is vastgelegd in twee declaratieve bestanden:
+De showcase [FCD-demo](/fcd/showcases/demo/) is vastgelegd in twee declaratieve bestanden:
 
 - [sk-bestellen.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/sk-bestellen.fcd.yaml): het product ShowKitchen, met het deelproduct Bestellen.
 - [fcd-demo.fcd.yaml](https://github.com/fcd-labs/fcd/blob/main/fcd/fcd-demo.fcd.yaml): de way of working die het product voortbrengt, met de stappen, quality gates en afwijkingen.
@@ -23,7 +25,7 @@ Pipeline en Dashboard lezen dezelfde bestanden: de configuratie is het model.
 
 ## De platen
 
-Elk declaratief bestand levert een plaat. Samen laten ze jouw FCD-model zien: wat er is, en hoe het ontstaat en levend blijft.
+Elk declaratief bestand levert een plaat. Samen laten ze jouw FCD zien: wat er is, en hoe het ontstaat en levend blijft.
 
 ### De productplaat
 
@@ -41,7 +43,7 @@ De Full Circle Delivery-plaat laat zien hoe het product ontstaat en levend blijf
 
 Niemand tekent deze platen. Een generator leest het declaratieve bestand en maakt de plaat: het bestand levert de plaat, niet andersom.
 
-Dat heeft gevolgen. Wijzig je het bestand, dan genereer je de plaat opnieuw, zodat plaat en bestand nooit uit elkaar lopen. Bestand en plaat staan allebei in git, dus je ziet hoe jouw FCD-model groeit: het is nooit af. En wat op de plaat staat, is wat Pipeline en Dashboard ook lezen: de plaat is geen tekening van de werkelijkheid, maar komt uit dezelfde bron.
+Dat heeft gevolgen. Wijzig je het bestand, dan genereer je de plaat opnieuw, zodat plaat en bestand nooit uit elkaar lopen. Bestand en plaat staan allebei in git, dus je ziet hoe jouw FCD groeit: het is nooit af. En wat op de plaat staat, is wat Pipeline en Dashboard ook lezen: de plaat is geen tekening van de werkelijkheid, maar komt uit dezelfde bron.
 
 De generatoren staan in fcd: [fcd_plaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_plaat.py) voor de productplaat, [fcd_fcdplaat.py](https://github.com/fcd-labs/fcd/blob/main/generators/fcd_fcdplaat.py) voor de Full Circle Delivery-plaat, en [genereer.sh](https://github.com/fcd-labs/fcd/blob/main/generators/genereer.sh) maakt ze allebei.
 

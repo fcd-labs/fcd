@@ -17,8 +17,9 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 | Comply or explain | Je volgt het kader, of je legt uit waarom niet. |
 | Afwijking | De explain bij een kader. Een mens keurt hem goed: de eigenaar. In de code `Explanation`. |
 | FCD-model | Eén taal: de bouwstenen, per perspectief geplaatst. Niet CD-model. |
-| Jouw FCD-model | Waar je staat, waar je heen wilt, welk perspectief aandacht nodig heeft. |
-| Declaratief bestand | Jouw FCD-model vastgelegd: wat en waarom, reproduceerbaar. Het levert de platen, niet andersom. |
+| Configureren | Van het FCD-model naar jouw FCD: per kader een keuze, en waar je afwijkt, waarom. |
+| Jouw FCD | Het FCD-model geconfigureerd: waar je staat, waar je heen wilt, welk perspectief aandacht nodig heeft. Met een naam: FCD-‹naam›. |
+| Declaratief bestand | Jouw FCD vastgelegd: wat en waarom, reproduceerbaar. Het levert de platen, niet andersom. |
 | FCD-taal | Eén taal voor mens en machine: de woorden en regels van het FCD-model (intent, deelproduct, kader, quality gate), met de woorden die de markt al kent. Het declaratieve bestand (`*.fcd.yaml`, `apiVersion: fcd/v0`) is de FCD-taal voor de machine. |
 | Continuous delivery | Een perspectief binnen FCD: er is altijd een werkende weg naar productie. |
 | Backlog | Wat het FCD-model vraagt en nog niet is ingevuld. Niet "gaten". |

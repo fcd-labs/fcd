@@ -17,8 +17,9 @@ Borrow words where the market has them, only add what the market lacks. The mark
 | Comply or explain | You follow the principle, or you explain why not. |
 | Deviation (*afwijking*) | The explain for a principle. A human approves it: the owner. In the code `Explanation`. |
 | FCD model | One language: the building blocks, placed per perspective. Not CD model. |
-| Your FCD model | Where you are, where you want to go, which perspective needs attention. |
-| Declarative file | Your FCD model captured: what and why, reproducible. It produces the pictures, not the other way round. |
+| Configuring | From the FCD model to your FCD: a decision per principle, and where you deviate, why. |
+| Your FCD | The FCD model configured: where you are, where you want to go, which perspective needs attention. With a name: FCD-‹name›. |
+| Declarative file | Your FCD captured: what and why, reproducible. It produces the pictures, not the other way round. |
 | FCD language (*FCD-taal*) | One language for people and machines: the words and rules of the FCD model (intent, sub-product, principle, quality gate), using words the market already knows. The declarative file (`*.fcd.yaml`, `apiVersion: fcd/v0`) is the FCD language for machines. |
 | Continuous delivery | A perspective within FCD: there is always a working path to production. |
 | Backlog | What the FCD model asks for and is not yet filled in. Not "gaps". |

@@ -18,6 +18,8 @@ export default defineConfig({
     "/en/showcases/showkitchen-mvp0": "/fcd/en/showcases/demo/",
     "/en/showcases/fcd-mvp0": "/fcd/en/showcases/demo/",
     "/showcases/in-werking": "/fcd/showcases/demo/",
+    "/jouw-fcd-model": "/fcd/jouw-fcd/",
+    "/en/jouw-fcd-model": "/fcd/en/jouw-fcd/",
     "/en/showcases/in-werking": "/fcd/en/showcases/demo/",
   },
   markdown: {
@@ -32,7 +34,7 @@ export default defineConfig({
         en: "Full Circle Delivery",
       },
       description:
-        "AI needs delivery. Delivery needs AI. Full Circle Delivery: het FCD-model, jouw FCD-model in een declaratief bestand, en een werkende showcase.",
+        "AI needs delivery. Delivery needs AI. Full Circle Delivery: het FCD-model, jouw FCD in een declaratief bestand, en een werkende showcase.",
       defaultLocale: "root",
       locales: {
         root: { label: "Nederlands", lang: "nl" },
@@ -60,7 +62,7 @@ export default defineConfig({
           translations: { en: "The story" },
         },
         { label: "Het FCD-model", slug: "model", translations: { en: "The FCD model" } },
-        { label: "Jouw FCD-model", slug: "jouw-fcd-model", translations: { en: "Your FCD model" } },
+        { label: "Jouw FCD", slug: "jouw-fcd", translations: { en: "Your FCD" } },
         {
           label: "Showcases",
           items: [

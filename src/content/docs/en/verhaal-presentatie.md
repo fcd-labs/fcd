@@ -53,8 +53,8 @@ The whole is transparent. An objective belongs with the intention. Key performan
 ## What you get
 
 1. **[The FCD model](model.md).** One language: the building blocks, described and placed per perspective. Business, IT and teams talk about the same thing.
-2. **[Your FCD model](jouw-fcd-model.md).** Through questions and answers: where you are, where you want to go and which perspective needs attention. Captured in a declarative file: what and why, reproducible.
-3. **[Your FCD model as a working showcase](showcases/index.md).** You see how it can work and where changes are needed.
+2. **[Your FCD](/fcd/en/jouw-fcd/).** Through questions and answers: where you are, where you want to go and which perspective needs attention. Captured in a declarative file: what and why, reproducible.
+3. **[Your FCD as a working showcase](showcases/index.md).** You see how it can work and where changes are needed.
 
 ## Finally
 

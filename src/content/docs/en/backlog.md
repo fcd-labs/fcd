@@ -8,7 +8,7 @@ What the FCD model asks for and is not yet filled in is not a gap. It is backlog
 
 - **Issues:** the work on FCD is tracked as issues in [fcd-labs/fcd](https://github.com/fcd-labs/fcd/issues). The fcd board will follow.
 - **Showcases:** each picture shows the backlog of that showcase. In [Demo](showcases/demo.md) there are now 5 on the product picture and 4 on the Full Circle Delivery picture. [Classic](showcases/classic.md) and [Ideal](showcases/ideal.md) are still placeholders.
-- **[Your FCD model](jouw-fcd-model.md):** the questions per perspective.
+- **[Your FCD](/fcd/en/jouw-fcd/):** the questions per perspective.
 - **The model:** the objects are an inventory, far from complete. See [the FCD model](model.md).
 
 ## Open in the model

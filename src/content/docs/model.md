@@ -67,7 +67,7 @@ erDiagram
 
 Modelkeuzes: één of meer persona's per domein, en één monorepo per deelproduct of één repository per service.
 
-### Kaders, perspectieven en inrichtingskeuzes
+### Kaders, perspectieven en keuzes
 
 Concept: deze relaties zijn nog te bevestigen.
 
@@ -75,14 +75,14 @@ Concept: deze relaties zijn nog te bevestigen.
 erDiagram
     KADER }|--|{ PERSPECTIEF : "hangt aan"
     KADER }o--o{ KADER : "is onderdeel van"
-    INRICHTINGSKEUZE }o--|| KADER : "vult in"
-    INRICHTINGSKEUZE }o--o| DEELPRODUCT : "geldt voor"
-    INRICHTINGSKEUZE }o--o| WAY_OF_WORKING : "geldt voor"
+    KEUZE }o--|| KADER : "vult in"
+    KEUZE }o--o| DEELPRODUCT : "geldt voor"
+    KEUZE }o--o| WAY_OF_WORKING : "geldt voor"
     QUALITY_GATE }o--|{ KADER : "toetst"
     AFWIJKING }o--|| KADER : "verwijst naar"
 ```
 
-Een afwijking zegt: we volgen het kader niet, en waarom. Een inrichtingskeuze zegt: zó volgen we het kader. Een inrichtingskeuze geldt voor één deelproduct, zoals een database, of voor de hele way of working, zoals docker-compose.
+Een afwijking zegt: we volgen het kader niet, en waarom. Een keuze zegt: zó volgen we het kader. Een keuze geldt voor één deelproduct, zoals een database, of voor de hele way of working, zoals docker-compose.
 
 ## FCD-criteria
 
@@ -121,8 +121,8 @@ Status *bevestigd*: beschrijving bevestigd. Status *concept*: beschrijving nog t
 | Omgeving<br/>`Environment` | Environment (CDEvents) | Waar een deelproduct terechtkomt. | concept |
 | Quality gate<br/>`QualityGate` | geen; eigen term | Een moment waarop iets wel of niet door mag. Toetst tegen één of meer kaders. | concept |
 | Perspectief<br/>`Perspective` | Viewpoint (ISO/IEC/IEEE 42010) | Een manier van kijken, zoals domein, testen of security. Tien perspectieven, ook het lege vak. Elk perspectief heeft kaders. | concept |
-| Inrichtingskeuze<br/>`Decision` | Architecture Decision Record (ADR) | Hoe een way of working een kader invult, zoals PostgreSQL of docker-compose. Verwijst naar één kader. Geldt voor één deelproduct of voor de hele way of working. | concept |
-| Way of working<br/>`WayOfWorking` | Way of Working (OMG Essence) | Hoe jouw FCD werkt: de pipeline, de kaders, de inrichtingskeuzes en de afwijkingen. FCD-demo is een way of working. | concept |
+| Keuze<br/>`Decision` | Architecture Decision Record (ADR) | Hoe een way of working een kader invult, zoals PostgreSQL of docker-compose. Verwijst naar één kader. Geldt voor één deelproduct of voor de hele way of working. | concept |
+| Way of working<br/>`WayOfWorking` | Way of Working (OMG Essence) | Hoe jouw FCD werkt: de pipeline, de kaders, de keuzes en de afwijkingen. FCD-demo is een way of working. | concept |
 | Dashboard<br/>`Dashboard` | geen; eigen term | Maakt zichtbaar hoe het gaat. | concept |
 | Repository<br/>`Repository` | Source (SLSA) | Waar de code staat van één of meer services van één deelproduct. Gaat nooit over de grens van een deelproduct heen. | bevestigd |
 | Open source software (OSS)<br/>`OpenSourceComponent` | Component (CycloneDX) | Open source componenten die worden gebruikt. Ook eigen code kan open source zijn. | concept |
@@ -135,7 +135,7 @@ Status *bevestigd*: beschrijving bevestigd. Status *concept*: beschrijving nog t
 | Objective<br/>`Objective` | Objective (OKR) | Het doel bij de intentie. | concept |
 | Key performance indicator (KPI)<br/>`KeyPerformanceIndicator` | Key result (OKR), service level indicator (OpenSLO) | Een meting bij het product. | concept |
 | Interface<br/>`API` | API (Backstage) | Het contract tussen deelproducten. | opgenomen |
-| Keten<br/>`ValueStream` | Value stream (SAFe, IT4IT) | De keten waarin waarde naar de persona stroomt. | opgenomen |
+| Keten<br/>`ValueStream` | Value stream (IT4IT) | De keten waarin waarde naar de persona stroomt. | opgenomen |
 | Soort werk<br/>`WorkItemType` | Flow item (Flow Framework) | Zoals feature, defect, risk of debt. | opgenomen |
 | Key result<br/>`KeyResult` | Key result (OKR) | Het meetbare resultaat bij een objective. | opgenomen |
 | Release<br/>`Release` | Release (ITIL) | Een release van een deelproduct: gepland of ongepland (spoed). Hoe een release is samengesteld, is een modelkeuze. | opgenomen |

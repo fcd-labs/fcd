@@ -67,7 +67,7 @@ erDiagram
 
 Model choices: one or more personas per domain, and one monorepo per sub-product or one repository per service.
 
-### Principles, perspectives and design decisions
+### Principles, perspectives and decisions
 
 Concept: these relationships are still to be confirmed.
 
@@ -82,7 +82,7 @@ erDiagram
     DEVIATION }o--|| PRINCIPLE : "refers to"
 ```
 
-A deviation says: we do not follow the principle, and why. A design decision says: this is how we follow the principle. A design decision applies to one sub-product, such as a database, or to the whole way of working, such as docker-compose.
+A deviation says: we do not follow the principle, and why. A decision says: this is how we follow the principle. A decision applies to one sub-product, such as a database, or to the whole way of working, such as docker-compose.
 
 ## FCD criteria
 
@@ -121,8 +121,8 @@ Status *confirmed*: description confirmed. Status *concept*: description still t
 | Environment<br/>`Environment` | Environment (CDEvents) | Where a sub-product lands. | concept |
 | Quality gate<br/>`QualityGate` | none; own term | A moment where something may or may not pass. Checks against one or more principles. | concept |
 | Perspective (*perspectief*)<br/>`Perspective` | Viewpoint (ISO/IEC/IEEE 42010) | A way of looking, such as domain, testing or security. Ten perspectives, including the empty box. Each perspective has principles. | concept |
-| Design decision (*inrichtingskeuze*)<br/>`Decision` | Architecture Decision Record (ADR) | How a way of working fills in a principle, such as PostgreSQL or docker-compose. Refers to one principle. Applies to one sub-product or to the whole way of working. | concept |
-| Way of working<br/>`WayOfWorking` | Way of Working (OMG Essence) | How your FCD works: the pipeline, the principles, the design decisions and the deviations. FCD-demo is a way of working. | concept |
+| Decision (*keuze*)<br/>`Decision` | Architecture Decision Record (ADR) | How a way of working fills in a principle, such as PostgreSQL or docker-compose. Refers to one principle. Applies to one sub-product or to the whole way of working. | concept |
+| Way of working<br/>`WayOfWorking` | Way of Working (OMG Essence) | How your FCD works: the pipeline, the principles, the decisions and the deviations. FCD-demo is a way of working. | concept |
 | Dashboard<br/>`Dashboard` | none; own term | Shows how things are going. | concept |
 | Repository<br/>`Repository` | Source (SLSA) | Where the code of one or more services of one sub-product lives. Never crosses the boundary of a sub-product. | confirmed |
 | Open source software (OSS)<br/>`OpenSourceComponent` | Component (CycloneDX) | Open source components in use. Your own code can be open source too. | concept |
@@ -135,7 +135,7 @@ Status *confirmed*: description confirmed. Status *concept*: description still t
 | Objective<br/>`Objective` | Objective (OKR) | The goal with the intention. | concept |
 | Key performance indicator (KPI)<br/>`KeyPerformanceIndicator` | Key result (OKR), service level indicator (OpenSLO) | A measurement with the product. | concept |
 | Interface<br/>`API` | API (Backstage) | The contract between sub-products. | included |
-| Value stream<br/>`ValueStream` | Value stream (SAFe, IT4IT) | The chain in which value flows to the persona. | included |
+| Value stream<br/>`ValueStream` | Value stream (IT4IT) | The chain in which value flows to the persona. | included |
 | Work item type<br/>`WorkItemType` | Flow item (Flow Framework) | Such as feature, defect, risk or debt. | included |
 | Key result<br/>`KeyResult` | Key result (OKR) | The measurable result of an objective. | included |
 | Release<br/>`Release` | Release (ITIL) | A release of a sub-product: planned or unplanned (urgent). How a release is composed is a model choice. | included |
