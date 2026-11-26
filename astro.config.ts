@@ -72,7 +72,13 @@ export default defineConfig({
           label: "Showcases",
           items: [
             { label: "Overzicht", slug: "showcases", translations: { en: "Overview" } },
-            { label: "Demo", slug: "showcases/demo" },
+            {
+              label: "Demo",
+              items: [
+                { label: "Demo", slug: "showcases/demo" },
+                { label: "The making of", slug: "showcases/demo/making-of" },
+              ],
+            },
             { label: "Classic", slug: "showcases/classic" },
             { label: "Ideal", slug: "showcases/ideal" },
           ],
