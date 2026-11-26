@@ -59,7 +59,14 @@ export default defineConfig({
           slug: "verhaal-presentatie",
           translations: { en: "The story" },
         },
-        { label: "Het FCD-model", slug: "model", translations: { en: "The FCD model" } },
+        {
+          label: "Het FCD-model",
+          translations: { en: "The FCD model" },
+          items: [
+            { label: "Het FCD-model", slug: "model", translations: { en: "The FCD model" } },
+            { label: "Terminologie", slug: "terminologie", translations: { en: "Terminology" } },
+          ],
+        },
         { label: "Jouw FCD-model", slug: "jouw-fcd-model", translations: { en: "Your FCD model" } },
         {
           label: "Showcases",
@@ -71,11 +78,6 @@ export default defineConfig({
           ],
         },
         { label: "Backlog", slug: "backlog" },
-        {
-          label: "Terminologie",
-          slug: "terminologie",
-          translations: { en: "Terminology" },
-        },
         {
           label: "Eerder werk",
           translations: { en: "Earlier work" },
