@@ -131,7 +131,14 @@ export default defineConfig({
             },
           ],
         },
-        { label: "Over mij", slug: "over", translations: { en: "About me" } },
+        {
+          label: "Over mij",
+          translations: { en: "About me" },
+          items: [
+            { label: "Over mij", slug: "over", translations: { en: "About me" } },
+            { label: "Overwegingen", slug: "overwegingen", translations: { en: "Considerations" } },
+          ],
+        },
       ],
     }),
   ],

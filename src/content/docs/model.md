@@ -10,6 +10,22 @@ Het FCD-model is één taal: de bouwstenen van jouw FCD, beschreven en per persp
 
 Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. Daarom staat bij elk object de marktterm. De Nederlandse naam staat op de [praatplaat](verhaal-presentatie.md); de code is Engels. De volledige lijst objecten staat [onderaan](#de-objecten).
 
+## People, process, product
+
+People, process, product geldt op elk niveau. Het product van het ene niveau draagt het process van het volgende, tot aan het werkproces van de gebruiker. Daar doe je het voor.
+
+| Niveau | People | Process | Product (eigenaar van) |
+|---|---|---|---|
+| Gebruiker | De gebruiker | Werkproces | Gebruikt draaiende software |
+| Squads | Squads | FCD | Draaiende software |
+| FCD-producten | Het team voor platform, CI/CD, observability, SRE en Ops | FCD | Draaiende FCD |
+
+- **Eigenaar van, niet maken met.** Wie iets maakt, blijft verantwoordelijk.
+- **Eigenaar van het werkproces:** de gebruiker zelf, of de business van de gebruiker. Dat hangt af van de context.
+- **Eigenaar van FCD:** de tribe. De squads hebben autonomie in het hoe, binnen de kaders.
+- **Twee soorten product:** de FCD-producten (zoals de pipeline en het dashboard) en het product voor de gebruiker. Daar doe je het voor.
+- **Process is meer dan FCD:** het werkproces van de gebruiker hoort er ook bij.
+
 ## Van code tot product
 
 Vijf bouwstenen: code, OSS libs, container, deelproduct, product. Drie werkwoorden:
@@ -99,6 +115,19 @@ Zes criteria. Ze gelden voor het product én voor FCD zelf.
 
 Wijzigbaar is geen FCD-criterium. Het product wordt opnieuw gemaakt uit de intent; wat dat overleeft (interfaces, contracten en data) valt onder betrouwbaar en volledig.
 
+## Verifiëren en valideren
+
+"Test" draagt twee betekenissen. FCD leent de bekende termen.
+
+| | Toetst | Meet je met | Geldt voor |
+|---|---|---|---|
+| Verifiëren | Werkt het product goed? | KPI's | De producten en de FCD-producten |
+| Valideren | Is product gelijk aan intent? | Objective en key results | De intent |
+
+Beide gebeuren continu, niet op twee momenten. Het bewijs ontstaat bij elke stap: continuous compliance in plaats van een audit achteraf.
+
+Voor de mens is er een momentopname op een gekozen moment, voor de historie en trendanalyse. De data levert de momentopname, niet andersom.
+
 ## De objecten
 
 Status *bevestigd*: beschrijving bevestigd. Status *concept*: beschrijving nog te bevestigen. Status *opgenomen*: als object opgenomen, beschrijving nog te bevestigen. Onder elk object staat de naam in de code (Engels).
@@ -132,10 +161,10 @@ Status *bevestigd*: beschrijving bevestigd. Status *concept*: beschrijving nog t
 | Kubernetes-cluster<br/>`KubernetesCluster` | Kubernetes cluster; de facto standaard | Waar containers draaien. | concept |
 | Testsoort<br/>`TestType` | geen; eigen term | Een soort test, zoals unit of contract. | concept |
 | Architectuurstijl<br/>`ArchitectureStyle` | geen; eigen term | Zoals monoliet of microservices. | concept |
-| Objective<br/>`Objective` | Objective (OKR) | Het doel bij de intentie. | concept |
-| Key performance indicator (KPI)<br/>`KeyPerformanceIndicator` | Key result (OKR), service level indicator (OpenSLO) | Een meting bij het product. | concept |
+| Objective<br/>`Objective` | Objective (OKR) | Het doel bij de intentie. Valideren: is product gelijk aan intent? | concept |
+| Key performance indicator (KPI)<br/>`KeyPerformanceIndicator` | Key result (OKR), service level indicator (OpenSLO) | Een meting bij het product en bij de FCD-producten. Verifiëren: werkt het product goed? | concept |
 | Interface<br/>`API` | API (Backstage) | Het contract tussen deelproducten. | opgenomen |
-| Keten<br/>`ValueStream` | Value stream (SAFe, IT4IT) | De keten waarin waarde naar de persona stroomt. | opgenomen |
+| Keten<br/>`ValueStream` | Value stream (IT4IT) | De keten waarin waarde naar de persona stroomt. | opgenomen |
 | Soort werk<br/>`WorkItemType` | Flow item (Flow Framework) | Zoals feature, defect, risk of debt. | opgenomen |
 | Key result<br/>`KeyResult` | Key result (OKR) | Het meetbare resultaat bij een objective. | opgenomen |
 | Release<br/>`Release` | Release (ITIL) | Een release van een deelproduct: gepland of ongepland (spoed). Hoe een release is samengesteld, is een modelkeuze. | opgenomen |
