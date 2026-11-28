@@ -39,6 +39,18 @@ Borrow words where the market has them, only add what the market lacks. The mark
 | Output | The software. |
 | Outcome | What it delivers for the user. |
 
+## Ownership and checking
+
+| Term | Meaning |
+|---|---|
+| People, process, product | Applies at every level. The product of one level carries the process of the next, up to the work process of the user. |
+| Work process (*werkproces*) | The process of the user. Owner: the user or the user's business. |
+| FCD products (*FCD-producten*) | The products squads work with, such as the pipeline and the dashboard. Running FCD. |
+| Owner of | Not "made with": whoever makes something remains responsible. The tribe owns FCD, squads own the product. |
+| Verify (*verifiëren*) | Does the product work well? Measured with KPIs, for the products and the FCD products. Continuously. |
+| Validate (*valideren*) | Does the product equal the intent? Measured with the objective and the key results. Continuously. |
+| Snapshot (*momentopname*) | The status at a chosen moment, generated from the data. For history and trend analysis. |
+
 ## Showcases
 
 | Term | Meaning |

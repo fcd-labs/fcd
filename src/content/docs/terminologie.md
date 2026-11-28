@@ -39,6 +39,18 @@ Woorden lenen waar de markt ze heeft, alleen toevoegen wat de markt mist. De mar
 | Output | De software. |
 | Outcome | Wat het voor de gebruiker oplevert. |
 
+## Eigenaarschap en toetsen
+
+| Term | Betekenis |
+|---|---|
+| People, process, product | Geldt op elk niveau. Het product van het ene niveau draagt het process van het volgende, tot aan het werkproces van de gebruiker. |
+| Werkproces | Het process van de gebruiker. Eigenaar: de gebruiker zelf of de business van de gebruiker. |
+| FCD-producten | De producten waarmee squads werken, zoals de pipeline en het dashboard. Draaiende FCD. |
+| Eigenaar van | Niet "maken met": wie iets maakt, blijft verantwoordelijk. De tribe is eigenaar van FCD, squads zijn eigenaar van het product. |
+| Verifiëren | Werkt het product goed? Gemeten met KPI's, voor de producten en de FCD-producten. Continu. |
+| Valideren | Is product gelijk aan intent? Gemeten met de objective en de key results. Continu. |
+| Momentopname | De status op een gekozen moment, gegenereerd uit de data. Voor de historie en trendanalyse. |
+
 ## Showcases
 
 | Term | Betekenis |

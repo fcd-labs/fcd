@@ -10,6 +10,22 @@ The FCD model is one language: the building blocks of your FCD, described and pl
 
 Borrow words where the market has them, only add what the market lacks. That is why each object lists its market term. The Dutch name is on the [talking picture](verhaal-presentatie.md); the code is English. The full list of objects is [at the bottom](#the-objects).
 
+## People, process, product
+
+People, process, product applies at every level. The product of one level carries the process of the next, up to the work process of the user. That is what you do it for.
+
+| Level | People | Process | Product (owner of) |
+|---|---|---|---|
+| User | The user | Work process | Uses running software |
+| Squads | Squads | FCD | Running software |
+| FCD products | The team for platform, CI/CD, observability, SRE and Ops | FCD | Running FCD |
+
+- **Owner of, not made with.** Whoever makes something remains responsible.
+- **Owner of the work process:** the user, or the user's business. That depends on the context.
+- **Owner of FCD:** the tribe. The squads have autonomy in the how, within the principles.
+- **Two kinds of product:** the FCD products (such as the pipeline and the dashboard) and the product for the user. That is what you do it for.
+- **Process is more than FCD:** the work process of the user is part of it too.
+
 ## From code to product
 
 Five building blocks: code, OSS libs, container, sub-product, product. Three verbs:
@@ -99,6 +115,19 @@ Six criteria. They apply to the product and to FCD itself.
 
 Changeability is not an FCD criterion. The product is made again from the intent; what survives that (interfaces, contracts and data) falls under reliable and complete.
 
+## Verify and validate
+
+"Test" carries two meanings. FCD borrows the well-known terms.
+
+| | Checks | Measured with | Applies to |
+|---|---|---|---|
+| Verify | Does the product work well? | KPIs | The products and the FCD products |
+| Validate | Does the product equal the intent? | Objective and key results | The intent |
+
+Both happen continuously, not at two moments. The evidence is created at every step: continuous compliance instead of an audit afterwards.
+
+For people there is a snapshot at a chosen moment, for history and trend analysis. The data produces the snapshot, not the other way round.
+
 ## The objects
 
 Status *confirmed*: description confirmed. Status *concept*: description still to be confirmed. Status *included*: included as an object, description still to be confirmed. Below each object is its name in the code.
@@ -132,10 +161,10 @@ Status *confirmed*: description confirmed. Status *concept*: description still t
 | Kubernetes cluster<br/>`KubernetesCluster` | Kubernetes cluster; de facto standard | Where containers run. | concept |
 | Test type<br/>`TestType` | none; own term | A kind of test, such as unit or contract. | concept |
 | Architecture style<br/>`ArchitectureStyle` | none; own term | Such as monolith or microservices. | concept |
-| Objective<br/>`Objective` | Objective (OKR) | The goal with the intention. | concept |
-| Key performance indicator (KPI)<br/>`KeyPerformanceIndicator` | Key result (OKR), service level indicator (OpenSLO) | A measurement with the product. | concept |
+| Objective<br/>`Objective` | Objective (OKR) | The goal with the intention. Validate: does the product equal the intent? | concept |
+| Key performance indicator (KPI)<br/>`KeyPerformanceIndicator` | Key result (OKR), service level indicator (OpenSLO) | A measurement with the product and with the FCD products. Verify: does the product work well? | concept |
 | Interface<br/>`API` | API (Backstage) | The contract between sub-products. | included |
-| Value stream<br/>`ValueStream` | Value stream (SAFe, IT4IT) | The chain in which value flows to the persona. | included |
+| Value stream<br/>`ValueStream` | Value stream (IT4IT) | The chain in which value flows to the persona. | included |
 | Work item type<br/>`WorkItemType` | Flow item (Flow Framework) | Such as feature, defect, risk or debt. | included |
 | Key result<br/>`KeyResult` | Key result (OKR) | The measurable result of an objective. | included |
 | Release<br/>`Release` | Release (ITIL) | A release of a sub-product: planned or unplanned (urgent). How a release is composed is a model choice. | included |
